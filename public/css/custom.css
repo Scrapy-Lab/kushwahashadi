@@ -59,3 +59,41 @@ span.psw { float: left; padding: 6px 20px; }
 .text-uppercase { text-transform: uppercase; }
 .text-white { color: #000; font-size: 20px; padding-bottom: 15px; }
 .selectpicker {cursor: pointer; font-size: 14px; padding: 4px 12px; text-align: center; }
+
+
+/* CSS NEW */
+form.modal-content.animate {
+    max-width: 50%;
+    margin: 2rem auto 0;
+    padding: 10px 30px;
+}
+.modal {
+    padding: 0 !important;
+    background: #000000b0;
+}
+.inputgroup.d-flex {
+    width: 48%;
+    flex-direction: column;
+}
+.inputgroup select {
+    padding: 7px;
+    border: 1px solid darkgrey;
+    color: #000;
+    margin: 4px 0;
+    border-radius: 10px;
+}
+.inputgroup input {
+    padding: 7px;
+    border: 1px solid darkgrey;
+    color: #000;
+    margin: 4px 0;
+    border-radius: 10px;
+}
+.submitButtn input {
+    width: 100%;
+    background: #651e1e;
+    color: #fff;
+    padding: 14px;
+    border-radius: 10px;
+    margin: 12px 0;
+}
