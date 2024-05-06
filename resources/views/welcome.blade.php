@@ -1,5 +1,11 @@
 @extends('layouts.app')
 @section('content')
+    <img src="./images/HomePage_Default_Final.webp" class="w-100" alt="" />
+    <div class="header_logo">
+        @if (!auth()->user())
+            <img src="./images/header-logo.png" w="100" h="100" alt="" />
+        @endif
+    </div>
     <div class="feature feature--boxed-border z-depth-2-bottom px-3 py-4  s-search">
         <form data-toggle="validator" role="form" action="" method="POST">
             <div class="row justify-content-between">

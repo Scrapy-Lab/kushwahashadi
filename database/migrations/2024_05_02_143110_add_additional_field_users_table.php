@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('sibling_name')->after('on_behalf')->default('');
             $table->string('user_surname')->after('name');
             $table->string('gender')->after('user_surname');
-            $table->date('dob')->after('gender');
+            $table->date('dob')->default('2024-01-01')->after('gender');
             $table->string('phone')->after('dob');
             $table->string('degree')->after('phone');
             $table->string('address')->after('degree');
