@@ -14,7 +14,7 @@
 
 <body>
 
-    <div style="margin: 0 auto;max-width: fit-content;">
+    <div style="margin: 0 auto;">
         @include('layouts.header')
         @yield('content')
         @include('layouts.footer')
