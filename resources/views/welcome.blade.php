@@ -1,9 +1,15 @@
 @extends('layouts.app')
 @section('content')
-    <div class="feature feature--boxed-border feature--bg-1 z-depth-2-bottom px-3 py-4  s-search">
+    <img src="./images/HomePage_Default_Final.webp" class="w-100" alt="" />
+    <div class="header_logo">
+        @if (!auth()->user())
+            <img src="./images/header-logo.png" w="100" h="100" alt="" />
+        @endif
+    </div>
+    <div class="feature feature--boxed-border z-depth-2-bottom px-3 py-4  s-search">
         <form data-toggle="validator" role="form" action="" method="POST">
-            <div class="row">
-                <div class="col-3">
+            <div class="row justify-content-between">
+                <div class="col-md-2">
                     <label class="text-uppercase ">I'm Looking For A</label>
                     <select name="gender" onchange="(this.value,this)" class="form-control form-control-sm selectpicker"
                         data-placeholder="Choose a gender" tabindex="2" data-hide-disabled="true" title="gender">
@@ -12,17 +18,17 @@
                         <option value="2">Female</option>
                     </select>
                 </div>
-                <div class="col-3">
+                <div class="col-md-2">
                     <label for="" class="text-uppercase ">Aged From</label>
                     <input type="number" class="form-control form-control-sm" name="aged_from" id="aged_from"
                         value="" placeholder=" ">
                 </div>
-                <div class="col-3">
+                <div class="col-md-2">
                     <label for="" class="text-uppercase ">To</label>
                     <input type="number" class="form-control form-control-sm" name="aged_to" id="aged_to" value=""
                         placeholder=" ">
                 </div>
-                <div class="col-3">
+                <div class="col-md-2">
                     <label for="" class="text-uppercase ">Religion</label>
                     <select name="religion" onchange="(this.value,this)"
                         class="form-control form-control-sm selectpicker s_religion" data-placeholder="Choose a religion"
@@ -35,7 +41,8 @@
                         <option value="29">Hindu-Sc/St</option>
                     </select>
                 </div>
-                <div class="col-3">
+                <div class="col-md-2">
+                    <label for=""></label>
                     <button type="submit" class="btn text-white">Let’s Begin</button>
                 </div>
             </div>
