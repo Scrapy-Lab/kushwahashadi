@@ -53,7 +53,7 @@
                             <!-- Profile connect -->
                             <div class="profile-connect mt-5">
                                 <!-- <a href="#" class="btn btn-styled btn-block btn-circle btn-sm btn-base-5">Follow</a>
-                                        <a href="#" class="btn btn-styled btn-block btn-circle btn-sm btn-base-2">Send message</a> -->
+                                            <a href="#" class="btn btn-styled btn-block btn-circle btn-sm btn-base-2">Send message</a> -->
                                 <h2 class="heading heading-5 strong-400">Package Informations</h2>
                             </div>
                             <div class="profile-stats clearfix mt-0">
@@ -145,12 +145,13 @@
                             </div>
                             <div class="card-body">
                                 <h3><span class="grey">Member ID -</span> 75DEE6ED4592 </h3>
-
+                                {{-- INTRODUCTION --}}
                                 <div class="intro d-flex justify-content-between align-items-center">
                                     <h4>Introduction</h4>
                                     <p><i class="fa fa-pencil" aria-hidden="true"></i></p>
                                 </div>
 
+                                {{-- BASIC INFORMATION --}}
                                 <div class="intro">
                                     <div class=" d-flex justify-content-between align-items-center">
                                         <h4>Basic Information</h4>
@@ -216,6 +217,369 @@
                                         </table>
                                     </div>
                                 </div>
+
+                                {{-- PRESENT ADDRESS --}}
+                                <div class="intro">
+                                    <div class=" d-flex justify-content-between align-items-center">
+                                        <h4>Present Address</h4>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <button><i class="fa fa-unlock" aria-hidden="true"></i> Show</button>
+                                            <p><i class="fa fa-pencil" aria-hidden="true"></i></p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-start mt-4">
+                                        <table class="table table-striped">
+                                            <tr>
+                                                <th>COUNTRY</th>
+                                                <td>Bharat</td>
+                                            </tr>
+                                            <tr>
+                                                <th>CITY</th>
+                                                <td>Ballia</td>
+                                            </tr>
+                                            <tr>
+                                                <th>FULL ADDRESS</th>
+                                                <td></td>
+                                            </tr>
+                                        </table>
+
+                                        <table class="table table-striped">
+                                            <tr>
+                                                <th>STATE</th>
+                                                <td>Uttar Pradesh</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                {{-- EDUCATION AND CAREER --}}
+                                <div class="intro">
+                                    <div class=" d-flex justify-content-between align-items-center">
+                                        <h4>Education And Career</h4>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <button><i class="fa fa-unlock" aria-hidden="true"></i> Show</button>
+                                            <p><i class="fa fa-pencil" aria-hidden="true"></i></p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-start mt-4">
+                                        <table class="table table-striped">
+                                            <tr>
+                                                <th>HIGHEST EDUCATION</th>
+                                                <td>B.Tech & M.ba</td>
+                                            </tr>
+                                            <tr>
+                                                <th>EDUCATION DETAIL</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>ANNUAL INCOME</th>
+                                                <td></td>
+                                            </tr>
+                                        </table>
+
+                                        <table class="table table-striped">
+                                            <tr>
+                                                <th>OCCUPATION</th>
+                                                <td>Manager</td>
+                                            </tr>
+                                            <tr>
+                                                <th>POSTING PLACE</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Other OCCUPATION</th>
+                                                <td>Assistant manager</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                {{-- Physical Attributes --}}
+                                <div class="intro">
+                                    <div class=" d-flex justify-content-between align-items-center">
+                                        <h4>Physical Attributes</h4>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <button><i class="fa fa-unlock" aria-hidden="true"></i> Show</button>
+                                            <p><i class="fa fa-pencil" aria-hidden="true"></i></p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-start mt-4">
+                                        <table class="table table-striped">
+                                            <tr>
+                                                <th>HEIGHT</th>
+                                                <td>5.10 Feet</td>
+                                            </tr>
+                                            <tr>
+                                                <th>COMPLEXION</th>
+                                                <td>Wheatish</td>
+                                            </tr>
+                                            <tr>
+                                                <th>BODY TYPE</th>
+                                                <td></td>
+                                            </tr>
+                                        </table>
+
+                                        <table class="table table-striped">
+                                            <tr>
+                                                <th>WEIGHT</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>BLOOD GROUP</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>ANY DISABILITY</th>
+                                                <td></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                {{-- Spiritual And Social Background --}}
+                                <div class="intro">
+                                    <div class=" d-flex justify-content-between align-items-center">
+                                        <h4>Spiritual And Social Background</h4>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <button><i class="fa fa-unlock" aria-hidden="true"></i> Show</button>
+                                            <p><i class="fa fa-pencil" aria-hidden="true"></i></p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-start mt-4">
+                                        <table class="table table-striped">
+                                            <tr>
+                                                <th>RELIGION</th>
+                                                <td>Hindu</td>
+                                            </tr>
+                                            <tr>
+                                                <th>SUB-CASTE</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>FAMILY VALUES</th>
+                                                <td></td>
+                                            </tr>
+                                        </table>
+
+                                        <table class="table table-striped">
+                                            <tr>
+                                                <th>CASTE / SECT</th>
+                                                <td>Kushwaha</td>
+                                            </tr>
+                                            <tr>
+                                                <th>GOTRA</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>FAMILY STATUS</th>
+                                                <td></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                {{-- Astronomic Information --}}
+                                <div class="intro">
+                                    <div class=" d-flex justify-content-between align-items-center">
+                                        <h4>Astronomic Information</h4>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <button><i class="fa fa-unlock" aria-hidden="true"></i> Show</button>
+                                            <p><i class="fa fa-pencil" aria-hidden="true"></i></p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-start mt-4">
+                                        <table class="table table-striped">
+                                            <tr>
+                                                <th>SUN SIGN</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>CITY OF BIRTH</th>
+                                                <td></td>
+                                            </tr>
+                                        </table>
+
+                                        <table class="table table-striped">
+                                            <tr>
+                                                <th>MOON SIGN</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>TIME OF BIRTH</th>
+                                                <td></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                {{-- Family Information --}}
+                                <div class="intro">
+                                    <div class=" d-flex justify-content-between align-items-center">
+                                        <h4>Family Information</h4>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <button><i class="fa fa-unlock" aria-hidden="true"></i> Show</button>
+                                            <p><i class="fa fa-pencil" aria-hidden="true"></i></p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-start mt-4">
+                                        <table class="table table-striped">
+                                            <tr>
+                                                <th>FAMILY RESIDENCE</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>FATHER</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>MOTHER</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>BROTHER</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>SISTER</th>
+                                                <td></td>
+                                            </tr>
+                                        </table>
+
+                                        <table class="table table-striped">
+                                            <tr>
+                                                <th>NATIVE PLACE</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>FATHER OCCUPATION</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>MOTHER OCCUPATION</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>BROTHER OCCUPATION</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>SISTER OCCUPATION</th>
+                                                <td></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                {{-- Partner Expectation --}}
+                                <div class="intro">
+                                    <div class=" d-flex justify-content-between align-items-center">
+                                        <h4>Partner Expectation</h4>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <button><i class="fa fa-unlock" aria-hidden="true"></i> Show</button>
+                                            <p><i class="fa fa-pencil" aria-hidden="true"></i></p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-start mt-4">
+                                        <table class="table table-striped">
+                                            <tr>
+                                                <th>GENERAL REQUIREMENT</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>HEIGHT</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>MARITAL STATUS</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>COUNTRY OF RESIDENCE</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>CASTE / SECT</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>EDUCATION</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>DRINKING HABITS</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>DIET</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>MANGLIK</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>FAMILY VALUES</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>PREFERED COUNTRY</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>PREFER CITIES</th>
+                                                <td></td>
+                                            </tr>
+                                        </table>
+
+                                        <table class="table table-striped">
+                                            <tr>
+                                                <th>AGE</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>WEIGHT</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>WITH CHILDREN ACCEPTABLES</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>RELIGION</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>SUB CASTE</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>PROFESSION</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>SMOKING HABITS</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>BODY TYPE</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>ANY DISABILITY</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>FAMILY STATUS</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>PREFERED STATE</th>
+                                                <td></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -242,7 +606,7 @@
                             <!-- Profile connect -->
                             <div class="profile-connect mt-5">
                                 <!-- <a href="#" class="btn btn-styled btn-block btn-circle btn-sm btn-base-5">Follow</a>
-                                        <a href="#" class="btn btn-styled btn-block btn-circle btn-sm btn-base-2">Send message</a> -->
+                                            <a href="#" class="btn btn-styled btn-block btn-circle btn-sm btn-base-2">Send message</a> -->
                                 <h2 class="heading heading-5 strong-400">Package Informations</h2>
                             </div>
                             <div class="profile-stats clearfix mt-0">
@@ -315,7 +679,34 @@
 
 
                     <div class="col-md-7">
-                        adfs
+                        <div class="card z-depth-2-top">
+                            <div class="card-title">
+                                <h3 class="heading heading-6 strong-500 pull-left">
+                                    <b>My Interests</b>
+                                </h3>
+
+                            </div>
+                            <div class="interests">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Image</th>
+                                            <th>Name</th>
+                                            <th>Age</th>
+                                            <th>Religion</th>
+                                            <th>Location</th>
+                                            <th>Manglik</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="7" class="text-center">No Result Found</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -338,7 +729,7 @@
                             <!-- Profile connect -->
                             <div class="profile-connect mt-5">
                                 <!-- <a href="#" class="btn btn-styled btn-block btn-circle btn-sm btn-base-5">Follow</a>
-                                        <a href="#" class="btn btn-styled btn-block btn-circle btn-sm btn-base-2">Send message</a> -->
+                                            <a href="#" class="btn btn-styled btn-block btn-circle btn-sm btn-base-2">Send message</a> -->
                                 <h2 class="heading heading-5 strong-400">Package Informations</h2>
                             </div>
                             <div class="profile-stats clearfix mt-0">
@@ -411,7 +802,88 @@
 
 
                     <div class="col-md-7">
-                        adfs
+                        <div class="card z-depth-2-top">
+                            <div class="card-title">
+                                <h3 class="heading heading-6 strong-500 pull-left">
+                                    <b>Short List</b>
+                                </h3>
+
+                            </div>
+
+                            <div class="interests">
+                                <table class="table table-striped table-fixed">
+                                    <thead>
+                                        <tr>
+                                            <th>Image</th>
+                                            <th>Name</th>
+                                            <th>Age</th>
+                                            <th>Religion</th>
+                                            <th>Location</th>
+                                            <th>Manglik</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><img src="images/img12.jpg" alt=""></td>
+                                            <td>Pooja Khushwaha</td>
+                                            <td>32</td>
+                                            <td>Hindu</td>
+                                            <td>Uttar Pardesh</td>
+                                            <td></td>
+                                            <td><i class="fa fa-heart" aria-hidden="true"></i>
+                                                <i class="fa fa-times" aria-hidden="true"></i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="images/img12.jpg" alt=""></td>
+                                            <td>Shalini Singh</td>
+                                            <td>33</td>
+                                            <td>Hindu</td>
+                                            <td>Uttar Pardesh Bharat</td>
+                                            <td></td>
+                                            <td><i class="fa fa-heart" aria-hidden="true"></i>
+                                                <i class="fa fa-times" aria-hidden="true"></i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="images/img13.jpg" alt=""></td>
+                                            <td>Suman Verma</td>
+                                            <td>34</td>
+                                            <td>Hindu</td>
+                                            <td>Uttar Pardesh</td>
+                                            <td></td>
+                                            <td><i class="fa fa-heart" aria-hidden="true"></i>
+                                                <i class="fa fa-times" aria-hidden="true"></i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="images/img13.jpg" alt=""></td>
+                                            <td>Shivani Maurya</td>
+                                            <td>29</td>
+                                            <td>Hindu</td>
+                                            <td>Uttar Pardesh</td>
+                                            <td></td>
+                                            <td><i class="fa fa-heart" aria-hidden="true"></i>
+                                                <i class="fa fa-times" aria-hidden="true"></i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="images/img13.jpg" alt=""></td>
+                                            <td>Sneha Lata Verma</td>
+                                            <td>30</td>
+                                            <td>Hindu</td>
+                                            <td>Uttar Pardesh</td>
+                                            <td></td>
+                                            <td><i class="fa fa-heart" aria-hidden="true"></i>
+                                                <i class="fa fa-times" aria-hidden="true"></i>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -434,7 +906,7 @@
                             <!-- Profile connect -->
                             <div class="profile-connect mt-5">
                                 <!-- <a href="#" class="btn btn-styled btn-block btn-circle btn-sm btn-base-5">Follow</a>
-                                        <a href="#" class="btn btn-styled btn-block btn-circle btn-sm btn-base-2">Send message</a> -->
+                                            <a href="#" class="btn btn-styled btn-block btn-circle btn-sm btn-base-2">Send message</a> -->
                                 <h2 class="heading heading-5 strong-400">Package Informations</h2>
                             </div>
                             <div class="profile-stats clearfix mt-0">
@@ -507,7 +979,35 @@
 
 
                     <div class="col-md-7">
-                        adfs
+                        <div class="card z-depth-2-top">
+                            <div class="card-title">
+                                <h3 class="heading heading-6 strong-500 pull-left">
+                                    <b>Followed Users</b>
+                                </h3>
+
+                            </div>
+
+                            <div class="interests">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Image</th>
+                                            <th>Name</th>
+                                            <th>Age</th>
+                                            <th>Religion</th>
+                                            <th>Location</th>
+                                            <th>Manglik</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="7" class="text-center">No Result Found</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -530,7 +1030,7 @@
                             <!-- Profile connect -->
                             <div class="profile-connect mt-5">
                                 <!-- <a href="#" class="btn btn-styled btn-block btn-circle btn-sm btn-base-5">Follow</a>
-                                        <a href="#" class="btn btn-styled btn-block btn-circle btn-sm btn-base-2">Send message</a> -->
+                                            <a href="#" class="btn btn-styled btn-block btn-circle btn-sm btn-base-2">Send message</a> -->
                                 <h2 class="heading heading-5 strong-400">Package Informations</h2>
                             </div>
                             <div class="profile-stats clearfix mt-0">
@@ -603,7 +1103,35 @@
 
 
                     <div class="col-md-7">
-                        adfs
+                        <div class="card z-depth-2-top">
+                            <div class="card-title">
+                                <h3 class="heading heading-6 strong-500 pull-left">
+                                    <b>Messaging</b>
+                                </h3>
+
+                            </div>
+
+                            <div class="row px-4 align-items-start">
+                                <div class="col-md-8 ">
+                                    <form action="">
+                                    <div class="selectMember">
+                                        <h3><i class="fa fa-comments-o" aria-hidden="true"></i> Select A Member</h3>
+                                        <p>"Select A Member From The Contact List To Start Messaging "</p>
+                                        <div class="inputgroup d-flex">
+                                            <input type="text" name="" id="" placeholder="Type Message">
+                                            <input type="submit" value="Submit">
+                                        </div>
+
+                                    </div>
+                                </form>
+                                </div>
+                                <div class="col-md-3 contactList">
+                                    <div class="contactList">
+                                        <h3><i class="fa fa-users" aria-hidden="true"></i> Contact List</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -626,7 +1154,7 @@
                             <!-- Profile connect -->
                             <div class="profile-connect mt-5">
                                 <!-- <a href="#" class="btn btn-styled btn-block btn-circle btn-sm btn-base-5">Follow</a>
-                                        <a href="#" class="btn btn-styled btn-block btn-circle btn-sm btn-base-2">Send message</a> -->
+                                            <a href="#" class="btn btn-styled btn-block btn-circle btn-sm btn-base-2">Send message</a> -->
                                 <h2 class="heading heading-5 strong-400">Package Informations</h2>
                             </div>
                             <div class="profile-stats clearfix mt-0">
@@ -699,7 +1227,42 @@
 
 
                     <div class="col-md-7">
-                        adfs
+                        <div class="card z-depth-2-top">
+                            <div class="card-title">
+                                <h3 class="heading heading-6 strong-500 pull-left">
+                                    <b>Ignored List</b>
+                                </h3>
+
+                            </div>
+
+                            <div class="interests">
+                                <table class="table table-striped table-fixed">
+                                    <thead>
+                                        <tr>
+                                            <th>Image</th>
+                                            <th>Name</th>
+                                            <th>Age</th>
+                                            <th>Religion</th>
+                                            <th>Location</th>
+                                            <th>Manglik</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><img src="images/img12.jpg" alt=""></td>
+                                            <td>Pooja Khushwaha</td>
+                                            <td>32</td>
+                                            <td>Hindu</td>
+                                            <td>Uttar Pardesh</td>
+                                            <td></td>
+                                            <td><i class="fa fa-check" aria-hidden="true"></i></i>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

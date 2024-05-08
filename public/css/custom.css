@@ -637,9 +637,116 @@ span.grey {
     margin: 0;
 }
 .intro h4 {
-    font-size: 20px;
+    font-size: 19px;
     margin: 0;
+    font-weight: 700;
 }
 .intro table {
     width: 50%;
+}
+.intro button {
+    width: 100%;
+    padding: 0 10px;
+    background: #1bbc9c;
+    font-size: 16px;
+}
+.intro button i.fa.fa-unlock {
+    font-size: 12px;
+    padding: 0;
+}
+.intro th {
+    font-weight: 500 !important;
+    font-size: 14px;
+}
+.interests {
+    padding:  0 20px;
+}
+.table-fixed {
+    width: 100%;
+    table-layout: fixed;
+}
+.interests img {
+    width: 66px;
+}
+.table-fixed th,
+.table-fixed td {
+    text-overflow: ellipsis;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    text-align: justify;
+}
+.table-fixed tr {
+    vertical-align: middle ;
+}
+
+.interests i.fa.fa-heart {
+    color: #fff;
+    background: #1bbc9c;
+    padding: 7px 6px 5px;
+    font-size: 12px;
+    box-shadow: 0 4px 10px -5px rgba(0, 0, 0, 0.8) !important;
+}
+.interests i.fa.fa-times {
+    color: #fff;
+    background: #dc3545;
+    padding: 7px 6px 5px;
+    font-size: 12px;
+    box-shadow: 0 4px 10px -5px rgba(0, 0, 0, 0.8) !important;
+}
+
+.interests i.fa.fa-check {
+    color: #fff;
+    background: #1bbc9c;
+    padding: 7px 6px 5px;
+    font-size: 12px;
+    box-shadow: 0 4px 10px -5px rgba(0, 0, 0, 0.8) !important;
+}
+
+.selectMember h3 {
+    background-color: rgb(247 247 247);
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+    color: #1bbc9c;
+    font-size: 16px;
+    padding: 10px;
+}
+.contactList h3 {
+    background-color: rgb(247 247 247);
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+    color: #1bbc9c;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.selectMember p {
+    color: #1BBC9C !important;
+    text-align: center !important;
+    padding: 1.5rem 0 !important;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+}
+.selectMember {
+    border: 1px solid rgba(0, 0, 0, 0.07);
+}
+.inputgroup {
+    gap: 12px;
+    padding: 0 10px;
+    margin-bottom: 15px;
+}
+
+.inputgroup input[type="submit"] {
+    background-color: #1BBC9C;
+    color: #fff;
+}
+
+.inputgroup input[type="text"] {
+    background: #FFF;
+    border-color: #e6e6e6;
+    color: #555;
+    border-radius: none !important;
+    border: 1px solid rgba(0, 0, 0, .15);
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.selectMember .inputgroup.d-flex {
+    width: 100%;
+    flex-direction: row;
 }
