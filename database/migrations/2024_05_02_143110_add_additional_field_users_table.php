@@ -12,17 +12,25 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('on_behalf')->after('email');
-            $table->string('sibling_name')->after('on_behalf')->default('');
-            $table->string('user_surname')->after('name');
-            $table->string('gender')->after('user_surname');
+
+            $table->string('last_name')->after('name');
+            $table->string('gender')->after('last_name');
             $table->date('dob')->default('2024-01-01')->after('gender');
-            $table->string('phone')->after('dob');
-            $table->string('degree')->after('phone');
+            $table->string('martial_status')->after('dob');
+            $table->string('no_of_children')->after('martial_status');
+            $table->string('area')->after('no_of_children');
+            $table->string('on_behalf')->after('area');
+            $table->string('on_behalf_name')->after('on_behalf')->default('');
+            $table->string('phone')->after('on_behalf_name');
+            $table->string('wp_no')->after('phone');
+            $table->string('degree')->after('wp_no');
             $table->string('address')->after('degree');
-            $table->string('height')->after('address');
-            $table->string('profession')->after('height');
-            $table->string('is_admin')->after('profession')->default(0);
+            $table->string('country')->after('address');
+            $table->string('state')->after('country');
+            $table->string('city')->after('state');
+            // $table->string('height')->after('address');
+            // $table->string('profession')->after('height');
+            $table->string('is_admin')->after('city')->default(0);
         });
     }
 
