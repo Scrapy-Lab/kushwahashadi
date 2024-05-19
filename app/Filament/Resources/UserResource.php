@@ -110,16 +110,11 @@ class UserResource extends Resource
                     ->maxLength(255)
                     ->default(null),
 
-                Forms\Components\TextInput::make('is_admin')
-                    ->required()
-                    ->maxLength(255)
-                    ->default(0),
+                // Forms\Components\TextInput::make('is_admin')
+                //     ->required()
+                //     ->maxLength(255)
+                //     ->default(0),
 
-                Forms\Components\DateTimePicker::make('email_verified_at'),
-                Forms\Components\TextInput::make('password')
-                    ->password()
-                    ->required()
-                    ->maxLength(255),
             ]);
     }
 
