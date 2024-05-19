@@ -31,6 +31,7 @@ return new class extends Migration
             // $table->string('height')->after('address');
             // $table->string('profession')->after('height');
             $table->string('is_admin')->after('city')->default(0);
+            $table->timestamp('deleted_at')->nullable();
         });
     }
 

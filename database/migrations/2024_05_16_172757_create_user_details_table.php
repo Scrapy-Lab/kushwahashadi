@@ -53,6 +53,7 @@ return new class extends Migration
             $table->string('partner_exp_family_values')->nullable();
             $table->string('partner_exp_prefered_countries')->nullable();
             $table->string('partner_exp_prefered_cities')->nullable();
+            $table->timestamp('deleted_at')->nullable();
             $table->timestamps();
         });
     }
