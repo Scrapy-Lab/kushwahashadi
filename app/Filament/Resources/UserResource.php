@@ -28,92 +28,18 @@ class UserResource extends Resource
         return $form
             ->schema([
 
-                Fieldset::make('Basic Details')
-                    ->schema([
 
-
-                        Tabs::make('Tabs')
-                            ->tabs([
-                                Tabs\Tab::make('Basic Details')
-                                    ->icon('heroicon-m-bell')
-                                    ->schema([
-                                        Forms\Components\TextInput::make('name')
-                                            ->required()
-                                            ->maxLength(255),
-                                        Forms\Components\TextInput::make('last_name')
-                                            ->maxLength(255)
-                                            ->default(null),
-                                        Forms\Components\TextInput::make('email')
-                                            ->email()
-                                            ->required()
-                                            ->maxLength(255),
-                                        Forms\Components\Select::make('gender')
-                                            ->options([
-                                                'male' => 'Male',
-                                                'female' => 'Female',
-                                            ]),
-                                        Forms\Components\DatePicker::make('dob'),
-                                        Forms\Components\TextInput::make('martial_status')
-                                            ->maxLength(255)
-                                            ->default(null),
-                                    ])->columns(3),
-                                Tabs\Tab::make('Contact Details')
-                                    ->schema([
-                                        Forms\Components\TextInput::make('phone')
-                                            ->tel()
-                                            ->maxLength(255)
-                                            ->default(null),
-                                        Forms\Components\TextInput::make('wp_no')
-                                            ->maxLength(255)
-                                            ->default(null),
-
-
-                                    ])->columns(3),
-                                Tabs\Tab::make('Address')
-                                    ->schema([
-
-                                        Forms\Components\TextInput::make('address')
-                                            ->maxLength(255)
-                                            ->default(null),
-                                        Forms\Components\TextInput::make('country')
-                                            ->maxLength(255)
-                                            ->default(null),
-                                        Forms\Components\TextInput::make('state')
-                                            ->maxLength(255)
-                                            ->default(null),
-                                        Forms\Components\TextInput::make('city')
-                                            ->maxLength(255)
-                                            ->default(null),
-                                        Forms\Components\TextInput::make('area')
-                                            ->maxLength(255)
-                                            ->default(null),
-                                    ]),
-                            ]),
-
-
-
-                    ])->columns(2),
-
-
-                Forms\Components\TextInput::make('no_of_children')
+                Forms\Components\TextInput::make('name')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('last_name')
                     ->maxLength(255)
                     ->default(null),
-                Forms\Components\TextInput::make('on_behalf')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('on_behalf_name')
-                    ->maxLength(255)
-                    ->default(''),
+                Forms\Components\TextInput::make('email')
+                    ->email()
+                    ->required()
+                    ->maxLength(255),
 
-
-                Forms\Components\TextInput::make('degree')
-                    ->maxLength(255)
-                    ->default(null),
-
-                // Forms\Components\TextInput::make('is_admin')
-                //     ->required()
-                //     ->maxLength(255)
-                //     ->default(0),
 
             ]);
     }

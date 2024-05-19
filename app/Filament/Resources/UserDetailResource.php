@@ -4,8 +4,11 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\UserDetailResource\Pages;
 use App\Filament\Resources\UserDetailResource\RelationManagers;
+use App\Models\User;
 use App\Models\UserDetail;
 use Filament\Forms;
+use Filament\Forms\Components\Fieldset;
+use Filament\Forms\Components\Tabs;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -19,33 +22,120 @@ class UserDetailResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-    protected static ?string $navigationGroup = 'Member List';
-
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('user_id')
-                    ->required()
-                    ->numeric(),
-                Forms\Components\TextInput::make('highest_education')
+
+                Fieldset::make('Basic Details')
+                    ->schema([
+
+                        Forms\Components\Select::make('user_id')
+                            ->required()
+                            ->searchable()
+                            ->preload()
+                            ->relationship(name: 'user', titleAttribute: 'name')->disabledOn('edit'),
+                        Tabs::make('Tabs')
+                            ->tabs([
+                                Tabs\Tab::make('Basic Details')
+                                    ->icon('heroicon-m-bell')
+                                    ->schema([
+                                        Forms\Components\TextInput::make('user.name')
+                                            ->required(),
+                                        Forms\Components\TextInput::make('user.last_name')
+                                            ->required(),
+
+                                        Forms\Components\Select::make('gender')
+                                            ->options([
+                                                'male' => 'Male',
+                                                'female' => 'Female',
+                                            ]),
+                                        Forms\Components\DatePicker::make('dob'),
+                                        Forms\Components\TextInput::make('martial_status')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('phone')
+                                            ->tel()
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('wp_no')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                    ])->columns(3),
+                                Tabs\Tab::make('Contact Details')
+                                    ->schema([])->columns(3),
+                                Tabs\Tab::make('Address')
+                                    ->schema([
+
+                                        Forms\Components\TextInput::make('address')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('country')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('state')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('city')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('area')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                    ])->columns(3),
+                            ]),
+
+
+
+                    ])->columns(1),
+
+                Fieldset::make('Education Details')
+                    ->schema([
+
+                        Forms\Components\TextInput::make('degree')
+                            ->maxLength(255)
+                            ->default(null),
+
+                        Forms\Components\TextInput::make('highest_education')
+                            ->maxLength(255)
+                            ->default(null),
+                        Forms\Components\TextInput::make('occupation')
+                            ->maxLength(255)
+                            ->default(null),
+                        Forms\Components\TextInput::make('edu_details')
+                            ->maxLength(255)
+                            ->default(null),
+                        Forms\Components\TextInput::make('posting_place')
+                            ->maxLength(255)
+                            ->default(null),
+                        Forms\Components\TextInput::make('annual_income')
+                            ->maxLength(255)
+                            ->default(null),
+                        Forms\Components\TextInput::make('other_occupation')
+                            ->maxLength(255)
+                            ->default(null),
+                    ]),
+
+                Forms\Components\TextInput::make('no_of_children')
                     ->maxLength(255)
                     ->default(null),
-                Forms\Components\TextInput::make('occupation')
+                Forms\Components\TextInput::make('area')
                     ->maxLength(255)
                     ->default(null),
-                Forms\Components\TextInput::make('edu_details')
+                Forms\Components\TextInput::make('on_behalf')
                     ->maxLength(255)
                     ->default(null),
-                Forms\Components\TextInput::make('posting_place')
+                Forms\Components\TextInput::make('on_behalf_name')
+                    ->maxLength(255)
+                    ->default(''),
+                Forms\Components\TextInput::make('phone')
+                    ->tel()
                     ->maxLength(255)
                     ->default(null),
-                Forms\Components\TextInput::make('annual_income')
+                Forms\Components\TextInput::make('wp_no')
                     ->maxLength(255)
                     ->default(null),
-                Forms\Components\TextInput::make('other_occupation')
-                    ->maxLength(255)
-                    ->default(null),
+
                 Forms\Components\TextInput::make('height')
                     ->maxLength(255)
                     ->default(null),
@@ -155,6 +245,35 @@ class UserDetailResource extends Resource
                 Tables\Columns\TextColumn::make('user_id')
                     ->numeric()
                     ->sortable(),
+                Tables\Columns\TextColumn::make('gender')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('dob')
+                    ->date()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('martial_status')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('no_of_children')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('area')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('on_behalf')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('on_behalf_name')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('phone')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('wp_no')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('degree')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('address')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('country')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('state')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('city')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('highest_education')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('occupation')
@@ -233,6 +352,10 @@ class UserDetailResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('partner_exp_prefered_cities')
                     ->searchable(),
+                Tables\Columns\TextColumn::make('deleted_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

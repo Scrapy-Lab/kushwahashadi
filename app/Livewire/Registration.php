@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use App\Models\User;
+use App\Models\UserDetail;
 use Illuminate\Support\Facades\Hash;
 
 class Registration extends Component
@@ -24,9 +25,11 @@ class Registration extends Component
     public $confirm_password;
     public $terms_condition;
     public $createUser;
+    public $createUserDetail;
 
     public function mount(){
         $this->createUser = new User();
+        $this->createUserDetail = new UserDetail();
     }
 
     public function render()
@@ -38,19 +41,23 @@ class Registration extends Component
     {
         try{
             $this->createUser->name = $this->name;
-            $this->createUser->user_surname = $this->user_surname;
-            $this->createUser->on_behalf = $this->on_behalf;
-            $this->createUser->gender = $this->gender;
-            $this->createUser->dob = $this->dob;
-            $this->createUser->phone = $this->phone;
-            $this->createUser->degree = $this->degree;
-            $this->createUser->address = $this->address;
-            $this->createUser->height = $this->height;
-            $this->createUser->profession = $this->profession;
-            $this->createUser->sibling_name = $this->sibling_name;
+            $this->createUser->last_name = $this->user_surname;
+            $this->createUserDetail->on_behalf = $this->on_behalf;
+            $this->createUserDetail->gender = $this->gender;
+            $this->createUserDetail->dob = $this->dob;
+            $this->createUserDetail->phone = $this->phone;
+            $this->createUserDetail->degree = $this->degree;
+            $this->createUserDetail->address = $this->address;
+            $this->createUserDetail->height = $this->height;
+            // $this->createUserDetail->profession = $this->profession;
+            // $this->createUserDetail->sibling_name = $this->sibling_name;
             $this->createUser->email = $this->email;
             $this->createUser->password = Hash::make($this->password);
             $this->createUser->save();
+            $this->createUserDetail->user_id = $this->createUser->id;
+            $this->createUserDetail->save();
+
+        return redirect(route('dashboard'));
         } catch (\Exception $e){
             dd($e->getMessage());
         }

@@ -14,6 +14,23 @@ return new class extends Migration
         Schema::create('user_details', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->string('gender')->nullable();
+            $table->date('dob')->default('2024-01-01')->nullable();
+            $table->string('martial_status')->nullable();
+            $table->string('no_of_children')->nullable();
+            $table->string('area')->nullable();
+            $table->string('on_behalf')->nullable();
+            $table->string('on_behalf_name')->default('')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('wp_no')->nullable();
+            $table->string('degree')->nullable();
+            $table->string('address')->nullable();
+            $table->string('country')->nullable();
+            $table->string('state')->nullable();
+            $table->string('city')->nullable();
+            // $table->string('height')->after('address');
+            // $table->string('profession')->after('height');
+
             $table->string('highest_education')->nullable();
             $table->string('occupation')->nullable();
             $table->string('edu_details')->nullable();

@@ -8,4 +8,4 @@ Route::get('/', function () {
 
 Route::get('/dashboard',function(){
     return view('innerPages.dashboard');
-});
+})->name('dashboard');
