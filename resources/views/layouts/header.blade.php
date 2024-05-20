@@ -17,7 +17,9 @@
 
         <div class="header_login">
     @if (Auth::check())
+    <a href="{{route('logout')}}">
         <button class=" btn-danger btn ">Logout</button>
+    </a>
     @else
         <img src="./images/language-switcher-web.svg" w="10" h="10" alt="" />
         <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"

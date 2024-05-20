@@ -40,7 +40,8 @@ class UserDetailResource extends Resource
                                 Tabs\Tab::make('Basic Details')
                                     ->icon('heroicon-m-bell')
                                     ->schema([
-                                        Forms\Components\TextInput::make('user.name')
+                                        Forms\Components\TextInput::make('name')
+                                         ->relationship(name: 'user', titleAttribute: 'name')->disabledOn('edit')
                                             ->required(),
                                         Forms\Components\TextInput::make('user.last_name')
                                             ->required(),
