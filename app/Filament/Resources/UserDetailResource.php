@@ -22,6 +22,8 @@ class UserDetailResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    protected static ?string $navigationGroup = 'Member List';
+
     public static function form(Form $form): Form
     {
         return $form
@@ -40,11 +42,16 @@ class UserDetailResource extends Resource
                                 Tabs\Tab::make('Basic Details')
                                     ->icon('heroicon-m-bell')
                                     ->schema([
-                                        Forms\Components\TextInput::make('name')
-                                         ->relationship(name: 'user', titleAttribute: 'name')->disabledOn('edit')
-                                            ->required(),
-                                        Forms\Components\TextInput::make('user.last_name')
-                                            ->required(),
+                                        // Forms\Components\TextInput::make('name')
+                                        //  ->relationship(name: 'user', titleAttribute: 'name')->disabledOn('edit')
+                                        //     ->required(),
+                                        // Forms\Components\TextInput::make('user.last_name')
+                                        //     ->required(),
+                                        Forms\Components\Select::make('last_name')
+                                            ->required()
+                                            ->searchable()
+                                            ->preload()
+                                            ->relationship(name: 'user', titleAttribute: 'last_name')->disabledOn('edit'),
 
                                         Forms\Components\Select::make('gender')
                                             ->options([
@@ -243,26 +250,30 @@ class UserDetailResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('user_id')
-                    ->numeric()
-                    ->sortable(),
+                Tables\Columns\TextColumn::make('user.name')
+                    ->sortable()
+                    ->label('First Name'),
+                Tables\Columns\TextColumn::make('user.last_name')
+                    ->sortable()
+                    ->label('First Name'),
                 Tables\Columns\TextColumn::make('gender')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('dob')
                     ->date()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('martial_status')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('no_of_children')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('area')
-                    ->searchable(),
                 Tables\Columns\TextColumn::make('on_behalf')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('on_behalf_name')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('phone')
                     ->searchable(),
+                Tables\Columns\TextColumn::make('martial_status')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('no_of_children')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('area')
+                    ->searchable(),
+
                 Tables\Columns\TextColumn::make('wp_no')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('degree')

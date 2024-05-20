@@ -52,42 +52,11 @@ class UserResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('last_name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('gender')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('dob')
-                    ->date()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('martial_status')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('no_of_children')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('area')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('on_behalf')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('on_behalf_name')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('phone')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('wp_no')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('degree')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('address')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('country')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('state')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('city')
-                    ->searchable(),
+
                 Tables\Columns\TextColumn::make('is_admin')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('email')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('email_verified_at')
-                    ->dateTime()
-                    ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
