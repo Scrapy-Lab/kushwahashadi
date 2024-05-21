@@ -47,11 +47,11 @@ class UserDetailResource extends Resource
                                         //     ->required(),
                                         // Forms\Components\TextInput::make('user.last_name')
                                         //     ->required(),
-                                        Forms\Components\Select::make('last_name')
-                                            ->required()
-                                            ->searchable()
-                                            ->preload()
-                                            ->relationship(name: 'user', titleAttribute: 'last_name')->disabledOn('edit'),
+                                        // Forms\Components\Select::make('last_name')
+                                        //     ->required()
+                                        //     ->searchable()
+                                        //     ->preload()
+                                        //     ->relationship(name: 'user', titleAttribute: 'last_name')->disabledOn('edit'),
 
                                         Forms\Components\Select::make('gender')
                                             ->options([
