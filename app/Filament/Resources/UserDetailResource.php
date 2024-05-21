@@ -29,7 +29,7 @@ class UserDetailResource extends Resource
         return $form
             ->schema([
 
-                Fieldset::make('Basic Details')
+                Fieldset::make('Basic Information')
                     ->schema([
 
                         Forms\Components\Select::make('user_id')
@@ -55,11 +55,14 @@ class UserDetailResource extends Resource
 
                                         Forms\Components\Select::make('gender')
                                             ->options([
-                                                'male' => 'Male',
-                                                'female' => 'Female',
+                                                '1' => 'Male',
+                                                '2' => 'Female',
                                             ]),
                                         Forms\Components\DatePicker::make('dob'),
                                         Forms\Components\TextInput::make('martial_status')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('no_of_children')
                                             ->maxLength(255)
                                             ->default(null),
                                         Forms\Components\TextInput::make('phone')
@@ -71,7 +74,17 @@ class UserDetailResource extends Resource
                                             ->default(null),
                                     ])->columns(3),
                                 Tabs\Tab::make('Contact Details')
-                                    ->schema([])->columns(3),
+                                    ->schema([
+                                        Forms\Components\TextInput::make('area')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('on_behalf')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('on_behalf_name')
+                                            ->maxLength(255)
+                                            ->default(''),
+                                    ])->columns(3),
                                 Tabs\Tab::make('Address')
                                     ->schema([
 
@@ -97,152 +110,179 @@ class UserDetailResource extends Resource
 
                     ])->columns(1),
 
-                Fieldset::make('Education Details')
+                Fieldset::make('Self Details')
                     ->schema([
+                        Tabs::make('Tabs')
+                            ->tabs([
+                                Tabs\Tab::make('Education And Career')
+                                    ->icon('heroicon-m-bell')
+                                    ->schema([
+                                        Forms\Components\TextInput::make('degree')
+                                            ->maxLength(255)
+                                            ->default(null),
 
-                        Forms\Components\TextInput::make('degree')
-                            ->maxLength(255)
-                            ->default(null),
+                                        Forms\Components\TextInput::make('highest_education')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('occupation')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('edu_details')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('posting_place')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('annual_income')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('other_occupation')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                    ])->columns(3),
+                                Tabs\Tab::make('Physical Attributes')
+                                    ->icon('heroicon-m-bell')
+                                    ->schema([
+                                        Forms\Components\TextInput::make('height')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('wight')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('complexion')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('blood_group')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('body_type')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('any_disability')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                    ])->columns(3),
+                            ]),
+                        Tabs::make('Tabs')
+                            ->tabs([
 
-                        Forms\Components\TextInput::make('highest_education')
-                            ->maxLength(255)
-                            ->default(null),
-                        Forms\Components\TextInput::make('occupation')
-                            ->maxLength(255)
-                            ->default(null),
-                        Forms\Components\TextInput::make('edu_details')
-                            ->maxLength(255)
-                            ->default(null),
-                        Forms\Components\TextInput::make('posting_place')
-                            ->maxLength(255)
-                            ->default(null),
-                        Forms\Components\TextInput::make('annual_income')
-                            ->maxLength(255)
-                            ->default(null),
-                        Forms\Components\TextInput::make('other_occupation')
-                            ->maxLength(255)
-                            ->default(null),
+                                Tabs\Tab::make('Spiritual And Social Background')
+                                    ->schema([
+                                        Forms\Components\TextInput::make('religion')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('caste')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('sub_caste')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('gotra')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('family_values')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('family_status')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                    ])->columns(2),
+                                Tabs\Tab::make('Astronomic Information')
+                                    ->schema([
+                                        Forms\Components\TextInput::make('sun_sign')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('moon_sign')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('birth_city')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('time_of_birth')
+                                            ->maxLength(255)
+                                            ->default(null),
+
+                                    ])->columns(2),
+                            ]),
                     ]),
 
-                Forms\Components\TextInput::make('no_of_children')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('area')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('on_behalf')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('on_behalf_name')
-                    ->maxLength(255)
-                    ->default(''),
-                Forms\Components\TextInput::make('phone')
-                    ->tel()
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('wp_no')
-                    ->maxLength(255)
-                    ->default(null),
 
-                Forms\Components\TextInput::make('height')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('wight')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('complexion')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('blood_group')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('body_type')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('any_disability')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('religion')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('caste')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('sub_caste')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('gotra')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('family_values')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('family_status')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('sun_sign')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('moon_sign')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('birth_city')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('time_of_birth')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('family_residence')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('father')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('mother')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('brother')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('sister')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('partner_exp_general_requirement')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('partner_exp_height')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('partner_exp_marital_status')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('partner_exp_country_of_residence')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('partner_exp_caste')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('partner_exp_education')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('partner_exp_drinking_habits')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('partner_exp_diet')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('partner_exp_manglik')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('partner_exp_family_values')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('partner_exp_prefered_countries')
-                    ->maxLength(255)
-                    ->default(null),
-                Forms\Components\TextInput::make('partner_exp_prefered_cities')
-                    ->maxLength(255)
-                    ->default(null),
+
+                Fieldset::make('Family Information')
+                    ->schema([
+                        Tabs::make('Tabs')
+                            ->tabs([
+
+                                Tabs\Tab::make('Spiritual And Social Background')
+                                    ->schema([
+                                        Forms\Components\TextInput::make('family_residence')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('father')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('mother')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('brother')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('sister')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                    ])->columns(2),
+
+                            ]),
+                    ])->columns(1),
+
+                Fieldset::make('Partner Expectation')
+                    ->schema([
+                        Tabs::make('Tabs')
+                            ->tabs([
+
+                                Tabs\Tab::make('Partner Expectation')
+                                    ->schema([
+                                        Forms\Components\TextInput::make('partner_exp_general_requirement')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('partner_exp_height')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('partner_exp_marital_status')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('partner_exp_country_of_residence')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('partner_exp_caste')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('partner_exp_education')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('partner_exp_drinking_habits')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('partner_exp_diet')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('partner_exp_manglik')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('partner_exp_family_values')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('partner_exp_prefered_countries')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                        Forms\Components\TextInput::make('partner_exp_prefered_cities')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                    ])->columns(2),
+
+                            ]),
+                    ])->columns(1),
+
             ]);
     }
 
