@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sub_castes', function (Blueprint $table) {
+        Schema::create('blood_groups', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('caste_id')->constrained('castes')->onDelete('cascade');
             $table->string('name');
             $table->boolean('status');
             $table->timestamps();
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sub_castes');
+        Schema::dropIfExists('blood_groups');
     }
 };

@@ -63,8 +63,8 @@ class UserDetailResource extends Resource
                                             ->maxLength(255)
                                             ->default(null),
                                         Forms\Components\TextInput::make('no_of_children')
-                                            ->maxLength(255)
-                                            ->default(null),
+                                            ->default(null)
+                                            ->numeric(),
                                         Forms\Components\TextInput::make('phone')
                                             ->tel()
                                             ->maxLength(255)
@@ -309,8 +309,7 @@ class UserDetailResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('martial_status')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('no_of_children')
-                    ->searchable(),
+                Tables\Columns\TextColumn::make('no_of_children'),
                 Tables\Columns\TextColumn::make('area')
                     ->searchable(),
 
