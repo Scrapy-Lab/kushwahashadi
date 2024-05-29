@@ -230,7 +230,22 @@ class UserDetailResource extends Resource
                                         Forms\Components\TextInput::make('sister')
                                             ->maxLength(255)
                                             ->default(null),
-                                    ])->columns(2),
+                                            Forms\Components\TextInput::make('native_place')
+                                                ->maxLength(255)
+                                                ->default(null),
+                                            Forms\Components\TextInput::make('father_occupation')
+                                                ->maxLength(255)
+                                                ->default(null),
+                                            Forms\Components\TextInput::make('mother_occupation')
+                                                ->maxLength(255)
+                                                ->default(null),
+                                            Forms\Components\TextInput::make('sister_occupation')
+                                                ->maxLength(255)
+                                                ->default(null),
+                                            Forms\Components\TextInput::make('brother_occupation')
+                                                ->maxLength(255)
+                                                ->default(null),
+                                            ])->columns(2),
 
                             ]),
                     ])->columns(1),
@@ -278,7 +293,41 @@ class UserDetailResource extends Resource
                                         Forms\Components\TextInput::make('partner_exp_prefered_cities')
                                             ->maxLength(255)
                                             ->default(null),
-                                    ])->columns(2),
+
+                                            Forms\Components\TextInput::make('partner_exp_age')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                            Forms\Components\TextInput::make('partner_exp_weight')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                            Forms\Components\TextInput::make('partner_exp_with_child')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                            Forms\Components\TextInput::make('partner_exp_religion')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                            Forms\Components\TextInput::make('partner_exp_sub_caste')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                            Forms\Components\TextInput::make('partner_exp_profession')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                            Forms\Components\TextInput::make('partner_exp_smoking')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                            Forms\Components\TextInput::make('partner_exp_bodyType')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                            Forms\Components\TextInput::make('partner_exp_disability')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                            Forms\Components\TextInput::make('partner_exp_family_stat')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                            Forms\Components\TextInput::make('partner_exp_prefered_state')
+                                            ->maxLength(255)
+                                            ->default(null),
+                                    ])->columns(4),
 
                             ]),
                     ])->columns(1),

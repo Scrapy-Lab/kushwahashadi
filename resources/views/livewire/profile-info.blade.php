@@ -323,23 +323,23 @@
                     <table class="table table-striped">
                         <tr>
                             <th>NATIVE PLACE</th>
-                            <td></td>
+                            <td>{{$user_details->native_place}}</td>
                         </tr>
                         <tr>
                             <th>FATHER OCCUPATION</th>
-                            <td></td>
+                            <td>{{$user_details->father_occupation}}</td>
                         </tr>
                         <tr>
                             <th>MOTHER OCCUPATION</th>
-                            <td></td>
+                            <td>{{$user_details->mother_occupation}}</td>
                         </tr>
                         <tr>
                             <th>BROTHER OCCUPATION</th>
-                            <td></td>
+                            <td>{{$user_details->brother_occupation}}</td>
                         </tr>
                         <tr>
                             <th>SISTER OCCUPATION</th>
-                            <td></td>
+                            <td>{{$user_details->sister_occupation}}</td>
                         </tr>
                     </table>
                 </div>
@@ -409,47 +409,47 @@
                     <table class="table table-striped">
                         <tr>
                             <th>AGE</th>
-                            <td></td>
+                            <td>{{$user_details->native_place}}</td>
                         </tr>
                         <tr>
                             <th>WEIGHT</th>
-                            <td></td>
+                            <td>{{$user_details->native_place}}</td>
                         </tr>
                         <tr>
                             <th>WITH CHILDREN ACCEPTABLES</th>
-                            <td></td>
+                            <td>{{$user_details->native_place}}</td>
                         </tr>
                         <tr>
                             <th>RELIGION</th>
-                            <td></td>
+                            <td>{{$user_details->native_place}}</td>
                         </tr>
                         <tr>
                             <th>SUB CASTE</th>
-                            <td></td>
+                            <td>{{$user_details->native_place}}</td>
                         </tr>
                         <tr>
                             <th>PROFESSION</th>
-                            <td></td>
+                            <td>{{$user_details->native_place}}</td>
                         </tr>
                         <tr>
                             <th>SMOKING HABITS</th>
-                            <td></td>
+                            <td>{{$user_details->native_place}}</td>
                         </tr>
                         <tr>
                             <th>BODY TYPE</th>
-                            <td></td>
+                            <td>{{$user_details->native_place}}</td>
                         </tr>
                         <tr>
                             <th>ANY DISABILITY</th>
-                            <td></td>
+                            <td>{{$user_details->native_place}}</td>
                         </tr>
                         <tr>
                             <th>FAMILY STATUS</th>
-                            <td></td>
+                            <td>{{$user_details->native_place}}</td>
                         </tr>
                         <tr>
                             <th>PREFERED STATE</th>
-                            <td></td>
+                            <td>{{$user_details->native_place}}</td>
                         </tr>
                     </table>
                 </div>
