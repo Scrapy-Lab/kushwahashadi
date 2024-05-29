@@ -48,7 +48,7 @@
                         </tr>
                         <tr>
                             <th> Number of Children</th>
-                            <td>{{$user_details->no_of_children}}</td>z
+                            <td>{{$user_details->no_of_children}}</td>
                         </tr>
                         <tr>
                             <th>On Behalf</th>
