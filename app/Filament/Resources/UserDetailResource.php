@@ -12,9 +12,11 @@ use Filament\Forms\Components\Tabs;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Actions\ExportBulkAction;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\HtmlString;
 
 class UserDetailResource extends Resource
 {
@@ -23,6 +25,7 @@ class UserDetailResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     protected static ?string $navigationGroup = 'Member List';
+    protected static ?string $modelLabel = 'Member List';
 
     public static function form(Form $form): Form
     {
@@ -344,123 +347,121 @@ class UserDetailResource extends Resource
                     ->label('First Name'),
                 Tables\Columns\TextColumn::make('user.last_name')
                     ->sortable()
-                    ->label('First Name'),
+                    ->label('Last Name'),
                 Tables\Columns\TextColumn::make('gender')
-                    ->searchable(),
+                ->formatStateUsing(function (string $state): HtmlString {
+                    return new HtmlString($state === '1' ? 'Male' : ($state === '2' ? 'Female' : 'Unknown'));
+                }),
                 Tables\Columns\TextColumn::make('dob')
                     ->date()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('on_behalf')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('on_behalf_name')
-                    ->searchable(),
+                // Tables\Columns\TextColumn::make('on_behalf_name')
+                //     ->searchable(),
                 Tables\Columns\TextColumn::make('phone')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('martial_status')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('no_of_children'),
-                Tables\Columns\TextColumn::make('area')
-                    ->searchable(),
+                // Tables\Columns\TextColumn::make('no_of_children'),
+                // Tables\Columns\TextColumn::make('area')
+                //     ->searchable(),
 
                 Tables\Columns\TextColumn::make('wp_no')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('degree')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('address')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('country')
-                    ->searchable(),
+                // Tables\Columns\TextColumn::make('address')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('country')
+                //     ->searchable(),
                 Tables\Columns\TextColumn::make('state')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('city')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('highest_education')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('occupation')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('edu_details')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('posting_place')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('annual_income')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('other_occupation')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('height')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('wight')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('complexion')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('blood_group')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('body_type')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('any_disability')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('religion')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('caste')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('sub_caste')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('gotra')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('family_values')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('family_status')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('sun_sign')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('moon_sign')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('birth_city')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('time_of_birth')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('family_residence')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('father')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('mother')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('brother')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('sister')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('partner_exp_general_requirement')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('partner_exp_height')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('partner_exp_marital_status')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('partner_exp_country_of_residence')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('partner_exp_caste')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('partner_exp_education')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('partner_exp_drinking_habits')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('partner_exp_diet')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('partner_exp_manglik')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('partner_exp_family_values')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('partner_exp_prefered_countries')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('partner_exp_prefered_cities')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('deleted_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                // Tables\Columns\TextColumn::make('highest_education')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('occupation')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('edu_details')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('posting_place')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('annual_income')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('other_occupation')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('height')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('wight')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('complexion')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('blood_group')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('body_type')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('any_disability')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('religion')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('caste')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('sub_caste')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('gotra')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('family_values')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('family_status')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('sun_sign')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('moon_sign')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('birth_city')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('time_of_birth')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('family_residence')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('father')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('mother')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('brother')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('sister')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('partner_exp_general_requirement')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('partner_exp_height')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('partner_exp_marital_status')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('partner_exp_country_of_residence')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('partner_exp_caste')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('partner_exp_education')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('partner_exp_drinking_habits')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('partner_exp_diet')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('partner_exp_manglik')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('partner_exp_family_values')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('partner_exp_prefered_countries')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('partner_exp_prefered_cities')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('deleted_at')
+                //     ->dateTime()
+                //     ->sortable()
+                //     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
@@ -473,6 +474,7 @@ class UserDetailResource extends Resource
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
+                ExportBulkAction::make(),
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                     Tables\Actions\ForceDeleteBulkAction::make(),
