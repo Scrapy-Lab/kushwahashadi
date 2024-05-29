@@ -409,47 +409,47 @@
                     <table class="table table-striped">
                         <tr>
                             <th>AGE</th>
-                            <td>{{$user_details->native_place}}</td>
+                            <td>{{$user_details->partner_exp_age}}</td>
                         </tr>
                         <tr>
                             <th>WEIGHT</th>
-                            <td>{{$user_details->native_place}}</td>
+                            <td>{{$user_details->partner_exp_weight}}</td>
                         </tr>
                         <tr>
                             <th>WITH CHILDREN ACCEPTABLES</th>
-                            <td>{{$user_details->native_place}}</td>
+                            <td>{{$user_details->partner_exp_with_child}}</td>
                         </tr>
                         <tr>
                             <th>RELIGION</th>
-                            <td>{{$user_details->native_place}}</td>
+                            <td>{{$user_details->partner_exp_religion}}</td>
                         </tr>
                         <tr>
                             <th>SUB CASTE</th>
-                            <td>{{$user_details->native_place}}</td>
+                            <td>{{$user_details->partner_exp_sub_caste}}</td>
                         </tr>
                         <tr>
                             <th>PROFESSION</th>
-                            <td>{{$user_details->native_place}}</td>
+                            <td>{{$user_details->partner_exp_profession}}</td>
                         </tr>
                         <tr>
                             <th>SMOKING HABITS</th>
-                            <td>{{$user_details->native_place}}</td>
+                            <td>{{$user_details->partner_exp_smoking}}</td>
                         </tr>
                         <tr>
                             <th>BODY TYPE</th>
-                            <td>{{$user_details->native_place}}</td>
+                            <td>{{$user_details->partner_exp_bodyType}}</td>
                         </tr>
                         <tr>
                             <th>ANY DISABILITY</th>
-                            <td>{{$user_details->native_place}}</td>
+                            <td>{{$user_details->partner_exp_disability}}</td>
                         </tr>
                         <tr>
                             <th>FAMILY STATUS</th>
-                            <td>{{$user_details->native_place}}</td>
+                            <td>{{$user_details->partner_exp_family_stat}}</td>
                         </tr>
                         <tr>
                             <th>PREFERED STATE</th>
-                            <td>{{$user_details->native_place}}</td>
+                            <td>{{$user_details->partner_exp_prefered_state}}</td>
                         </tr>
                     </table>
                 </div>
