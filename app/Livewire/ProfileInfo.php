@@ -18,7 +18,6 @@ class ProfileInfo extends Component
 
         $this->user = auth()->user();
        $this->user_details = $this->user->user_detail;
-
     }
 
     public function edit_basic_info_show(){

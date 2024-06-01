@@ -35,7 +35,8 @@
                         <tr>
                             <th>First Name</th>
                             @if ($editBasicInfo)
-                                <td><input class="form-control" type="text" wire:modal="name"></td>
+                                <td><input class="form-control" value="{{ $user->name }}" type="text"
+                                        wire:modal="name"></td>
                             @else
                                 {{-- <td>{{$user_details->gender == 1 ? "Male" :"Female" }}</td> --}}
                                 <td>{{ $user->name }}</td>
@@ -44,7 +45,14 @@
                         <tr>
                             <th>Gender</th>
                             @if ($editBasicInfo)
-                                <td><input class="form-control" type="text" wire:modal="gender"></td>
+                                <td>
+                                    {{-- <input class="form-control" value=" " type="text" wire:modal="gender"> --}}
+                                    <select class="form-select" aria-label="Default select example"name=""
+                                        wire:modal="gender">
+                                        <option value="1">Male</option>
+                                        <option value="2">Female</option>
+                                    </select>
+                                </td>
                             @else
                                 <td>{{ $user_details->gender == 1 ? 'Male' : 'Female' }}</td>
                             @endif
@@ -56,7 +64,8 @@
                         <tr>
                             <th> Number of Children</th>
                             @if ($editBasicInfo)
-                                <td><input class="form-control" type="text" wire:modal="no_of_children"></td>
+                                <td><input class="form-control" value="{{ $user_details->no_of_children }}"
+                                        type="text" wire:modal="no_of_children"></td>
                             @else
                                 <td>{{ $user_details->no_of_children }}</td>
                             @endif
@@ -64,7 +73,9 @@
                         <tr>
                             <th>On Behalf</th>
                             @if ($editBasicInfo)
-                                <td><input class="form-control" type="text" wire:modal="on_behalf"></td>
+                                <td><input class="form-control" value="{{ $user_details->on_behalf }} " type="text"
+                                        wire:modal="on_behalf">
+                                </td>
                             @else
                                 <td>{{ $user_details->on_behalf }}</td>
                             @endif
@@ -72,7 +83,7 @@
                         <tr>
                             <th>Date of Birth</th>
                             @if ($editBasicInfo)
-                                <td><input class="form-control" type="text" wire:modal="dob"></td>
+                                <td><input class="form-control" value="{{ $user_details->dob }} " type="text" wire:modal="dob"></td>
                             @else
                                 <td>{{ $user_details->dob }}</td>
                             @endif
@@ -87,7 +98,8 @@
                         <tr>
                             <th>Last Name</th>
                             @if ($editBasicInfo)
-                                <td><input class="form-control" type="text" wire:modal="last_name"></td>
+                                <td><input class="form-control" value=" {{ $user->last_name }}" type="text" wire:modal="last_name">
+                                </td>
                             @else
                                 <td>{{ $user->last_name }}</td>
                             @endif
@@ -99,7 +111,8 @@
                         <tr>
                             <th>Marital Status</th>
                             @if ($editBasicInfo)
-                                <td><input class="form-control" type="text" wire:modal="martial_status"></td>
+                                <td><input class="form-control" value="{{ $user_details->martial_status }}" type="text"
+                                        wire:modal="martial_status"></td>
                             @else
                                 <td>{{ $user_details->martial_status }}</td>
                             @endif
@@ -107,7 +120,7 @@
                         <tr>
                             <th>Area</th>
                             @if ($editBasicInfo)
-                                <td><input class="form-control" type="text" wire:modal="area"></td>
+                                <td><input class="form-control" value="{{ $user_details->area }}" type="text" wire:modal="area"></td>
                             @else
                                 <td>{{ $user_details->area }}</td>
                             @endif
@@ -115,7 +128,7 @@
                         <tr>
                             <th>Mobile</th>
                             @if ($editBasicInfo)
-                                <td><input class="form-control" type="text" wire:modal="phone"></td>
+                                <td><input class="form-control" value="{{ $user_details->phone }}" type="text" wire:modal="phone"></td>
                             @else
                                 <td>{{ $user_details->phone }}</td>
                             @endif
@@ -123,7 +136,7 @@
                         <tr>
                             <th>Whatsapp No.</th>
                             @if ($editBasicInfo)
-                                <td><input class="form-control" type="text" wire:modal="wp_no"></td>
+                                <td><input class="form-control" value="{{ $user_details->wp_no }}" type="text" wire:modal="wp_no"></td>
                             @else
                                 <td>{{ $user_details->wp_no }}</td>
                             @endif
