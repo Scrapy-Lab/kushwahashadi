@@ -750,3 +750,12 @@ span.grey {
     width: 100%;
     flex-direction: row;
 }
+
+td input.form-control {
+    width: 100%;
+    padding: 0px 0px;
+    margin: 4px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}

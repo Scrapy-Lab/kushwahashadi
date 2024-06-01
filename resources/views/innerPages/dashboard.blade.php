@@ -39,93 +39,11 @@
             {{-- PROFILE CONTENT --}}
             <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
                 <div class="row align-items-start justify-content-between">
-                    <div class="col-md-4 text-center mainProfile">
-                        <img src="images/profileIMg.jpeg" alt="">
-                        <div class="profile-details">
-                            <h2 class="heading heading-3 strong-500 profile-name">shashi kant verma</h2>
-                            <h3 class="heading heading-6 strong-400 profile-occupation mt-3">14</h3>
-                            <div class="profile-stats clearfix mt-2">
-                                <div class="stats-entry" style="width: 100%">
-                                    <span class="stats-count">0</span>
-                                    <span class="stats-label text-uppercase">Followers</span>
-                                </div>
-                            </div>
-                            <!-- Profile connect -->
-                            <div class="profile-connect mt-5">
-                                <!-- <a href="#" class="btn btn-styled btn-block btn-circle btn-sm btn-base-5">Follow</a>
-                                            <a href="#" class="btn btn-styled btn-block btn-circle btn-sm btn-base-2">Send message</a> -->
-                                <h2 class="heading heading-5 strong-400">Package Informations</h2>
-                            </div>
-                            <div class="profile-stats clearfix mt-0">
-                                <div class="stats-entry">
-                                    <span class="stats-count"> Free </span>
-                                    <span class="stats-label text-uppercase">Current Package</span>
-                                </div>
-                                <div class="stats-entry">
-                                    <span class="stats-count">₹0.00</span>
-                                    <span class="stats-label text-uppercase">Package Price</span>
-                                </div>
-                            </div>
-                            <div class="profile-stats clearfix mt-2">
-                                <div class="stats-entry">
-                                    <span class="stats-count">None</span>
-                                    <span class="stats-label text-uppercase">Payment Gateway</span>
-                                </div>
-                                <div class="stats-entry">
-                                    <span class="stats-count">0</span>
-                                    <span class="stats-label text-uppercase">Remaining Interest</span>
-                                </div>
-                            </div>
-                            <div class="profile-stats clearfix mt-2">
-                                <div class="stats-entry">
-                                    <span class="stats-count">0</span>
-                                    <span class="stats-label text-uppercase">Remaining Message</span>
-                                </div>
-                                <div class="stats-entry">
-                                    <span class="stats-count">0</span>
-                                    <span class="stats-label text-uppercase">Photo Gallery</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="profile-useful-links clearfix">
-                            <div class="useful-links">
-                                <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 gallery l_nav"
-                                    onclick="profile_load('gallery','alt-sm')">
-                                    <b style="font-size: 12px">Gallery</b>
-                                </a>
-                                <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 happy_story l_nav"
-                                    onclick="profile_load('happy_story','alt-sm')">
-                                    <b style="font-size: 12px">Happy Story</b>
-                                </a>
-                                <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 my_packages l_nav"
-                                    onclick="profile_load('my_packages','alt-sm')">
-                                    <b style="font-size: 12px">My Package</b>
-                                </a>
-                                <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 payments l_nav"
-                                    onclick="profile_load('payments','alt-sm')">
-                                    <b style="font-size: 12px">Payment Informations</b>
-                                </a>
-                                <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 picture_privacy l_nav"
-                                    onclick="profile_load('picture_privacy','alt-sm')">
-                                    <b style="font-size: 12px">Picture Privacy</b>
-                                </a>
 
-                                <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 change_pass l_nav"
-                                    onclick="profile_load('change_pass','alt-sm')">
-                                    <b style="font-size: 12px">Change Password</b>
-                                </a>
-
-                                <div class="text-center pt-3 pb-0">
-                                    <a onclick="profile_load('close_account')">
-                                        <i class="fa fa-lock"></i>
-                                        Close Account </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @livewire('profile-card')
 
 
-                        @livewire('profile-info')
+                    @livewire('profile-info')
                 </div>
             </div>
 
@@ -135,7 +53,8 @@
             {{-- My INtersts --}}
             <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
                 <div class="row align-items-start justify-content-between">
-                    <div class="col-md-4 text-center mainProfile">
+                    @livewire('profile-card')
+                    {{-- <div class="col-md-4 text-center mainProfile">
                         <img src="images/profileIMg.jpeg" alt="">
                         <div class="profile-details">
                             <h2 class="heading heading-3 strong-500 profile-name">shashi kant verma</h2>
@@ -149,7 +68,7 @@
                             <!-- Profile connect -->
                             <div class="profile-connect mt-5">
                                 <!-- <a href="#" class="btn btn-styled btn-block btn-circle btn-sm btn-base-5">Follow</a>
-                                            <a href="#" class="btn btn-styled btn-block btn-circle btn-sm btn-base-2">Send message</a> -->
+                                                                    <a href="#" class="btn btn-styled btn-block btn-circle btn-sm btn-base-2">Send message</a> -->
                                 <h2 class="heading heading-5 strong-400">Package Informations</h2>
                             </div>
                             <div class="profile-stats clearfix mt-0">
@@ -218,7 +137,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
 
                     <div class="col-md-7">
@@ -258,7 +177,7 @@
             {{-- Shortlists --}}
             <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
                 <div class="row align-items-start justify-content-between">
-                    <div class="col-md-4 text-center mainProfile">
+                    @livewire('profile-card')  {{-- <div class="col-md-4 text-center mainProfile">
                         <img src="images/profileIMg.jpeg" alt="">
                         <div class="profile-details">
                             <h2 class="heading heading-3 strong-500 profile-name">shashi kant verma</h2>
@@ -272,7 +191,7 @@
                             <!-- Profile connect -->
                             <div class="profile-connect mt-5">
                                 <!-- <a href="#" class="btn btn-styled btn-block btn-circle btn-sm btn-base-5">Follow</a>
-                                            <a href="#" class="btn btn-styled btn-block btn-circle btn-sm btn-base-2">Send message</a> -->
+                                                                    <a href="#" class="btn btn-styled btn-block btn-circle btn-sm btn-base-2">Send message</a> -->
                                 <h2 class="heading heading-5 strong-400">Package Informations</h2>
                             </div>
                             <div class="profile-stats clearfix mt-0">
@@ -341,7 +260,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
 
                     <div class="col-md-7">
@@ -435,7 +354,7 @@
             {{-- Followed USers --}}
             <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab4-tab">
                 <div class="row align-items-start justify-content-between">
-                    <div class="col-md-4 text-center mainProfile">
+                    @livewire('profile-card')   {{-- <div class="col-md-4 text-center mainProfile">
                         <img src="images/profileIMg.jpeg" alt="">
                         <div class="profile-details">
                             <h2 class="heading heading-3 strong-500 profile-name">shashi kant verma</h2>
@@ -449,7 +368,7 @@
                             <!-- Profile connect -->
                             <div class="profile-connect mt-5">
                                 <!-- <a href="#" class="btn btn-styled btn-block btn-circle btn-sm btn-base-5">Follow</a>
-                                            <a href="#" class="btn btn-styled btn-block btn-circle btn-sm btn-base-2">Send message</a> -->
+                                                                    <a href="#" class="btn btn-styled btn-block btn-circle btn-sm btn-base-2">Send message</a> -->
                                 <h2 class="heading heading-5 strong-400">Package Informations</h2>
                             </div>
                             <div class="profile-stats clearfix mt-0">
@@ -518,7 +437,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
 
                     <div class="col-md-7">
@@ -559,7 +478,7 @@
             {{-- Messaging --}}
             <div class="tab-pane fade" id="tab5" role="tabpanel" aria-labelledby="tab5-tab">
                 <div class="row align-items-start justify-content-between">
-                    <div class="col-md-4 text-center mainProfile">
+                    @livewire('profile-card') {{-- <div class="col-md-4 text-center mainProfile">
                         <img src="images/profileIMg.jpeg" alt="">
                         <div class="profile-details">
                             <h2 class="heading heading-3 strong-500 profile-name">shashi kant verma</h2>
@@ -573,7 +492,7 @@
                             <!-- Profile connect -->
                             <div class="profile-connect mt-5">
                                 <!-- <a href="#" class="btn btn-styled btn-block btn-circle btn-sm btn-base-5">Follow</a>
-                                            <a href="#" class="btn btn-styled btn-block btn-circle btn-sm btn-base-2">Send message</a> -->
+                                                                    <a href="#" class="btn btn-styled btn-block btn-circle btn-sm btn-base-2">Send message</a> -->
                                 <h2 class="heading heading-5 strong-400">Package Informations</h2>
                             </div>
                             <div class="profile-stats clearfix mt-0">
@@ -642,7 +561,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
 
                     <div class="col-md-7">
@@ -657,16 +576,17 @@
                             <div class="row px-4 align-items-start">
                                 <div class="col-md-8 ">
                                     <form action="">
-                                    <div class="selectMember">
-                                        <h3><i class="fa fa-comments-o" aria-hidden="true"></i> Select A Member</h3>
-                                        <p>"Select A Member From The Contact List To Start Messaging "</p>
-                                        <div class="inputgroup d-flex">
-                                            <input type="text" name="" id="" placeholder="Type Message">
-                                            <input type="submit" value="Submit">
-                                        </div>
+                                        <div class="selectMember">
+                                            <h3><i class="fa fa-comments-o" aria-hidden="true"></i> Select A Member</h3>
+                                            <p>"Select A Member From The Contact List To Start Messaging "</p>
+                                            <div class="inputgroup d-flex">
+                                                <input type="text" name="" id=""
+                                                    placeholder="Type Message">
+                                                <input type="submit" value="Submit">
+                                            </div>
 
-                                    </div>
-                                </form>
+                                        </div>
+                                    </form>
                                 </div>
                                 <div class="col-md-3 contactList">
                                     <div class="contactList">
@@ -683,7 +603,7 @@
             {{-- Ignored --}}
             <div class="tab-pane fade" id="tab6" role="tabpanel" aria-labelledby="tab6-tab">
                 <div class="row align-items-start justify-content-between">
-                    <div class="col-md-4 text-center mainProfile">
+                    @livewire('profile-card')  {{-- <div class="col-md-4 text-center mainProfile">
                         <img src="images/profileIMg.jpeg" alt="">
                         <div class="profile-details">
                             <h2 class="heading heading-3 strong-500 profile-name">shashi kant verma</h2>
@@ -697,7 +617,7 @@
                             <!-- Profile connect -->
                             <div class="profile-connect mt-5">
                                 <!-- <a href="#" class="btn btn-styled btn-block btn-circle btn-sm btn-base-5">Follow</a>
-                                            <a href="#" class="btn btn-styled btn-block btn-circle btn-sm btn-base-2">Send message</a> -->
+                                                                    <a href="#" class="btn btn-styled btn-block btn-circle btn-sm btn-base-2">Send message</a> -->
                                 <h2 class="heading heading-5 strong-400">Package Informations</h2>
                             </div>
                             <div class="profile-stats clearfix mt-0">
@@ -766,7 +686,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
 
                     <div class="col-md-7">
@@ -812,4 +732,90 @@
             {{-- Ignored --}}
         </div>
     </div>
+
+
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabel">Laravel Crop Image Before Upload Example - ItSolutionStuff.com
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="img-container">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <img id="image" src="https://avatars0.githubusercontent.com/u/3456749">
+                            </div>
+                            <div class="col-md-4">
+                                <div class="preview"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="crop">Crop</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var $modal = $('#modal');
+        var image = document.getElementById('image');
+        var cropper;
+
+        /*------------------------------------------
+        --------------------------------------------
+        Image Change Event
+        --------------------------------------------
+        --------------------------------------------*/
+        $("body").on("change", ".image", function(e) {
+            var files = e.target.files;
+            var done = function(url) {
+                image.src = url;
+                $modal.modal('show');
+            };
+
+            var reader;
+            var file;
+            var url;
+
+            if (files && files.length > 0) {
+                file = files[0];
+
+                if (URL) {
+                    done(URL.createObjectURL(file));
+                } else if (FileReader) {
+                    reader = new FileReader();
+                    reader.onload = function(e) {
+                        done(reader.result);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            }
+        });
+
+        /*------------------------------------------
+        --------------------------------------------
+        Show Model Event
+        --------------------------------------------
+        --------------------------------------------*/
+        $modal.on('shown.bs.modal', function() {
+            cropper = new Cropper(image, {
+                aspectRatio: 1,
+                viewMode: 3,
+                preview: '.preview'
+            });
+        }).on('hidden.bs.modal', function() {
+            cropper.destroy();
+            cropper = null;
+        });
+
+
+    </script>
 @endsection

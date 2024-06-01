@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('user_details', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->string('member_id');
             $table->string('gender')->nullable();
             $table->date('dob')->default('2024-01-01')->nullable();
             $table->string('martial_status')->nullable();

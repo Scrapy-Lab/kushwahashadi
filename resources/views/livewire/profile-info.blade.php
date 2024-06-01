@@ -1,5 +1,3 @@
-
-
 <div class="col-md-7">
     <div class="card z-depth-2-top">
         <div class="card-title">
@@ -19,7 +17,7 @@
 
         </div>
         <div class="card-body">
-            <h3><span class="grey">Member ID -</span> 75DEE6ED4592 </h3>
+            <h3><span class="grey">Member ID -</span> {{ strtoupper($user_details->member_id) }} </h3>
             {{-- INTRODUCTION --}}
             <div class="intro d-flex justify-content-between align-items-center">
                 <h4>Introduction</h4>
@@ -30,17 +28,26 @@
             <div class="intro">
                 <div class=" d-flex justify-content-between align-items-center">
                     <h4>Basic Information</h4>
-                    <p><i class="fa fa-pencil" aria-hidden="true"></i></p>
+                    <p wire:click="edit_basic_info_show"><i class="fa fa-pencil" aria-hidden="true"></i></p>
                 </div>
                 <div class="d-flex align-items-start mt-4">
                     <table class="table table-striped">
                         <tr>
                             <th>First Name</th>
-                            <td>{{$user->name}}</td>
+                            @if ($editBasicInfo)
+                                <td><input class="form-control" type="text" wire:modal="name"></td>
+                            @else
+                                {{-- <td>{{$user_details->gender == 1 ? "Male" :"Female" }}</td> --}}
+                                <td>{{ $user->name }}</td>
+                            @endif
                         </tr>
                         <tr>
                             <th>Gender</th>
-                            <td>{{$user_details->gender == 1 ? "Male" :"Female" }}</td>
+                            @if ($editBasicInfo)
+                                <td><input class="form-control" type="text" wire:modal="gender"></td>
+                            @else
+                                <td>{{ $user_details->gender == 1 ? 'Male' : 'Female' }}</td>
+                            @endif
                         </tr>
                         <tr>
                             <th>Age</th>
@@ -48,15 +55,27 @@
                         </tr>
                         <tr>
                             <th> Number of Children</th>
-                            <td>{{$user_details->no_of_children}}</td>
+                            @if ($editBasicInfo)
+                                <td><input class="form-control" type="text" wire:modal="no_of_children"></td>
+                            @else
+                                <td>{{ $user_details->no_of_children }}</td>
+                            @endif
                         </tr>
                         <tr>
                             <th>On Behalf</th>
-                            <td>{{$user_details->on_behalf}}</td>
+                            @if ($editBasicInfo)
+                                <td><input class="form-control" type="text" wire:modal="on_behalf"></td>
+                            @else
+                                <td>{{ $user_details->on_behalf }}</td>
+                            @endif
                         </tr>
                         <tr>
                             <th>Date of Birth</th>
-                            <td>{{$user_details->dob}}</td>
+                            @if ($editBasicInfo)
+                                <td><input class="form-control" type="text" wire:modal="dob"></td>
+                            @else
+                                <td>{{ $user_details->dob }}</td>
+                            @endif
                         </tr>
                         <tr>
                             <th><strong>Speacial Case</strong></th>
@@ -67,7 +86,11 @@
                     <table class="table table-striped">
                         <tr>
                             <th>Last Name</th>
-                            <td>{{$user->last_name}}</td>
+                            @if ($editBasicInfo)
+                                <td><input class="form-control" type="text" wire:modal="last_name"></td>
+                            @else
+                                <td>{{ $user->last_name }}</td>
+                            @endif
                         </tr>
                         <tr>
                             <th>Email</th>
@@ -75,19 +98,35 @@
                         </tr>
                         <tr>
                             <th>Marital Status</th>
-                            <td>{{$user_details->martial_status}}</td>
+                            @if ($editBasicInfo)
+                                <td><input class="form-control" type="text" wire:modal="martial_status"></td>
+                            @else
+                                <td>{{ $user_details->martial_status }}</td>
+                            @endif
                         </tr>
                         <tr>
                             <th>Area</th>
-                            <td>{{$user_details->area}}</td>
+                            @if ($editBasicInfo)
+                                <td><input class="form-control" type="text" wire:modal="area"></td>
+                            @else
+                                <td>{{ $user_details->area }}</td>
+                            @endif
                         </tr>
                         <tr>
                             <th>Mobile</th>
-                            <td>{{$user_details->phone}}</td>
+                            @if ($editBasicInfo)
+                                <td><input class="form-control" type="text" wire:modal="phone"></td>
+                            @else
+                                <td>{{ $user_details->phone }}</td>
+                            @endif
                         </tr>
                         <tr>
                             <th>Whatsapp No.</th>
-                            <td>{{$user_details->wp_no}}</td>
+                            @if ($editBasicInfo)
+                                <td><input class="form-control" type="text" wire:modal="wp_no"></td>
+                            @else
+                                <td>{{ $user_details->wp_no }}</td>
+                            @endif
                         </tr>
                     </table>
                 </div>
@@ -106,22 +145,22 @@
                     <table class="table table-striped">
                         <tr>
                             <th>COUNTRY</th>
-                            <td>{{$user_details->country}}</td>
+                            <td>{{ $user_details->country }}</td>
                         </tr>
                         <tr>
                             <th>CITY</th>
-                            <td>{{$user_details->city}}</td>
+                            <td>{{ $user_details->city }}</td>
                         </tr>
                         <tr>
                             <th>FULL ADDRESS</th>
-                            <td>{{$user_details->address}}</td>
+                            <td>{{ $user_details->address }}</td>
                         </tr>
                     </table>
 
                     <table class="table table-striped">
                         <tr>
                             <th>STATE</th>
-                            <td>{{$user_details->state}}</td>
+                            <td>{{ $user_details->state }}</td>
                         </tr>
                     </table>
                 </div>
@@ -140,30 +179,30 @@
                     <table class="table table-striped">
                         <tr>
                             <th>HIGHEST EDUCATION</th>
-                            <td>{{$user_details->highest_education}}</td>
+                            <td>{{ $user_details->highest_education }}</td>
                         </tr>
                         <tr>
                             <th>EDUCATION DETAIL</th>
-                            <td>{{$user_details->edu_details}}</td>
+                            <td>{{ $user_details->edu_details }}</td>
                         </tr>
                         <tr>
                             <th>ANNUAL INCOME</th>
-                            <td>{{$user_details->annual_income}}</td>
+                            <td>{{ $user_details->annual_income }}</td>
                         </tr>
                     </table>
 
                     <table class="table table-striped">
                         <tr>
                             <th>OCCUPATION</th>
-                            <td>{{$user_details->occupation}}</td>
+                            <td>{{ $user_details->occupation }}</td>
                         </tr>
                         <tr>
                             <th>POSTING PLACE</th>
-                            <td>{{$user_details->posting_place}}</td>
+                            <td>{{ $user_details->posting_place }}</td>
                         </tr>
                         <tr>
                             <th>Other OCCUPATION</th>
-                            <td>{{$user_details->other_occupation}}</td>
+                            <td>{{ $user_details->other_occupation }}</td>
                         </tr>
                     </table>
                 </div>
@@ -182,30 +221,30 @@
                     <table class="table table-striped">
                         <tr>
                             <th>HEIGHT</th>
-                            <td>{{$user_details->height}}</td>
+                            <td>{{ $user_details->height }}</td>
                         </tr>
                         <tr>
                             <th>COMPLEXION</th>
-                            <td>{{$user_details->complexion}}</td>
+                            <td>{{ $user_details->complexion }}</td>
                         </tr>
                         <tr>
                             <th>BODY TYPE</th>
-                            <td>{{$user_details->body_type}}</td>
+                            <td>{{ $user_details->body_type }}</td>
                         </tr>
                     </table>
 
                     <table class="table table-striped">
                         <tr>
                             <th>WEIGHT</th>
-                            <td>{{$user_details->wight}}</td>
+                            <td>{{ $user_details->wight }}</td>
                         </tr>
                         <tr>
                             <th>BLOOD GROUP</th>
-                            <td>{{$user_details->blood_group}}</td>
+                            <td>{{ $user_details->blood_group }}</td>
                         </tr>
                         <tr>
                             <th>ANY DISABILITY</th>
-                            <td>{{$user_details->any_disability}}</td>
+                            <td>{{ $user_details->any_disability }}</td>
                         </tr>
                     </table>
                 </div>
@@ -224,30 +263,31 @@
                     <table class="table table-striped">
                         <tr>
                             <th>RELIGION</th>
-                            <td>{{$user_details->religion}}</td>
+                            <td>{{ $user_details->religion }}</td>
                         </tr>
                         <tr>
                             <th>SUB-CASTE</th>
-                            <td>{{$user_details->sub_caste}}</td>
+                            <td>{{ $user_details->sub_caste }}</td>
                         </tr>
                         <tr>
                             <th>FAMILY VALUES</th>
-                            <td>{{$user_details->family_values}}</td>
+                            <td>{{ $user_details->family_values }}</td>
                         </tr>
                     </table>
 
                     <table class="table table-striped">
                         <tr>
                             <th>CASTE / SECT</th>
-                            <td>{{$user_details->caste}}</td>
+                            <td>{{ $user_details->caste }}</td>
                         </tr>
                         <tr>
                             <th>GOTRA</th>
-                            <td><{{$user_details->gotra}}/td>
+                            <td>
+                                <{{ $user_details->gotra }} /td>
                         </tr>
                         <tr>
                             <th>FAMILY STATUS</th>
-                            <td>{{$user_details->family_status}}</td>
+                            <td>{{ $user_details->family_status }}</td>
                         </tr>
                     </table>
                 </div>
@@ -266,22 +306,22 @@
                     <table class="table table-striped">
                         <tr>
                             <th>SUN SIGN</th>
-                            <td>{{$user_details->sun_sign}}</td>
+                            <td>{{ $user_details->sun_sign }}</td>
                         </tr>
                         <tr>
                             <th>CITY OF BIRTH</th>
-                            <td>{{$user_details->birth_city}}</td>
+                            <td>{{ $user_details->birth_city }}</td>
                         </tr>
                     </table>
 
                     <table class="table table-striped">
                         <tr>
                             <th>MOON SIGN</th>
-                            <td>{{$user_details->moon_sign}}</td>
+                            <td>{{ $user_details->moon_sign }}</td>
                         </tr>
                         <tr>
                             <th>TIME OF BIRTH</th>
-                            <td>{{$user_details->time_of_birth}}</td>
+                            <td>{{ $user_details->time_of_birth }}</td>
                         </tr>
                     </table>
                 </div>
@@ -300,46 +340,46 @@
                     <table class="table table-striped">
                         <tr>
                             <th>FAMILY RESIDENCE</th>
-                            <td>{{$user_details->family_residence}}</td>
+                            <td>{{ $user_details->family_residence }}</td>
                         </tr>
                         <tr>
                             <th>FATHER</th>
-                            <td>{{$user_details->father}}</td>
+                            <td>{{ $user_details->father }}</td>
                         </tr>
                         <tr>
                             <th>MOTHER</th>
-                            <td>{{$user_details->mother}}</td>
+                            <td>{{ $user_details->mother }}</td>
                         </tr>
                         <tr>
                             <th>BROTHER</th>
-                            <td>{{$user_details->brother}}</td>
+                            <td>{{ $user_details->brother }}</td>
                         </tr>
                         <tr>
                             <th>SISTER</th>
-                            <td>{{$user_details->sister}}</td>
+                            <td>{{ $user_details->sister }}</td>
                         </tr>
                     </table>
 
                     <table class="table table-striped">
                         <tr>
                             <th>NATIVE PLACE</th>
-                            <td>{{$user_details->native_place}}</td>
+                            <td>{{ $user_details->native_place }}</td>
                         </tr>
                         <tr>
                             <th>FATHER OCCUPATION</th>
-                            <td>{{$user_details->father_occupation}}</td>
+                            <td>{{ $user_details->father_occupation }}</td>
                         </tr>
                         <tr>
                             <th>MOTHER OCCUPATION</th>
-                            <td>{{$user_details->mother_occupation}}</td>
+                            <td>{{ $user_details->mother_occupation }}</td>
                         </tr>
                         <tr>
                             <th>BROTHER OCCUPATION</th>
-                            <td>{{$user_details->brother_occupation}}</td>
+                            <td>{{ $user_details->brother_occupation }}</td>
                         </tr>
                         <tr>
                             <th>SISTER OCCUPATION</th>
-                            <td>{{$user_details->sister_occupation}}</td>
+                            <td>{{ $user_details->sister_occupation }}</td>
                         </tr>
                     </table>
                 </div>
@@ -358,98 +398,98 @@
                     <table class="table table-striped">
                         <tr>
                             <th>GENERAL REQUIREMENT</th>
-                            <td>{{$user_details->partner_exp_general_requirement}}</td>
+                            <td>{{ $user_details->partner_exp_general_requirement }}</td>
                         </tr>
                         <tr>
                             <th>HEIGHT</th>
-                            <td>{{$user_details->partner_exp_height}}</td>
+                            <td>{{ $user_details->partner_exp_height }}</td>
                         </tr>
                         <tr>
                             <th>MARITAL STATUS</th>
-                            <td>{{$user_details->partner_exp_marital_status}}</td>
+                            <td>{{ $user_details->partner_exp_marital_status }}</td>
                         </tr>
                         <tr>
                             <th>COUNTRY OF RESIDENCE</th>
-                            <td>{{$user_details->partner_exp_country_of_residence}}</td>
+                            <td>{{ $user_details->partner_exp_country_of_residence }}</td>
                         </tr>
                         <tr>
                             <th>CASTE / SECT</th>
-                            <td>{{$user_details->partner_exp_caste}}</td>
+                            <td>{{ $user_details->partner_exp_caste }}</td>
                         </tr>
                         <tr>
                             <th>EDUCATION</th>
-                            <td>{{$user_details->partner_exp_education}}</td>
+                            <td>{{ $user_details->partner_exp_education }}</td>
                         </tr>
                         <tr>
                             <th>DRINKING HABITS</th>
-                            <td>{{$user_details->partner_exp_drinking_habits}}</td>
+                            <td>{{ $user_details->partner_exp_drinking_habits }}</td>
                         </tr>
                         <tr>
                             <th>DIET</th>
-                            <td>{{$user_details->partner_exp_diet}}</td>
+                            <td>{{ $user_details->partner_exp_diet }}</td>
                         </tr>
                         <tr>
                             <th>MANGLIK</th>
-                            <td>{{$user_details->partner_exp_manglik}}</td>
+                            <td>{{ $user_details->partner_exp_manglik }}</td>
                         </tr>
                         <tr>
                             <th>FAMILY VALUES</th>
-                            <td>{{$user_details->partner_exp_family_values}}</td>
+                            <td>{{ $user_details->partner_exp_family_values }}</td>
                         </tr>
                         <tr>
                             <th>PREFERED COUNTRY</th>
-                            <td>{{$user_details->partner_exp_prefered_countries}}</td>
+                            <td>{{ $user_details->partner_exp_prefered_countries }}</td>
                         </tr>
                         <tr>
                             <th>PREFER CITIES</th>
-                            <td>{{$user_details->partner_exp_prefered_cities}}</td>
+                            <td>{{ $user_details->partner_exp_prefered_cities }}</td>
                         </tr>
                     </table>
 
                     <table class="table table-striped">
                         <tr>
                             <th>AGE</th>
-                            <td>{{$user_details->partner_exp_age}}</td>
+                            <td>{{ $user_details->partner_exp_age }}</td>
                         </tr>
                         <tr>
                             <th>WEIGHT</th>
-                            <td>{{$user_details->partner_exp_weight}}</td>
+                            <td>{{ $user_details->partner_exp_weight }}</td>
                         </tr>
                         <tr>
                             <th>WITH CHILDREN ACCEPTABLES</th>
-                            <td>{{$user_details->partner_exp_with_child}}</td>
+                            <td>{{ $user_details->partner_exp_with_child }}</td>
                         </tr>
                         <tr>
                             <th>RELIGION</th>
-                            <td>{{$user_details->partner_exp_religion}}</td>
+                            <td>{{ $user_details->partner_exp_religion }}</td>
                         </tr>
                         <tr>
                             <th>SUB CASTE</th>
-                            <td>{{$user_details->partner_exp_sub_caste}}</td>
+                            <td>{{ $user_details->partner_exp_sub_caste }}</td>
                         </tr>
                         <tr>
                             <th>PROFESSION</th>
-                            <td>{{$user_details->partner_exp_profession}}</td>
+                            <td>{{ $user_details->partner_exp_profession }}</td>
                         </tr>
                         <tr>
                             <th>SMOKING HABITS</th>
-                            <td>{{$user_details->partner_exp_smoking}}</td>
+                            <td>{{ $user_details->partner_exp_smoking }}</td>
                         </tr>
                         <tr>
                             <th>BODY TYPE</th>
-                            <td>{{$user_details->partner_exp_bodyType}}</td>
+                            <td>{{ $user_details->partner_exp_bodyType }}</td>
                         </tr>
                         <tr>
                             <th>ANY DISABILITY</th>
-                            <td>{{$user_details->partner_exp_disability}}</td>
+                            <td>{{ $user_details->partner_exp_disability }}</td>
                         </tr>
                         <tr>
                             <th>FAMILY STATUS</th>
-                            <td>{{$user_details->partner_exp_family_stat}}</td>
+                            <td>{{ $user_details->partner_exp_family_stat }}</td>
                         </tr>
                         <tr>
                             <th>PREFERED STATE</th>
-                            <td>{{$user_details->partner_exp_prefered_state}}</td>
+                            <td>{{ $user_details->partner_exp_prefered_state }}</td>
                         </tr>
                     </table>
                 </div>

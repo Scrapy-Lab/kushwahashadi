@@ -43,8 +43,29 @@ class User extends Authenticatable
         ];
     }
 
-    public function user_detail(){
+    public function user_detail()
+    {
 
         return $this->hasOne(UserDetail::class);
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::created(function ($user) {
+            // Generate member_id
+
+            // dd($user);
+            // $latestUserDetail = UserDetail::orderBy('created_at', 'desc')->first();
+            // $number = $latestUserDetail ? intval(substr($latestUserDetail->member_id, -7)) + 1 : 1;
+            // $memberId = 'KUSHSHADI' . str_pad($number, 7, '0', STR_PAD_LEFT);
+
+            // // Create user_details record
+            // $user->user_detail()->create([
+            //     'member_id' => $memberId,
+            //     // other fields if needed
+            // ]);
+        });
     }
 }

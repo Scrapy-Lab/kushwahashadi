@@ -5,6 +5,7 @@ namespace App\Livewire;
 use Livewire\Component;
 use App\Models\User;
 use App\Models\UserDetail;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class Registration extends Component
@@ -27,7 +28,8 @@ class Registration extends Component
     public $createUser;
     public $createUserDetail;
 
-    public function mount(){
+    public function mount()
+    {
         $this->createUser = new User();
         $this->createUserDetail = new UserDetail();
     }
@@ -39,9 +41,18 @@ class Registration extends Component
 
     public function registerNow()
     {
-        try{
+
+        $latestUserDetail = UserDetail::orderBy('created_at', 'desc')->first();
+        // $number = $latestUserDetail ? intval(substr($latestUserDetail->member_id, -7)) + 1 : 1;
+        // $memberId = 'KUSHSHADI' . str_pad($number, 7, '0', STR_PAD_LEFT);
+
+        $text = $latestUserDetail->id+1;
+        $fullHash = md5($text); // Generate an MD5 hash
+        $truncatedHash = substr($fullHash, 0, 12); // Truncate to 12 characters
+        try {
             $this->createUser->name = $this->name;
             $this->createUser->last_name = $this->user_surname;
+            $this->createUserDetail->member_id = $truncatedHash;
             $this->createUserDetail->on_behalf = $this->on_behalf;
             $this->createUserDetail->gender = $this->gender;
             $this->createUserDetail->dob = $this->dob;
@@ -57,8 +68,16 @@ class Registration extends Component
             $this->createUserDetail->user_id = $this->createUser->id;
             $this->createUserDetail->save();
 
-        return redirect(route('dashboard'));
-        } catch (\Exception $e){
+            $credentials = [
+                'email' => $this->email,
+                'password' => $this->password,
+            ];
+
+            if (Auth::attempt($credentials)) {
+                return redirect()->intended('/dashboard');
+            }
+            // return redirect(route('dashboard'));
+        } catch (\Exception $e) {
             dd($e->getMessage());
         }
     }

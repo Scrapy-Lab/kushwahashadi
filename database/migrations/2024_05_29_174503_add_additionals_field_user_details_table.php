@@ -12,6 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('user_details', function (Blueprint $table) {
+
+            $table->text('user_image')->after('user_id')->nullable();
             $table->text('native_place')->after('sister')->nullable();
             $table->text('father_occupation')->after('native_place')->nullable();
             $table->text('mother_occupation')->after('father_occupation')->nullable();

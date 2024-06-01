@@ -10,12 +10,13 @@ Route::get('/', function () {
 Route::group(['middleware' => ['auth']], function () {
 
 
-Route::get('/dashboard',function(){
-    return view('innerPages.dashboard');
-})->name('dashboard');
-
-
+    Route::get('/dashboard', function () {
+        return view('innerPages.dashboard');
+    })->name('dashboard');
 });
+
+Route::get('crop-image-upload', [CropImageController::class, 'index']);
+Route::post('crop-image-upload', [CropImageController::class, 'store'])->name('crop.image.upload.store');
 
 Route::get('/logout', function () {
     Auth::logout();
