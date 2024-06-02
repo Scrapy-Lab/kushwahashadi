@@ -13,10 +13,12 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Actions\ExportBulkAction;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\HtmlString;
+use Illuminate\Support\Facades\Request;
 
 class UserDetailResource extends Resource
 {
@@ -342,12 +344,21 @@ class UserDetailResource extends Resource
     {
         return $table
             ->columns([
+                ImageColumn::make('user_image')
+                ->circular()
+                ->defaultImageUrl(url('/storage/profile_img/default_img.png'))
+                ->getStateUsing(function (UserDetail $record): string {
+                    // http://127.0.0.1:8000/admin/join-nows
+                    // dd(Request::getScheme()."://".Request::getHttpHost()."/storage/joinNowImages/".$record->aadhar_front);
+                    return Request::getScheme()."://".Request::getHttpHost()."/storage/profile_img/".(($record->user_image) ?? "default_img.png");
+                })
+                ,
                 Tables\Columns\TextColumn::make('user.name')
                     ->sortable()
                     ->label('First Name'),
-                Tables\Columns\TextColumn::make('user.last_name')
+                Tables\Columns\TextColumn::make('member_id')
                     ->sortable()
-                    ->label('Last Name'),
+                    ->formatStateUsing(fn (string $state): string => __(strtoupper($state))),
                 Tables\Columns\TextColumn::make('gender')
                 ->formatStateUsing(function (string $state): HtmlString {
                     return new HtmlString($state === '1' ? 'Male' : ($state === '2' ? 'Female' : 'Unknown'));
