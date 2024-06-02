@@ -21,6 +21,8 @@ class CasteResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    protected static ?string $navigationGroup = 'Profile Attributes';
+
     public static function form(Form $form): Form
     {
         return $form
