@@ -9,7 +9,7 @@
         @else
 
         @endif --}}
-    <img src="{{asset("storage/profile_img/".$user_details->user_image)}}" wire:ignore class="show-image" alt="">
+    <img src="{{ asset('storage/profile_img/' . $user_details->user_image) }}" wire:ignore class="show-image" alt="">
     <form wire:submit="store_profile_image" wire:ignore>
         @csrf
         <input type="file" name="image" class="image">
@@ -70,21 +70,22 @@
     </div>
     <div class="profile-useful-links clearfix">
         <div class="useful-links">
+
             <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 gallery l_nav"
-                onclick="profile_load('gallery','alt-sm')">
-                <b style="font-size: 12px">Gallery</b>
+                wire:click="$parent.show_profile()">
+                <b style="font-size: 12px">My Intrest</b>
             </a>
             <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 happy_story l_nav"
-                onclick="profile_load('happy_story','alt-sm')">
-                <b style="font-size: 12px">Happy Story</b>
+                wire:click="$parent.show_shortlist()">
+                <b style="font-size: 12px">Shortlist</b>
             </a>
             <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 my_packages l_nav"
                 onclick="profile_load('my_packages','alt-sm')">
-                <b style="font-size: 12px">My Package</b>
+                <b style="font-size: 12px">Messaging</b>
             </a>
             <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 payments l_nav"
                 onclick="profile_load('payments','alt-sm')">
-                <b style="font-size: 12px">Payment Informations</b>
+                <b style="font-size: 12px">Profile Viewers</b>
             </a>
             <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 picture_privacy l_nav"
                 onclick="profile_load('picture_privacy','alt-sm')">
@@ -106,7 +107,7 @@
 
     @script
         <script>
-             base64data =""
+            base64data = ""
             $("#crop").click(function() {
                 canvas = cropper.getCroppedCanvas({
                     width: 160,
@@ -118,7 +119,7 @@
                     var reader = new FileReader();
                     reader.readAsDataURL(blob);
                     reader.onloadend = function() {
-                         base64data = reader.result;
+                        base64data = reader.result;
 
 
                         $("input[name='image_base64']").val(base64data);

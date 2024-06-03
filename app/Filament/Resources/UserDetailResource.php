@@ -507,6 +507,7 @@ class UserDetailResource extends Resource
             'index' => Pages\ListUserDetails::route('/'),
             'create' => Pages\CreateUserDetail::route('/create'),
             'view' => Pages\ViewUserDetail::route('/{record}'),
+            'viewMember' => Pages\ViewMember::route('/{record}/member'),
             'edit' => Pages\EditUserDetail::route('/{record}/edit'),
         ];
     }

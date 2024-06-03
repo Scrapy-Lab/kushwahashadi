@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('on_behalves', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->boolean('status');
             $table->timestamps();
         });
     }

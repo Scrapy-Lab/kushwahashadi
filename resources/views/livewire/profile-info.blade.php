@@ -28,7 +28,13 @@
             <div class="intro">
                 <div class=" d-flex justify-content-between align-items-center">
                     <h4>Basic Information</h4>
-                    <p wire:click="edit_basic_info_show"><i class="fa fa-pencil" aria-hidden="true"></i></p>
+
+                    @if ($editBasicInfo)
+                        <p wire:click="edit_basic_info_show"><i class="fa fa-times" aria-hidden="true"></i></p>
+                        <p wire:click="edit_basic_info_show"><i class="fa fa-check" aria-hidden="true"></i></p>
+                    @else
+                        <p wire:click="edit_basic_info_show"><i class="fa fa-pencil" aria-hidden="true"></i></p>
+                    @endif
                 </div>
                 <div class="d-flex align-items-start mt-4">
                     <table class="table table-striped">
@@ -83,7 +89,8 @@
                         <tr>
                             <th>Date of Birth</th>
                             @if ($editBasicInfo)
-                                <td><input class="form-control" value="{{ $user_details->dob }} " type="text" wire:modal="dob"></td>
+                                <td><input class="form-control" value="{{ $user_details->dob }} " type="text"
+                                        wire:modal="dob"></td>
                             @else
                                 <td>{{ $user_details->dob }}</td>
                             @endif
@@ -98,7 +105,8 @@
                         <tr>
                             <th>Last Name</th>
                             @if ($editBasicInfo)
-                                <td><input class="form-control" value=" {{ $user->last_name }}" type="text" wire:modal="last_name">
+                                <td><input class="form-control" value=" {{ $user->last_name }}" type="text"
+                                        wire:modal="last_name">
                                 </td>
                             @else
                                 <td>{{ $user->last_name }}</td>
@@ -111,8 +119,8 @@
                         <tr>
                             <th>Marital Status</th>
                             @if ($editBasicInfo)
-                                <td><input class="form-control" value="{{ $user_details->martial_status }}" type="text"
-                                        wire:modal="martial_status"></td>
+                                <td><input class="form-control" value="{{ $user_details->martial_status }}"
+                                        type="text" wire:modal="martial_status"></td>
                             @else
                                 <td>{{ $user_details->martial_status }}</td>
                             @endif
@@ -120,7 +128,8 @@
                         <tr>
                             <th>Area</th>
                             @if ($editBasicInfo)
-                                <td><input class="form-control" value="{{ $user_details->area }}" type="text" wire:modal="area"></td>
+                                <td><input class="form-control" value="{{ $user_details->area }}" type="text"
+                                        wire:modal="area"></td>
                             @else
                                 <td>{{ $user_details->area }}</td>
                             @endif
@@ -128,7 +137,8 @@
                         <tr>
                             <th>Mobile</th>
                             @if ($editBasicInfo)
-                                <td><input class="form-control" value="{{ $user_details->phone }}" type="text" wire:modal="phone"></td>
+                                <td><input class="form-control" value="{{ $user_details->phone }}" type="text"
+                                        wire:modal="phone"></td>
                             @else
                                 <td>{{ $user_details->phone }}</td>
                             @endif
@@ -136,7 +146,8 @@
                         <tr>
                             <th>Whatsapp No.</th>
                             @if ($editBasicInfo)
-                                <td><input class="form-control" value="{{ $user_details->wp_no }}" type="text" wire:modal="wp_no"></td>
+                                <td><input class="form-control" value="{{ $user_details->wp_no }}" type="text"
+                                        wire:modal="wp_no"></td>
                             @else
                                 <td>{{ $user_details->wp_no }}</td>
                             @endif

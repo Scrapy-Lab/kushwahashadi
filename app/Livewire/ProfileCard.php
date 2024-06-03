@@ -37,6 +37,10 @@ class ProfileCard extends Component
 
 
 
+
+
+
+
     #[On('post-created')]
     public function store_profile_image($value = '')
     {

@@ -27,6 +27,15 @@ class ProfileInfo extends Component
 
     }
 
+
+    public function updated_basic_info(){
+
+        dd($this->firstName);
+
+
+    }
+
+
     public function render()
     {
         return view('livewire.profile-info');
