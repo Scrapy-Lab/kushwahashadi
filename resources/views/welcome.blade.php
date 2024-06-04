@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <img src="./images/HomePage_Default_Final.webp" class="w-100" alt="" />
+    <img src="{{asset('images/HomePage_Default_Final.webp')}}" class="w-100" alt="" />
     <div class="header_logo">
         @if (!auth()->user())
             <img src="./images/header-logo.png" w="100" h="100" alt="" />
