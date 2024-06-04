@@ -755,68 +755,39 @@ span.grey {
     padding: 0 !important;
     width: 30% !important;
 }
-
-.trademark .btn {
-    width: fit-content !important;
-    color: #fff;
-    height: auto !important;
-
+.myDiv {
+    max-width: 70%;
+    margin: 0 auto;
 }
-.row {
-    width: 80%;
-    margin: 0 auto !important;
+.chooseContent h3 {
+    font-size: 20px;
+    font-weight: 700;
 }
-
-h2 {
-    font-weight: 600 !important;
-    line-height: 1.5 !important;
-    margin: 0 0 10px !important;
-    font-size: 26px !important;
-    color: #8e1d2a !important;
-    text-transform: uppercase;
+.chooseimgCont {
+    padding: 16px;
 }
-.d-flex a {
-    padding: 0px 8px 0 0;
-    border-right: 2px solid;
-}
-.allbrowsers {
-    flex-wrap: wrap;
-    gap: 9px;
-    justify-content: center;
-    text-align: center;
-}
-.card-body h3 {
-    text-transform: uppercase;
-    text-align: center;
+.chooseimgCont p {
     color: #000 !important;
 }
-.carousel-item {
-    display: none;
-    transition: transform 0.6s ease-in-out;
-  }
-  .carousel-item-next,
-  .carousel-item-prev,
-  .carousel-item.active {
-    display: block;
-  }
-  .card {
-    height: 262px !important;
+.col-md-3{
+    width: 23% !important;
 }
-a.readMore {
-    text-align: center !important;
-    width: 67%;
-    display: block;
-    margin: 16px auto;
-    padding: 10px;
+.chooseimgCont .blue {
+    color: green;
+}
+.chooseimgCont a {
+    font-size: 16px;
+    width: 170px;
     background: linear-gradient(270deg, rgb(99, 37, 86) 0, rgb(144, 29, 40) 100%);
-    color: #fff;
+    color: rgb(255, 255, 255);
+    border-radius: 6px;
+    padding: 10px 10px;
     text-decoration: none;
-    font-weight: 500;
 }
-
-.slider-content {
-    width: 100%;
-    background-color: #f8f8f8;
-    box-shadow: 0px 2px 0px #e5e6e6;
-    padding: 25px;
+.profileCard {
+    box-shadow: 0 16px 26px #00000014, 0 6px 30px #0000000f, 0 8px 10px #0000000f !important;
+    color: #000 !important;
+}
+.profileCard h3 {
+    color: #000 !important;
 }
