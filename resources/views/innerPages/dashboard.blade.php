@@ -4,10 +4,10 @@
     <div class="container">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
-                <a class="nav-link" href="{{ route('dashboard') }}"><i class="fa fa-heart" aria-hidden="true"></i>Dashboard</a>
+                <a class="nav-link active" href="{{ route('dashboard') }}"><i class="fa fa-heart" aria-hidden="true"></i>Dashboard</a>
             </li>
             <li class="nav-item" role="presentation">
-                <a class="nav-link active" href="{{ route('edit_profile') }}"><i class="fa fa-user" aria-hidden="true"></i>
+                <a class="nav-link " href="{{ route('edit_profile') }}"><i class="fa fa-user" aria-hidden="true"></i>
                     Edit Profile</a>
             </li>
 
@@ -35,8 +35,8 @@
 
         <div class="row align-items-start justify-content-between">
 
-            @livewire('profile-card')
-            {{-- @livewire('user-dashboard') --}}
+            {{-- @livewire('profile-card') --}}
+            @livewire('user-dashboard')
         </div>
 
     </div>

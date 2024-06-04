@@ -5,6 +5,15 @@
 
         @livewire('profile-card')
 
+
+        <div class="col-md-7">
+
+            <h1>Dashboard update here </h1>
+
+        </div>
+
+
+
         @if ($showProfile)
             @livewire('profile-info')
         @endif

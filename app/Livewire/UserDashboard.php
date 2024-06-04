@@ -6,7 +6,7 @@ use Livewire\Component;
 
 class UserDashboard extends Component
 {
-    public $showProfile = true;
+    public $showProfile = false;
     public $showShortlist = false;
     public $showIntrest = false;
     public $showMesssage = false;

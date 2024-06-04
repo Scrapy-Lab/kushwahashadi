@@ -73,7 +73,7 @@
         <div class="useful-links">
 
             <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 gallery l_nav"
-                wire:click="$parent.show_profile()" href="{{route('edit_profile')}}">
+                wire:click="$parent.show_profile()">
                 <b style="font-size: 12px">My Profile</b>
             </a>
             <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 gallery l_nav"
@@ -144,6 +144,7 @@
                 });
 
             });
+
         </script>
     @endscript
 </div>
