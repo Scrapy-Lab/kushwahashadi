@@ -6,7 +6,7 @@
         @livewire('profile-card')
 
 
-        <div class="col-md-7">
+        <div class="col-md-7" id="dashboard_listing" wire:ignore>
 
             <h1>Dashboard update here </h1>
 

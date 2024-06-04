@@ -72,8 +72,8 @@
     <div class="profile-useful-links clearfix">
         <div class="useful-links">
 
-            <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 gallery l_nav"
-                wire:click="$parent.show_profile()">
+            <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 gallery l_nav "
+                wire:click="$parent.show_profile()" >
                 <b style="font-size: 12px">My Profile</b>
             </a>
             <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 gallery l_nav"
@@ -142,6 +142,14 @@
                 $wire.dispatch('post-created', {
                     value: base64data
                 });
+
+            });
+
+            $(".l_nav").click(function() {
+
+                console.log("adasdTest");
+
+                $("#dashboard_listing").hide();
 
             });
 
