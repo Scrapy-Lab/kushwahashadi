@@ -759,5 +759,45 @@ td input.form-control {
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
+}
 
+.col-md-4 {
+    padding: 0 !important;
+    width: 30% !important;
+}
+.myDiv {
+    max-width: 70%;
+    margin: 0 auto;
+}
+.chooseContent h3 {
+    font-size: 20px;
+    font-weight: 700;
+}
+.chooseimgCont {
+    padding: 16px;
+}
+.chooseimgCont p {
+    color: #000 !important;
+}
+.col-md-3{
+    width: 23% !important;
+}
+.chooseimgCont .blue {
+    color: green;
+}
+.chooseimgCont a {
+    font-size: 16px;
+    width: 170px;
+    background: linear-gradient(270deg, rgb(99, 37, 86) 0, rgb(144, 29, 40) 100%);
+    color: rgb(255, 255, 255);
+    border-radius: 6px;
+    padding: 10px 10px;
+    text-decoration: none;
+}
+.profileCard {
+    box-shadow: 0 16px 26px #00000014, 0 6px 30px #0000000f, 0 8px 10px #0000000f !important;
+    color: #000 !important;
+}
+.profileCard h3 {
+    color: #000 !important;
 }
