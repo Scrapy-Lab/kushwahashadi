@@ -34,11 +34,8 @@
             </li>
         </ul>
 
-        <div class="row align-items-start justify-content-between">
+        @livewire('user-dashboard')
 
-            @livewire('profile-card')
-            {{-- @livewire('user-dashboard') --}}
-        </div>
 
     </div>
 
