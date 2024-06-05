@@ -16,6 +16,7 @@
             </div>
 
         </div>
+
         <div class="card-body">
             <h3><span class="grey">Member ID -</span> {{ strtoupper($memberId) }} </h3>
             {{-- INTRODUCTION --}}

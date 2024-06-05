@@ -22,11 +22,12 @@ class ProfileInfo extends Component
         if ($id) {
             $this->user = User::findOrFail($id);
             $this->is_view_profile = false;
+            $user = $this->user;
         } else {
             $this->user = Auth::user();
+            $user = auth()->user();
         }
 
-        $user = auth()->user();
         // dd($this->user, $id);
         // $this->user_details = $this->user->user_detail;
         $this->memberId = $user->member_id;
