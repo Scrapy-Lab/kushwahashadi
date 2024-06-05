@@ -69,47 +69,48 @@
             </div>
         </div>
     </div>
-    <div class="profile-useful-links clearfix">
-        <div class="useful-links">
+    @if (!$is_view_profile)
+        <div class="profile-useful-links clearfix">
+            <div class="useful-links">
 
-            <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 gallery l_nav "
-                wire:click="$parent.show_profile()" >
-                <b style="font-size: 12px">My Profile</b>
-            </a>
-            <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 gallery l_nav"
-                wire:click="$parent.show_intrest()">
-                <b style="font-size: 12px">My Intrest</b>
-            </a>
-            <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 happy_story l_nav"
-                wire:click="$parent.show_shortlist()">
-                <b style="font-size: 12px">Shortlist</b>
-            </a>
-            <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 my_packages l_nav"
-                wire:click="$parent.show_messsage()">
-                <b style="font-size: 12px">Messaging</b>
-            </a>
-            <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 payments l_nav"
-                wire:click="$parent.show_viewers()">
-                <b style="font-size: 12px">Profile Viewers</b>
-            </a>
-            <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 picture_privacy l_nav"
-                onclick="profile_load('picture_privacy','alt-sm')">
-                <b style="font-size: 12px">Picture Privacy</b>
-            </a>
+                <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 gallery l_nav "
+                    wire:click="$parent.show_profile()">
+                    <b style="font-size: 12px">My Profile</b>
+                </a>
+                <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 gallery l_nav"
+                    wire:click="$parent.show_intrest()">
+                    <b style="font-size: 12px">My Intrest</b>
+                </a>
+                <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 happy_story l_nav"
+                    wire:click="$parent.show_shortlist()">
+                    <b style="font-size: 12px">Shortlist</b>
+                </a>
+                <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 my_packages l_nav"
+                    wire:click="$parent.show_messsage()">
+                    <b style="font-size: 12px">Messaging</b>
+                </a>
+                <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 payments l_nav"
+                    wire:click="$parent.show_viewers()">
+                    <b style="font-size: 12px">Profile Viewers</b>
+                </a>
+                <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 picture_privacy l_nav"
+                    onclick="profile_load('picture_privacy','alt-sm')">
+                    <b style="font-size: 12px">Picture Privacy</b>
+                </a>
 
-            <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 change_pass l_nav"
-                onclick="profile_load('change_pass','alt-sm')">
-                <b style="font-size: 12px">Change Password</b>
-            </a>
+                <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 change_pass l_nav"
+                    onclick="profile_load('change_pass','alt-sm')">
+                    <b style="font-size: 12px">Change Password</b>
+                </a>
 
-            <div class="text-center pt-3 pb-0">
-                <a onclick="profile_load('close_account')">
-                    <i class="fa fa-lock"></i>
-                    Close Account </a>
+                <div class="text-center pt-3 pb-0">
+                    <a onclick="profile_load('close_account')">
+                        <i class="fa fa-lock"></i>
+                        Close Account </a>
+                </div>
             </div>
         </div>
-    </div>
-
+    @endif
     @script
         <script>
             base64data = ""
@@ -152,7 +153,6 @@
                 $("#dashboard_listing").hide();
 
             });
-
         </script>
     @endscript
 </div>

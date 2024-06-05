@@ -13,6 +13,7 @@ class ProfileCard extends Component
     public $user;
     public $user_details;
     public $imageBase64;
+    public $is_view_profile = false;
 
 
     // protected $listeners = ['store_profile_image' ];
@@ -23,8 +24,11 @@ class ProfileCard extends Component
 
 
 
-    public function mount()
+    public function mount($id = null)
     {
+        if($id){
+            $this->is_view_profile = true;
+        }
 
         $this->user = auth()->user();
         $this->user_details = $this->user->user_detail;

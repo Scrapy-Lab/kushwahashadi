@@ -177,7 +177,7 @@
                 <div class="card z-depth-2-top">
                     <div class="card-title">
                         <h3 class="heading heading-6 strong-500 pull-left">
-                            <b>Ignored List</b>
+                            <b>Profile Viewd By</b>
                         </h3>
 
                     </div>

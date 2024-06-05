@@ -17,7 +17,7 @@
 
         </div>
         <div class="card-body">
-            <h3><span class="grey">Member ID -</span> {{ strtoupper($user_details->member_id) }} </h3>
+            <h3><span class="grey">Member ID -</span> {{ strtoupper($memberId) }} </h3>
             {{-- INTRODUCTION --}}
             <div class="intro d-flex justify-content-between align-items-center">
                 <h4>Introduction</h4>
@@ -28,10 +28,25 @@
             <div class="intro">
                 <div class=" d-flex justify-content-between align-items-center">
                     <h4>Basic Information</h4>
+                    <!-- Display Validation Errors -->
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    @if (session()->has('message'))
+                        <div class="alert alert-success">
+                            {{ session('message') }}
+                        </div>
+                    @endif
 
                     @if ($editBasicInfo)
                         <p wire:click="edit_basic_info_show"><i class="fa fa-times" aria-hidden="true"></i></p>
-                        <p wire:click="edit_basic_info_show"><i class="fa fa-check" aria-hidden="true"></i></p>
+                        <p wire:click="update_info"><i class="fa fa-check" aria-hidden="true"></i></p>
                     @else
                         <p wire:click="edit_basic_info_show"><i class="fa fa-pencil" aria-hidden="true"></i></p>
                     @endif
@@ -41,26 +56,26 @@
                         <tr>
                             <th>First Name</th>
                             @if ($editBasicInfo)
-                                <td><input class="form-control" value="{{ $user->name }}" type="text"
-                                        wire:modal="name"></td>
+                                <td><input class="form-control" type="text" wire:model="form.name"></td>
                             @else
-                                {{-- <td>{{$user_details->gender == 1 ? "Male" :"Female" }}</td> --}}
+                                {{-- <td>{{$user->user_detail->gender == 1 ? "Male" :"Female" }}</td> --}}
                                 <td>{{ $user->name }}</td>
                             @endif
                         </tr>
                         <tr>
+                            {{-- @dd($user) --}}
                             <th>Gender</th>
                             @if ($editBasicInfo)
                                 <td>
-                                    {{-- <input class="form-control" value=" " type="text" wire:modal="gender"> --}}
+                                    {{-- <input class="form-control" value=" " type="text" wire:model="form.gender"> --}}
                                     <select class="form-select" aria-label="Default select example"name=""
-                                        wire:modal="gender">
+                                        wire:model="form.gender">
                                         <option value="1">Male</option>
                                         <option value="2">Female</option>
                                     </select>
                                 </td>
                             @else
-                                <td>{{ $user_details->gender == 1 ? 'Male' : 'Female' }}</td>
+                                <td>{{ $user->user_detail->gender == 1 ? 'Male' : 'Female' }}</td>
                             @endif
                         </tr>
                         <tr>
@@ -70,29 +85,26 @@
                         <tr>
                             <th> Number of Children</th>
                             @if ($editBasicInfo)
-                                <td><input class="form-control" value="{{ $user_details->no_of_children }}"
-                                        type="text" wire:modal="no_of_children"></td>
+                                <td><input class="form-control" type="text" wire:model="form.no_of_children"></td>
                             @else
-                                <td>{{ $user_details->no_of_children }}</td>
+                                <td>{{ $user->user_detail->no_of_children }}</td>
                             @endif
                         </tr>
                         <tr>
                             <th>On Behalf</th>
                             @if ($editBasicInfo)
-                                <td><input class="form-control" value="{{ $user_details->on_behalf }} " type="text"
-                                        wire:modal="on_behalf">
+                                <td><input class="form-control" type="text" wire:model="form.on_behalf">
                                 </td>
                             @else
-                                <td>{{ $user_details->on_behalf }}</td>
+                                <td>{{ $user->user_detail->on_behalf }}</td>
                             @endif
                         </tr>
                         <tr>
                             <th>Date of Birth</th>
                             @if ($editBasicInfo)
-                                <td><input class="form-control" value="{{ $user_details->dob }} " type="text"
-                                        wire:modal="dob"></td>
+                                <td><input class="form-control" type="text" wire:model="form.dob"></td>
                             @else
-                                <td>{{ $user_details->dob }}</td>
+                                <td>{{ $user->user_detail->dob }}</td>
                             @endif
                         </tr>
                         <tr>
@@ -105,8 +117,7 @@
                         <tr>
                             <th>Last Name</th>
                             @if ($editBasicInfo)
-                                <td><input class="form-control" value=" {{ $user->last_name }}" type="text"
-                                        wire:modal="last_name">
+                                <td><input class="form-control" type="text" wire:model="form.last_name">
                                 </td>
                             @else
                                 <td>{{ $user->last_name }}</td>
@@ -119,296 +130,306 @@
                         <tr>
                             <th>Marital Status</th>
                             @if ($editBasicInfo)
-                                <td><input class="form-control" value="{{ $user_details->martial_status }}"
-                                        type="text" wire:modal="martial_status"></td>
+                                <td><input class="form-control" type="text" wire:model="form.marital_status"></td>
                             @else
-                                <td>{{ $user_details->martial_status }}</td>
+                                <td>{{ $user->user_detail->marital_status }}</td>
                             @endif
                         </tr>
                         <tr>
                             <th>Area</th>
                             @if ($editBasicInfo)
-                                <td><input class="form-control" value="{{ $user_details->area }}" type="text"
-                                        wire:modal="area"></td>
+                                <td><input class="form-control" type="text" wire:model="form.area"></td>
                             @else
-                                <td>{{ $user_details->area }}</td>
+                                <td>{{ $user->user_detail->area }}</td>
                             @endif
                         </tr>
                         <tr>
                             <th>Mobile</th>
                             @if ($editBasicInfo)
-                                <td><input class="form-control" value="{{ $user_details->phone }}" type="text"
-                                        wire:modal="phone"></td>
+                                <td><input class="form-control" value="{{ $user->user_detail->phone }}" type="text"
+                                        wire:model="form.phone"></td>
                             @else
-                                <td>{{ $user_details->phone }}</td>
+                                <td>{{ $user->user_detail->phone }}</td>
                             @endif
                         </tr>
                         <tr>
                             <th>Whatsapp No.</th>
                             @if ($editBasicInfo)
-                                <td><input class="form-control" value="{{ $user_details->wp_no }}" type="text"
-                                        wire:modal="wp_no"></td>
+                                <td><input class="form-control" value="{{ $user->user_detail->wp_no }}" type="text"
+                                        wire:model="form.wp_no"></td>
                             @else
-                                <td>{{ $user_details->wp_no }}</td>
+                                <td>{{ $user->user_detail->wp_no }}</td>
                             @endif
                         </tr>
                     </table>
                 </div>
             </div>
+            @if ($is_view_profile)
 
-            {{-- PRESENT ADDRESS --}}
-            <div class="intro">
-                <div class=" d-flex justify-content-between align-items-center">
-                    <h4>Present Address</h4>
-                    <div class="d-flex align-items-center gap-2">
-                        <button><i class="fa fa-unlock" aria-hidden="true"></i> Show</button>
-                        <p><i class="fa fa-pencil" aria-hidden="true"></i></p>
+
+                {{-- PRESENT ADDRESS --}}
+                <div class="intro">
+                    <div class=" d-flex justify-content-between align-items-center">
+                        <h4>Present Address</h4>
+                        <div class="d-flex align-items-center gap-2">
+                            @if ($editAddress)
+                                <p wire:click="edit_address_show"><i class="fa fa-times" aria-hidden="true"></i></p>
+                                <p wire:click="update_info"><i class="fa fa-check" aria-hidden="true"></i></p>
+                            @else
+                                <p wire:click="edit_address_show"><i class="fa fa-pencil" aria-hidden="true"></i></p>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-start mt-4">
+                        <table class="table table-striped">
+                            <tr>
+                                <th>COUNTRY</th>
+                                @if ($editAddress)
+                                    <td><input class="form-control" value="{{ $user->user_detail->country }}"
+                                            type="text" wire:model="form.country"></td>
+                                @else
+                                    {{-- <td>{{ $user->user_detail->wp_no }}</td> --}}
+                                    <td>{{ $user->user_detail->country }}</td>
+                                @endif
+                            </tr>
+                            <tr>
+                                <th>CITY</th>
+                                <td>{{ $user->user_detail->city }}</td>
+                            </tr>
+                            <tr>
+                                <th>FULL ADDRESS</th>
+                                <td>{{ $user->user_detail->address }}</td>
+                            </tr>
+                        </table>
+
+                        <table class="table table-striped">
+                            <tr>
+                                <th>STATE</th>
+                                <td>{{ $user->user_detail->state }}</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
-                <div class="d-flex align-items-start mt-4">
-                    <table class="table table-striped">
-                        <tr>
-                            <th>COUNTRY</th>
-                            <td>{{ $user_details->country }}</td>
-                        </tr>
-                        <tr>
-                            <th>CITY</th>
-                            <td>{{ $user_details->city }}</td>
-                        </tr>
-                        <tr>
-                            <th>FULL ADDRESS</th>
-                            <td>{{ $user_details->address }}</td>
-                        </tr>
-                    </table>
 
-                    <table class="table table-striped">
-                        <tr>
-                            <th>STATE</th>
-                            <td>{{ $user_details->state }}</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
+                {{-- EDUCATION AND CAREER --}}
+                <div class="intro">
+                    <div class=" d-flex justify-content-between align-items-center">
+                        <h4>Education And Career</h4>
+                        <div class="d-flex align-items-center gap-2">
+                            <button><i class="fa fa-unlock" aria-hidden="true"></i> Show</button>
+                            <p><i class="fa fa-pencil" aria-hidden="true"></i></p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-start mt-4">
+                        <table class="table table-striped">
+                            <tr>
+                                <th>HIGHEST EDUCATION</th>
+                                <td>{{ $user->user_detail->highest_education }}</td>
+                            </tr>
+                            <tr>
+                                <th>EDUCATION DETAIL</th>
+                                <td>{{ $user->user_detail->edu_details }}</td>
+                            </tr>
+                            <tr>
+                                <th>ANNUAL INCOME</th>
+                                <td>{{ $user->user_detail->annual_income }}</td>
+                            </tr>
+                        </table>
 
-            {{-- EDUCATION AND CAREER --}}
-            <div class="intro">
-                <div class=" d-flex justify-content-between align-items-center">
-                    <h4>Education And Career</h4>
-                    <div class="d-flex align-items-center gap-2">
-                        <button><i class="fa fa-unlock" aria-hidden="true"></i> Show</button>
-                        <p><i class="fa fa-pencil" aria-hidden="true"></i></p>
+                        <table class="table table-striped">
+                            <tr>
+                                <th>OCCUPATION</th>
+                                <td>{{ $user->user_detail->occupation }}</td>
+                            </tr>
+                            <tr>
+                                <th>POSTING PLACE</th>
+                                <td>{{ $user->user_detail->posting_place }}</td>
+                            </tr>
+                            <tr>
+                                <th>Other OCCUPATION</th>
+                                <td>{{ $user->user_detail->other_occupation }}</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
-                <div class="d-flex align-items-start mt-4">
-                    <table class="table table-striped">
-                        <tr>
-                            <th>HIGHEST EDUCATION</th>
-                            <td>{{ $user_details->highest_education }}</td>
-                        </tr>
-                        <tr>
-                            <th>EDUCATION DETAIL</th>
-                            <td>{{ $user_details->edu_details }}</td>
-                        </tr>
-                        <tr>
-                            <th>ANNUAL INCOME</th>
-                            <td>{{ $user_details->annual_income }}</td>
-                        </tr>
-                    </table>
 
-                    <table class="table table-striped">
-                        <tr>
-                            <th>OCCUPATION</th>
-                            <td>{{ $user_details->occupation }}</td>
-                        </tr>
-                        <tr>
-                            <th>POSTING PLACE</th>
-                            <td>{{ $user_details->posting_place }}</td>
-                        </tr>
-                        <tr>
-                            <th>Other OCCUPATION</th>
-                            <td>{{ $user_details->other_occupation }}</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
+                {{-- Physical Attributes --}}
+                <div class="intro">
+                    <div class=" d-flex justify-content-between align-items-center">
+                        <h4>Physical Attributes</h4>
+                        <div class="d-flex align-items-center gap-2">
+                            <button><i class="fa fa-unlock" aria-hidden="true"></i> Show</button>
+                            <p><i class="fa fa-pencil" aria-hidden="true"></i></p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-start mt-4">
+                        <table class="table table-striped">
+                            <tr>
+                                <th>HEIGHT</th>
+                                <td>{{ $user->user_detail->height }}</td>
+                            </tr>
+                            <tr>
+                                <th>COMPLEXION</th>
+                                <td>{{ $user->user_detail->complexion }}</td>
+                            </tr>
+                            <tr>
+                                <th>BODY TYPE</th>
+                                <td>{{ $user->user_detail->body_type }}</td>
+                            </tr>
+                        </table>
 
-            {{-- Physical Attributes --}}
-            <div class="intro">
-                <div class=" d-flex justify-content-between align-items-center">
-                    <h4>Physical Attributes</h4>
-                    <div class="d-flex align-items-center gap-2">
-                        <button><i class="fa fa-unlock" aria-hidden="true"></i> Show</button>
-                        <p><i class="fa fa-pencil" aria-hidden="true"></i></p>
+                        <table class="table table-striped">
+                            <tr>
+                                <th>WEIGHT</th>
+                                <td>{{ $user->user_detail->weight }}</td>
+                            </tr>
+                            <tr>
+                                <th>BLOOD GROUP</th>
+                                <td>{{ $user->user_detail->blood_group }}</td>
+                            </tr>
+                            <tr>
+                                <th>ANY DISABILITY</th>
+                                <td>{{ $user->user_detail->any_disability }}</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
-                <div class="d-flex align-items-start mt-4">
-                    <table class="table table-striped">
-                        <tr>
-                            <th>HEIGHT</th>
-                            <td>{{ $user_details->height }}</td>
-                        </tr>
-                        <tr>
-                            <th>COMPLEXION</th>
-                            <td>{{ $user_details->complexion }}</td>
-                        </tr>
-                        <tr>
-                            <th>BODY TYPE</th>
-                            <td>{{ $user_details->body_type }}</td>
-                        </tr>
-                    </table>
 
-                    <table class="table table-striped">
-                        <tr>
-                            <th>WEIGHT</th>
-                            <td>{{ $user_details->wight }}</td>
-                        </tr>
-                        <tr>
-                            <th>BLOOD GROUP</th>
-                            <td>{{ $user_details->blood_group }}</td>
-                        </tr>
-                        <tr>
-                            <th>ANY DISABILITY</th>
-                            <td>{{ $user_details->any_disability }}</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
+                {{-- Spiritual And Social Background --}}
+                <div class="intro">
+                    <div class=" d-flex justify-content-between align-items-center">
+                        <h4>Spiritual And Social Background</h4>
+                        <div class="d-flex align-items-center gap-2">
+                            <button><i class="fa fa-unlock" aria-hidden="true"></i> Show</button>
+                            <p><i class="fa fa-pencil" aria-hidden="true"></i></p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-start mt-4">
+                        <table class="table table-striped">
+                            <tr>
+                                <th>RELIGION</th>
+                                <td>{{ $user->user_detail->religion }}</td>
+                            </tr>
+                            <tr>
+                                <th>SUB-CASTE</th>
+                                <td>{{ $user->user_detail->sub_caste }}</td>
+                            </tr>
+                            <tr>
+                                <th>FAMILY VALUES</th>
+                                <td>{{ $user->user_detail->family_values }}</td>
+                            </tr>
+                        </table>
 
-            {{-- Spiritual And Social Background --}}
-            <div class="intro">
-                <div class=" d-flex justify-content-between align-items-center">
-                    <h4>Spiritual And Social Background</h4>
-                    <div class="d-flex align-items-center gap-2">
-                        <button><i class="fa fa-unlock" aria-hidden="true"></i> Show</button>
-                        <p><i class="fa fa-pencil" aria-hidden="true"></i></p>
+                        <table class="table table-striped">
+                            <tr>
+                                <th>CASTE / SECT</th>
+                                <td>{{ $user->user_detail->caste }}</td>
+                            </tr>
+                            <tr>
+                                <th>GOTRA</th>
+                                <td>
+                                    <{{ $user->user_detail->gotra }} /td>
+                            </tr>
+                            <tr>
+                                <th>FAMILY STATUS</th>
+                                <td>{{ $user->user_detail->family_status }}</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
-                <div class="d-flex align-items-start mt-4">
-                    <table class="table table-striped">
-                        <tr>
-                            <th>RELIGION</th>
-                            <td>{{ $user_details->religion }}</td>
-                        </tr>
-                        <tr>
-                            <th>SUB-CASTE</th>
-                            <td>{{ $user_details->sub_caste }}</td>
-                        </tr>
-                        <tr>
-                            <th>FAMILY VALUES</th>
-                            <td>{{ $user_details->family_values }}</td>
-                        </tr>
-                    </table>
 
-                    <table class="table table-striped">
-                        <tr>
-                            <th>CASTE / SECT</th>
-                            <td>{{ $user_details->caste }}</td>
-                        </tr>
-                        <tr>
-                            <th>GOTRA</th>
-                            <td>
-                                <{{ $user_details->gotra }} /td>
-                        </tr>
-                        <tr>
-                            <th>FAMILY STATUS</th>
-                            <td>{{ $user_details->family_status }}</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
+                {{-- Astronomic Information --}}
+                <div class="intro">
+                    <div class=" d-flex justify-content-between align-items-center">
+                        <h4>Astronomic Information</h4>
+                        <div class="d-flex align-items-center gap-2">
+                            <button><i class="fa fa-unlock" aria-hidden="true"></i> Show</button>
+                            <p><i class="fa fa-pencil" aria-hidden="true"></i></p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-start mt-4">
+                        <table class="table table-striped">
+                            <tr>
+                                <th>SUN SIGN</th>
+                                <td>{{ $user->user_detail->sun_sign }}</td>
+                            </tr>
+                            <tr>
+                                <th>CITY OF BIRTH</th>
+                                <td>{{ $user->user_detail->birth_city }}</td>
+                            </tr>
+                        </table>
 
-            {{-- Astronomic Information --}}
-            <div class="intro">
-                <div class=" d-flex justify-content-between align-items-center">
-                    <h4>Astronomic Information</h4>
-                    <div class="d-flex align-items-center gap-2">
-                        <button><i class="fa fa-unlock" aria-hidden="true"></i> Show</button>
-                        <p><i class="fa fa-pencil" aria-hidden="true"></i></p>
+                        <table class="table table-striped">
+                            <tr>
+                                <th>MOON SIGN</th>
+                                <td>{{ $user->user_detail->moon_sign }}</td>
+                            </tr>
+                            <tr>
+                                <th>TIME OF BIRTH</th>
+                                <td>{{ $user->user_detail->time_of_birth }}</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
-                <div class="d-flex align-items-start mt-4">
-                    <table class="table table-striped">
-                        <tr>
-                            <th>SUN SIGN</th>
-                            <td>{{ $user_details->sun_sign }}</td>
-                        </tr>
-                        <tr>
-                            <th>CITY OF BIRTH</th>
-                            <td>{{ $user_details->birth_city }}</td>
-                        </tr>
-                    </table>
 
-                    <table class="table table-striped">
-                        <tr>
-                            <th>MOON SIGN</th>
-                            <td>{{ $user_details->moon_sign }}</td>
-                        </tr>
-                        <tr>
-                            <th>TIME OF BIRTH</th>
-                            <td>{{ $user_details->time_of_birth }}</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
+                {{-- Family Information --}}
+                <div class="intro">
+                    <div class=" d-flex justify-content-between align-items-center">
+                        <h4>Family Information</h4>
+                        <div class="d-flex align-items-center gap-2">
+                            <button><i class="fa fa-unlock" aria-hidden="true"></i> Show</button>
+                            <p><i class="fa fa-pencil" aria-hidden="true"></i></p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-start mt-4">
+                        <table class="table table-striped">
+                            <tr>
+                                <th>FAMILY RESIDENCE</th>
+                                <td>{{ $user->user_detail->family_residence }}</td>
+                            </tr>
+                            <tr>
+                                <th>FATHER</th>
+                                <td>{{ $user->user_detail->father }}</td>
+                            </tr>
+                            <tr>
+                                <th>MOTHER</th>
+                                <td>{{ $user->user_detail->mother }}</td>
+                            </tr>
+                            <tr>
+                                <th>BROTHER</th>
+                                <td>{{ $user->user_detail->brother }}</td>
+                            </tr>
+                            <tr>
+                                <th>SISTER</th>
+                                <td>{{ $user->user_detail->sister }}</td>
+                            </tr>
+                        </table>
 
-            {{-- Family Information --}}
-            <div class="intro">
-                <div class=" d-flex justify-content-between align-items-center">
-                    <h4>Family Information</h4>
-                    <div class="d-flex align-items-center gap-2">
-                        <button><i class="fa fa-unlock" aria-hidden="true"></i> Show</button>
-                        <p><i class="fa fa-pencil" aria-hidden="true"></i></p>
+                        <table class="table table-striped">
+                            <tr>
+                                <th>NATIVE PLACE</th>
+                                <td>{{ $user->user_detail->native_place }}</td>
+                            </tr>
+                            <tr>
+                                <th>FATHER OCCUPATION</th>
+                                <td>{{ $user->user_detail->father_occupation }}</td>
+                            </tr>
+                            <tr>
+                                <th>MOTHER OCCUPATION</th>
+                                <td>{{ $user->user_detail->mother_occupation }}</td>
+                            </tr>
+                            <tr>
+                                <th>BROTHER OCCUPATION</th>
+                                <td>{{ $user->user_detail->brother_occupation }}</td>
+                            </tr>
+                            <tr>
+                                <th>SISTER OCCUPATION</th>
+                                <td>{{ $user->user_detail->sister_occupation }}</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
-                <div class="d-flex align-items-start mt-4">
-                    <table class="table table-striped">
-                        <tr>
-                            <th>FAMILY RESIDENCE</th>
-                            <td>{{ $user_details->family_residence }}</td>
-                        </tr>
-                        <tr>
-                            <th>FATHER</th>
-                            <td>{{ $user_details->father }}</td>
-                        </tr>
-                        <tr>
-                            <th>MOTHER</th>
-                            <td>{{ $user_details->mother }}</td>
-                        </tr>
-                        <tr>
-                            <th>BROTHER</th>
-                            <td>{{ $user_details->brother }}</td>
-                        </tr>
-                        <tr>
-                            <th>SISTER</th>
-                            <td>{{ $user_details->sister }}</td>
-                        </tr>
-                    </table>
-
-                    <table class="table table-striped">
-                        <tr>
-                            <th>NATIVE PLACE</th>
-                            <td>{{ $user_details->native_place }}</td>
-                        </tr>
-                        <tr>
-                            <th>FATHER OCCUPATION</th>
-                            <td>{{ $user_details->father_occupation }}</td>
-                        </tr>
-                        <tr>
-                            <th>MOTHER OCCUPATION</th>
-                            <td>{{ $user_details->mother_occupation }}</td>
-                        </tr>
-                        <tr>
-                            <th>BROTHER OCCUPATION</th>
-                            <td>{{ $user_details->brother_occupation }}</td>
-                        </tr>
-                        <tr>
-                            <th>SISTER OCCUPATION</th>
-                            <td>{{ $user_details->sister_occupation }}</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-
+            @endif
             {{-- Partner Expectation --}}
             <div class="intro">
                 <div class=" d-flex justify-content-between align-items-center">
@@ -422,98 +443,98 @@
                     <table class="table table-striped">
                         <tr>
                             <th>GENERAL REQUIREMENT</th>
-                            <td>{{ $user_details->partner_exp_general_requirement }}</td>
+                            <td>{{ $user->user_detail->partner_exp_general_requirement }}</td>
                         </tr>
                         <tr>
                             <th>HEIGHT</th>
-                            <td>{{ $user_details->partner_exp_height }}</td>
+                            <td>{{ $user->user_detail->partner_exp_height }}</td>
                         </tr>
                         <tr>
                             <th>MARITAL STATUS</th>
-                            <td>{{ $user_details->partner_exp_marital_status }}</td>
+                            <td>{{ $user->user_detail->partner_exp_marital_status }}</td>
                         </tr>
                         <tr>
                             <th>COUNTRY OF RESIDENCE</th>
-                            <td>{{ $user_details->partner_exp_country_of_residence }}</td>
+                            <td>{{ $user->user_detail->partner_exp_country_of_residence }}</td>
                         </tr>
                         <tr>
                             <th>CASTE / SECT</th>
-                            <td>{{ $user_details->partner_exp_caste }}</td>
+                            <td>{{ $user->user_detail->partner_exp_caste }}</td>
                         </tr>
                         <tr>
                             <th>EDUCATION</th>
-                            <td>{{ $user_details->partner_exp_education }}</td>
+                            <td>{{ $user->user_detail->partner_exp_education }}</td>
                         </tr>
                         <tr>
                             <th>DRINKING HABITS</th>
-                            <td>{{ $user_details->partner_exp_drinking_habits }}</td>
+                            <td>{{ $user->user_detail->partner_exp_drinking_habits }}</td>
                         </tr>
                         <tr>
                             <th>DIET</th>
-                            <td>{{ $user_details->partner_exp_diet }}</td>
+                            <td>{{ $user->user_detail->partner_exp_diet }}</td>
                         </tr>
                         <tr>
                             <th>MANGLIK</th>
-                            <td>{{ $user_details->partner_exp_manglik }}</td>
+                            <td>{{ $user->user_detail->partner_exp_manglik }}</td>
                         </tr>
                         <tr>
                             <th>FAMILY VALUES</th>
-                            <td>{{ $user_details->partner_exp_family_values }}</td>
+                            <td>{{ $user->user_detail->partner_exp_family_values }}</td>
                         </tr>
                         <tr>
                             <th>PREFERED COUNTRY</th>
-                            <td>{{ $user_details->partner_exp_prefered_countries }}</td>
+                            <td>{{ $user->user_detail->partner_exp_prefered_countries }}</td>
                         </tr>
                         <tr>
                             <th>PREFER CITIES</th>
-                            <td>{{ $user_details->partner_exp_prefered_cities }}</td>
+                            <td>{{ $user->user_detail->partner_exp_prefered_cities }}</td>
                         </tr>
                     </table>
 
                     <table class="table table-striped">
                         <tr>
                             <th>AGE</th>
-                            <td>{{ $user_details->partner_exp_age }}</td>
+                            <td>{{ $user->user_detail->partner_exp_age }}</td>
                         </tr>
                         <tr>
                             <th>WEIGHT</th>
-                            <td>{{ $user_details->partner_exp_weight }}</td>
+                            <td>{{ $user->user_detail->partner_exp_weight }}</td>
                         </tr>
                         <tr>
                             <th>WITH CHILDREN ACCEPTABLES</th>
-                            <td>{{ $user_details->partner_exp_with_child }}</td>
+                            <td>{{ $user->user_detail->partner_exp_with_child }}</td>
                         </tr>
                         <tr>
                             <th>RELIGION</th>
-                            <td>{{ $user_details->partner_exp_religion }}</td>
+                            <td>{{ $user->user_detail->partner_exp_religion }}</td>
                         </tr>
                         <tr>
                             <th>SUB CASTE</th>
-                            <td>{{ $user_details->partner_exp_sub_caste }}</td>
+                            <td>{{ $user->user_detail->partner_exp_sub_caste }}</td>
                         </tr>
                         <tr>
                             <th>PROFESSION</th>
-                            <td>{{ $user_details->partner_exp_profession }}</td>
+                            <td>{{ $user->user_detail->partner_exp_profession }}</td>
                         </tr>
                         <tr>
                             <th>SMOKING HABITS</th>
-                            <td>{{ $user_details->partner_exp_smoking }}</td>
+                            <td>{{ $user->user_detail->partner_exp_smoking }}</td>
                         </tr>
                         <tr>
                             <th>BODY TYPE</th>
-                            <td>{{ $user_details->partner_exp_bodyType }}</td>
+                            <td>{{ $user->user_detail->partner_exp_bodyType }}</td>
                         </tr>
                         <tr>
                             <th>ANY DISABILITY</th>
-                            <td>{{ $user_details->partner_exp_disability }}</td>
+                            <td>{{ $user->user_detail->partner_exp_disability }}</td>
                         </tr>
                         <tr>
                             <th>FAMILY STATUS</th>
-                            <td>{{ $user_details->partner_exp_family_stat }}</td>
+                            <td>{{ $user->user_detail->partner_exp_family_stat }}</td>
                         </tr>
                         <tr>
                             <th>PREFERED STATE</th>
-                            <td>{{ $user_details->partner_exp_prefered_state }}</td>
+                            <td>{{ $user->user_detail->partner_exp_prefered_state }}</td>
                         </tr>
                     </table>
                 </div>
