@@ -20,6 +20,7 @@ class SubCasteResource extends Resource
     protected static ?string $model = SubCaste::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationGroup = 'Profile Attributes';
 
     public static function form(Form $form): Form
     {
