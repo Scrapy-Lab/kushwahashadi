@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('member_id');
             $table->string('gender')->nullable();
             $table->date('dob')->default('2024-01-01')->nullable();
-            $table->string('martial_status')->nullable();
+            $table->string('marital_status')->nullable();
             $table->string('no_of_children')->nullable();
             $table->string('area')->nullable();
             $table->string('on_behalf')->nullable();
@@ -39,7 +39,7 @@ return new class extends Migration
             $table->string('annual_income')->nullable();
             $table->string('other_occupation')->nullable();
             $table->string('height')->nullable();
-            $table->string('wight')->nullable();
+            $table->string('weight')->nullable();
             $table->string('complexion')->nullable();
             $table->string('blood_group')->nullable();
             $table->string('body_type')->nullable();

@@ -2,6 +2,8 @@
 
 namespace App\Livewire;
 
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\Features\SupportFileUploads\WithFileUploads;
 use Livewire\Attributes\On;
@@ -13,6 +15,7 @@ class ProfileCard extends Component
     public $user;
     public $user_details;
     public $imageBase64;
+    public $is_view_profile = false;
 
 
     // protected $listeners = ['store_profile_image' ];
@@ -23,10 +26,21 @@ class ProfileCard extends Component
 
 
 
-    public function mount()
+    public function mount($id = null)
     {
+        // if($id){
 
-        $this->user = auth()->user();
+        // }
+
+        if ($id) {
+            $this->user = User::findOrFail($id);
+            // $this->is_view_profile = false;
+            $this->is_view_profile = true;
+        } else {
+            $this->user = Auth::user();
+        }
+
+        // $this->user = auth()->user();
         $this->user_details = $this->user->user_detail;
 
         // // Decode the base64 image data if it exists

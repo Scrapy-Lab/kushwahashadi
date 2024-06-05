@@ -64,7 +64,7 @@ class UserDetailResource extends Resource
                                                 '2' => 'Female',
                                             ]),
                                         Forms\Components\DatePicker::make('dob'),
-                                        Forms\Components\TextInput::make('martial_status')
+                                        Forms\Components\TextInput::make('marital_status')
                                             ->maxLength(255)
                                             ->default(null),
                                         Forms\Components\TextInput::make('no_of_children')
@@ -151,7 +151,7 @@ class UserDetailResource extends Resource
                                         Forms\Components\TextInput::make('height')
                                             ->maxLength(255)
                                             ->default(null),
-                                        Forms\Components\TextInput::make('wight')
+                                        Forms\Components\TextInput::make('weight')
                                             ->maxLength(255)
                                             ->default(null),
                                         Forms\Components\TextInput::make('complexion')
@@ -372,7 +372,7 @@ class UserDetailResource extends Resource
                 //     ->searchable(),
                 Tables\Columns\TextColumn::make('phone')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('martial_status')
+                Tables\Columns\TextColumn::make('marital_status')
                     ->searchable(),
                 // Tables\Columns\TextColumn::make('no_of_children'),
                 // Tables\Columns\TextColumn::make('area')
@@ -404,7 +404,7 @@ class UserDetailResource extends Resource
                 //     ->searchable(),
                 // Tables\Columns\TextColumn::make('height')
                 //     ->searchable(),
-                // Tables\Columns\TextColumn::make('wight')
+                // Tables\Columns\TextColumn::make('weight')
                 //     ->searchable(),
                 // Tables\Columns\TextColumn::make('complexion')
                 //     ->searchable(),
