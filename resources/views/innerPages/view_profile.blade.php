@@ -25,12 +25,13 @@
              <a href="#" class="nav-link">Upgrade Plan</a>
          </li>
         </ul>
-
-
         <div class="row align-items-start justify-content-between">
 
-            {{-- @livewire('profile-card') --}}
-            @livewire('user-dashboard')
+        @livewire('profile-card', ['id' => $id])
+        {{-- @if ($showProfile) --}}
+        @livewire('profile-info', ['id' => $id])
+        {{-- @endif --}}
+
         </div>
 
     </div>
