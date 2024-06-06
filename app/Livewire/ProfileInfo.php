@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\ProfileViewedBy;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
@@ -23,6 +24,11 @@ class ProfileInfo extends Component
             $this->user = User::findOrFail($id);
             $this->is_view_profile = false;
             $user = $this->user;
+
+            $profile_viewed_by = new ProfileViewedBy();
+            $profile_viewed_by->profile_id = $id;
+            $profile_viewed_by->user_id = Auth::id();
+            $profile_viewed_by->save();
         } else {
             $this->is_view_profile = true;
             $this->user = Auth::user();
@@ -175,4 +181,6 @@ class ProfileInfo extends Component
     {
         return view('livewire.profile-info');
     }
+
+    
 }
