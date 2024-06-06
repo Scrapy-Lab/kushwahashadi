@@ -24,6 +24,7 @@ class ProfileInfo extends Component
             $this->is_view_profile = false;
             $user = $this->user;
         } else {
+            $this->is_view_profile = true;
             $this->user = Auth::user();
             $user = auth()->user();
         }
