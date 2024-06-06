@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="{{ asset('css/user-member.css') }}">
+
 <x-filament-panels::page>
     <div class="fluid">
         <div class="fixed-fluid">
