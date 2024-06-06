@@ -243,18 +243,33 @@
                             </tr>
                             <tr>
                                 <th>CITY</th>
-                                <td>{{ $user->user_detail->city }}</td>
+                                @if ($editAddress)
+                                    <td><input class="form-control" value="{{ $user->user_detail->city }}"
+                                            type="text" wire:model="form.city"></td>
+                                @else
+                                    <td>{{ $user->user_detail->city }}</td>
+                                @endif
                             </tr>
                             <tr>
                                 <th>FULL ADDRESS</th>
-                                <td>{{ $user->user_detail->address }}</td>
+                                @if ($editAddress)
+                                    <td><input class="form-control" value="{{ $user->user_detail->address }}"
+                                            type="text" wire:model="form.address"></td>
+                                @else
+                                    <td>{{ $user->user_detail->address }}</td>
+                                @endif
                             </tr>
                         </table>
 
                         <table class="table table-striped">
                             <tr>
                                 <th>STATE</th>
+                                @if ($editAddress)
+                                <td><input class="form-control" value="{{ $user->user_detail->state }}"
+                                        type="text" wire:model="form.state"></td>
+                            @else
                                 <td>{{ $user->user_detail->state }}</td>
+                            @endif
                             </tr>
                         </table>
                     </div>
