@@ -31,6 +31,7 @@ class ProfileInfo extends Component
             $profile_viewed_by->user_id = Auth::id();
             $profile_viewed_by->save();
         } else {
+            $this->is_view_profile = true;
             $this->user = Auth::user();
             $user = auth()->user();
         }

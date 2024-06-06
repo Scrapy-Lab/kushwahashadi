@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\ProfileViewedBy;
 use Livewire\Component;
 
 class UserDashboard extends Component
@@ -11,6 +12,15 @@ class UserDashboard extends Component
     public $showIntrest = false;
     public $showMesssage = false;
     public $showViewers = false;
+
+    public $profileviewers;
+
+
+    public function mount(){
+
+        $this->profileviewers = ProfileViewedBy::all();
+    }
+
 
 
     public function show_profile()

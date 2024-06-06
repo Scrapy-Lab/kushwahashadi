@@ -628,12 +628,6 @@ span.grey {
     border-top: 2px solid #1BBC9C !important;
     padding: 20px 10px;
 }
-.intro i {
-    color: #fff;
-    background: #1bbc9c;
-    font-size: 14px;
-    padding: 5px 10px;
-}
 .intro p {
     margin: 0;
 }
@@ -800,4 +794,108 @@ td input.form-control {
 }
 .profileCard h3 {
     color: #000 !important;
+}
+
+
+
+/* DASHBOARD CSS */
+div#dashboard_listing {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.19);
+    height: 1097px;
+    overflow: scroll;
+}
+div#dashboard_listing a {
+    transition: all ease .5s;
+    box-shadow: 0 4px 10px -5px rgba(0, 0, 0, 0.8) !important;
+    color: #fff;
+    background: #1bbc9c;
+    font-size: 14px;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+
+div#dashboard_listing a:hover {
+    background: #000;
+}
+.table-container {
+    display: flex;
+    justify-content: space-between;
+}
+table {
+    margin: 10px 0 !important;
+}
+
+tr {
+    height: 41px;
+}
+a.show {
+    background: #1bbc9c;
+    color: #fff;
+    text-decoration: none;
+    padding-right: 12px;
+}
+
+th , td {
+    text-transform: uppercase;
+    font-size: 14px !important;
+}
+div#dashboard_listing h3 {
+    color: #1bbc9c;
+    font-weight: 800;
+    font-size: 18px;
+}
+.idMember {
+    color: grey;
+}
+
+
+
+
+
+/* Dashboard Css */
+.activeinfo {
+    width: 65%;
+    padding-top: 20px;
+}
+.activeMember img {
+    width: 236px;
+    height: fit-content;
+}
+.activeMember h2 {
+    font-size: 20px;
+    color: #1bbc9c;
+    font-weight: 700;
+}
+.activeMember td {
+    font-size: 11px !important;
+    font-weight: 700;
+    height: 41px;
+}
+.activeMember h4 {
+    font-size: 16px;
+    font-weight: bold;
+    color: grey;
+}
+span.green {
+    color: #1bbc9c;
+}
+.activeMember {
+    box-shadow: -1px 10px 1px -8px rgba(134, 134, 134, 0.75);
+    padding-top: 12px;
+}
+ul.activeDetials {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 10px 0 20px;
+}
+.editProfileMain {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.19);
+    height: 1275px !important;
+    overflow: scroll;
+}
+
+.card-title {
+    padding-top: 42px;
+    box-shadow: 0px 7px 5px 0px rgba(134, 134, 134, 0.75) inset;
 }

@@ -1,5 +1,53 @@
 <div class="col-md-7">
-    <div class="card z-depth-2-top">
+    <div class="card z-depth-2-top editProfileMain">
+
+        <div class="intro quickIntro">
+            <div class=" d-flex justify-content-between align-items-center mb-3">
+                <h4>Quick Information</h4>
+            </div>
+            <h4>Member Id: <span class="green">42A093EF6089</span></h4>
+            <div class="d-flex align-items-start mt-4">
+                <table class="table table-striped">
+                    <tr>
+                        <th>First Name</th>
+                            <th>Ritu</th>
+                    </tr>
+                    <tr>
+                        <th>Gender</th>
+                            <th>Female</th>
+                    </tr>
+                    <tr>
+                        <th>Marital Status</th>
+                            <th>Never Married</th>
+                    </tr>
+                    <tr>
+                        <th>Area</th>
+                            <th>Delhi</th>
+                    </tr>
+                </table>
+
+                <table class="table table-striped">
+                    <tr>
+                        <th>Last Name</th>
+                        <th>Kushwaha</th>
+                    </tr>
+                    <tr>
+                        <th>Age</th>
+                            <th>28</th>
+                    </tr>
+                    <tr>
+                        <th>Number of Children</th>
+                            <th>0</th>
+                    </tr>
+                    <tr>
+                        <th>On Behalf</th>
+                            <th>K_BDA</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
         <div class="card-title">
 
             <h3 class="heading heading-6 strong-500 pull-left">
@@ -195,18 +243,33 @@
                             </tr>
                             <tr>
                                 <th>CITY</th>
-                                <td>{{ $user->user_detail->city }}</td>
+                                @if ($editAddress)
+                                    <td><input class="form-control" value="{{ $user->user_detail->city }}"
+                                            type="text" wire:model="form.city"></td>
+                                @else
+                                    <td>{{ $user->user_detail->city }}</td>
+                                @endif
                             </tr>
                             <tr>
                                 <th>FULL ADDRESS</th>
-                                <td>{{ $user->user_detail->address }}</td>
+                                @if ($editAddress)
+                                    <td><input class="form-control" value="{{ $user->user_detail->address }}"
+                                            type="text" wire:model="form.address"></td>
+                                @else
+                                    <td>{{ $user->user_detail->address }}</td>
+                                @endif
                             </tr>
                         </table>
 
                         <table class="table table-striped">
                             <tr>
                                 <th>STATE</th>
+                                @if ($editAddress)
+                                <td><input class="form-control" value="{{ $user->user_detail->state }}"
+                                        type="text" wire:model="form.state"></td>
+                            @else
                                 <td>{{ $user->user_detail->state }}</td>
+                            @endif
                             </tr>
                         </table>
                     </div>

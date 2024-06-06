@@ -3,36 +3,28 @@
     {{-- Dashboard --}}
     
     <div class="container">
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
-                <a class="nav-link" href="{{ route('dashboard') }}"><i class="fa fa-heart" aria-hidden="true"></i>Dashboard</a>
-            </li>
-            <li class="nav-item" role="presentation">
-                <a class="nav-link active" href="{{ route('edit_profile') }}" id="tab1-tab" data-bs-toggle="tab"
-                    data-bs-target="#tab1" type="button" role="tab" aria-controls="tab1" aria-selected="true"><i
-                        class="fa fa-user" aria-hidden="true"></i>
-                    Edit Profile</a>
-            </li>
-
-            <li class="nav-item" role="presentation">
-                <a class="nav-link" id="tab3-tab" data-bs-toggle="tab" data-bs-target="#tab3" type="button" role="tab"
-                    aria-controls="tab3" aria-selected="false"><i class="fa fa-list-ul" aria-hidden="true"></i>
-                    Shortlist</a>
-            </li>
-            <li class="nav-item" role="presentation">
-                <a class="nav-link" id="tab4-tab" data-bs-toggle="tab" data-bs-target="#tab4" type="button" role="tab"
-                    aria-controls="tab4" aria-selected="false"><i class="fa fa-star" aria-hidden="true"></i> Followed
-                    Users</a>
-            </li>
-            <li class="nav-item" role="presentation">
-                <a class="nav-link" id="tab5-tab" data-bs-toggle="tab" data-bs-target="#tab5" type="button" role="tab"
-                    aria-controls="tab5" aria-selected="false"><i class="fa fa-comments-o" aria-hidden="true"></i>
-                    Messaging</a>
-            </li>
-            <li class="nav-item" role="presentation">
-                <a class="nav-link" id="tab6-tab" data-bs-toggle="tab" data-bs-target="#tab6" type="button" role="tab"
-                    aria-controls="tab6" aria-selected="false"><i class="fa fa-ban" aria-hidden="true"></i> Ignored List</a>
-            </li>
+        <ul class="d-flex gap-5 p-0" style="list-style: none;">
+         <li class="nav-item">
+             <a href="{{ route('dashboard') }}" class="nav-link">Dashboard</a>
+         </li>
+         <li class="nav-item">
+             <a href="{{ route('edit_profile') }}" class="nav-link">Edit Profile</a>
+         </li>
+         <li class="nav-item">
+             <a href="#" class="nav-link">Partner Expectations</a>
+         </li>
+         <li class="nav-item">
+             <a href="#" class="nav-link">Search</a>
+         </li>
+         <li class="nav-item">
+             <a href="#" class="nav-link">Happy Story</a>
+         </li>
+         <li class="nav-item">
+             <a href="#" class="nav-link">Contact Us</a>
+         </li>
+         <li class="nav-item">
+             <a href="#" class="nav-link">Upgrade Plan</a>
+         </li>
         </ul>
         <div class="row align-items-start justify-content-between">
 
