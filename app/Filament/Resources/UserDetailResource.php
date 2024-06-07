@@ -19,7 +19,9 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\HtmlString;
 use Illuminate\Support\Facades\Request;
-
+use Filament\Tables\Actions\Action;
+use Filament\Forms\Components\Toggle;
+use Filament\Forms\Components\Wizard\Step;
 class UserDetailResource extends Resource
 {
     protected static ?string $model = UserDetail::class;
@@ -483,6 +485,13 @@ class UserDetailResource extends Resource
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
+                Action::make('viewMemberDetails')
+                    ->label('Package')
+                    ->icon('heroicon-o-rectangle-stack')
+                    ->steps([
+                        Step::make('Name')
+                            ->description('Give the category a unique name')
+                    ]),
             ])
             ->bulkActions([
                 ExportBulkAction::make(),
