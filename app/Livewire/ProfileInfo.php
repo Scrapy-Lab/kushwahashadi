@@ -26,10 +26,32 @@ class ProfileInfo extends Component
             $this->is_view_profile = false;
             $user = $this->user;
 
-            $profile_viewed_by = new ProfileViewedBy();
-            $profile_viewed_by->profile_id = $id;
-            $profile_viewed_by->user_id = Auth::id();
-            $profile_viewed_by->save();
+            // $profile_viewed_by = new ProfileViewedBy();
+            // $profile_viewed_by->profile_id = $id;
+            // $profile_viewed_by->user_id = Auth::id();
+            // $profile_viewed_by->save();
+
+            $profile_id = $id; // Assuming $id is defined somewhere earlier in your code
+            $user_id = Auth::id();
+
+            // Ensure the profile_id and user_id are not the same
+            if ($profile_id !== $user_id) {
+                // Check if a record with the given profile_id and user_id already exists
+                $profile_viewed_by = ProfileViewedBy::where('profile_id', $profile_id)
+                    ->where('user_id', $user_id)
+                    ->first();
+
+                if ($profile_viewed_by) {
+                    // If the record exists, update the created_at timestamp
+                    $profile_viewed_by->touch();
+                } else {
+                    // If the record does not exist, create a new one
+                    $profile_viewed_by = new ProfileViewedBy();
+                    $profile_viewed_by->profile_id = $profile_id;
+                    $profile_viewed_by->user_id = $user_id;
+                    $profile_viewed_by->save();
+                }
+            }
         } else {
             $this->is_view_profile = true;
             $this->user = Auth::user();
@@ -182,6 +204,4 @@ class ProfileInfo extends Component
     {
         return view('livewire.profile-info');
     }
-
-    
 }

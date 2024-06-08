@@ -7,6 +7,11 @@ Route::get('/', function () {
     return view('welcome');
 })->name('login');
 
+
+Route::get('/registration-step', function () {
+    return view('innerPages.registration-step');
+})->name('registration_step');
+
 Route::group(['middleware' => ['auth']], function () {
 
 

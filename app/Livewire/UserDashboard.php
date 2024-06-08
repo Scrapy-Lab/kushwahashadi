@@ -18,7 +18,7 @@ class UserDashboard extends Component
 
     public function mount(){
 
-        $this->profileviewers = ProfileViewedBy::all();
+        $this->profileviewers = ProfileViewedBy::where("profile_id", auth()->user()->id)->get();
     }
 
 
@@ -69,6 +69,8 @@ class UserDashboard extends Component
         $this->showMesssage = false;
         $this->showViewers = true;
         $this->showProfile = false;
+
+        $this->profileviewers = ProfileViewedBy::where("profile_id", auth()->user()->id)->orderBy('created_at', 'desc')->get();
     }
 
     public function render()

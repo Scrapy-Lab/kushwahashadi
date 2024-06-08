@@ -556,11 +556,17 @@
         @if ($showViewers)
 
             <div class="col-md-7" id="dashboard_listing" wire:ignore>
-                @foreach ($profileviewers as $viewer)
+                @forelse ($profileviewers as $viewer)
                     {{-- MEMBERS --}}
                     <div class="activeMember">
                         <div class="d-flex justify-content-between">
-                            <img src="{{ url('/images/' . $viewer->user->user_detail->user_image) }}" alt="">
+                            @if ($viewer->user->user_detail->gender == 1)
+                                <img src="{{ asset('storage/profile_img/' . ($viewer->user->user_detail->user_image ?? 'default_male.jpg')) }}"
+                                    alt="">
+                            @else
+                                <img src="{{ asset('storage/profile_img/' . ($viewer->user->user_detail->user_image ?? 'default_female.jpg')) }}"
+                                    alt="">
+                            @endif
                             <div class="activeinfo">
                                 <h2>{{ $viewer->user->name }}</h2>
                                 <p class="memberDescription">...</p>
@@ -577,7 +583,7 @@
                                         <tbody>
                                             <tr>
                                                 <td>Age</td>
-                                                <td>{{$age}}</td>
+                                                <td>{{ $age }}</td>
                                             </tr>
                                             <tr>
                                                 <td>Religion</td>
@@ -618,7 +624,8 @@
                         </div>
                         <ul class="activeDetials">
                             <li>
-                                <a href="#">Full Profile</a>
+                                <a target="_blank" href="{{ route('view_profile', $viewer->user_id) }}">Full
+                                    Profile</a>
                             </li>
                             <li>
                                 <a href="#">Contact Numbers</a>
@@ -638,7 +645,11 @@
                         </ul>
                     </div>
                     {{-- MEMEBERS END --}}
-                @endforeach
+
+                @empty
+                    <h4>No User Found</h4>
+                @endforelse
+
 
 
                 {{-- MEMBERS --}}
@@ -714,6 +725,8 @@
                         <a href="#">Profile Report</a>
                     </li>
                 </ul>
+
+
             </div> --}}
                 {{-- MEMEBERS END --}}
 
@@ -947,5 +960,8 @@
 
             </div>
         @endif
+
+
+
     </div>
 </div>
