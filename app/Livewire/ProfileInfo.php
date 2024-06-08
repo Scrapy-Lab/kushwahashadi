@@ -158,33 +158,45 @@ class ProfileInfo extends Component
         $userDetail->on_behalf = $this->form['on_behalf'];
         $userDetail->on_behalf_name = $this->form['on_behalf_name'];
         $userDetail->wp_no = $this->form['wp_no'];
-        $userDetail->degree = $this->form['degree'];
+
+
         $userDetail->address = $this->form['address'];
         $userDetail->country = $this->form['country'];
         $userDetail->state = $this->form['state'];
         $userDetail->city = $this->form['city'];
+
+
+        $userDetail->degree = $this->form['degree'];
         $userDetail->highest_education = $this->form['highest_education'];
         $userDetail->occupation = $this->form['occupation'];
         $userDetail->edu_details = $this->form['edu_details'];
         $userDetail->posting_place = $this->form['posting_place'];
         $userDetail->annual_income = $this->form['annual_income'];
         $userDetail->other_occupation = $this->form['other_occupation'];
+
+
         $userDetail->height = $this->form['height'];
         $userDetail->weight = $this->form['weight'];
         $userDetail->complexion = $this->form['complexion'];
         $userDetail->blood_group = $this->form['blood_group'];
         $userDetail->body_type = $this->form['body_type'];
         $userDetail->any_disability = $this->form['any_disability'];
+
+
         $userDetail->religion = $this->form['religion'];
         $userDetail->caste = $this->form['caste'];
         $userDetail->sub_caste = $this->form['sub_caste'];
         $userDetail->gotra = $this->form['gotra'];
         $userDetail->family_values = $this->form['family_values'];
         $userDetail->family_status = $this->form['family_status'];
+
+
         $userDetail->sun_sign = $this->form['sun_sign'];
         $userDetail->moon_sign = $this->form['moon_sign'];
         $userDetail->birth_city = $this->form['birth_city'];
         $userDetail->time_of_birth = $this->form['time_of_birth'];
+
+
         $userDetail->family_residence = $this->form['family_residence'];
         $userDetail->father = $this->form['father'];
         $userDetail->mother = $this->form['mother'];

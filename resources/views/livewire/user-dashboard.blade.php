@@ -434,7 +434,7 @@
         @if ($showShortlist)
 
             <div class="col-md-7" id="dashboard_listing" wire:ignore>
-                <h3>Shortlisted Candidates</h3>
+                <h3>Shortlisted Profile</h3>
                 @forelse ($shortlistedCandidates as $viewer)
                     {{-- MEMBERS --}}
                     <div class="activeMember">

@@ -74,7 +74,7 @@ class Registration extends Component
             ];
 
             if (Auth::attempt($credentials)) {
-                return redirect()->intended('/dashboard');
+                return redirect()->intended('/registration-step');
             }
             // return redirect(route('dashboard'));
         } catch (\Exception $e) {

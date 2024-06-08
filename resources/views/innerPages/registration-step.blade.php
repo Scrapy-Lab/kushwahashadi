@@ -35,17 +35,21 @@
 
         .gradient-custom-2 {
             /* fallback for old browsers */
-            background: #a1c4fd;
+            /* background: #a1c4fd; */
 
             /* Chrome 10-25, Safari 5.1-6 */
-            background: -webkit-linear-gradient(to right, rgba(161, 196, 253, 1), rgba(194, 233, 251, 1));
+            /* background: -webkit-linear-gradient(to right, rgba(161, 196, 253, 1), rgba(194, 233, 251, 1)); */
 
             /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-            background: linear-gradient(to right, rgba(161, 196, 253, 1), rgba(194, 233, 251, 1))
+            /* background: linear-gradient(to right, rgba(161, 196, 253, 1), rgba(194, 233, 251, 1)) */
+
+            background: linear-gradient(90deg, rgba(255,200,208,1) 0%, rgba(255,200,244,1) 100%);
         }
 
         .bg-indigo {
-            background-color: #4835d4;
+            /* background-color: #4835d4; */
+            background: linear-gradient(90deg, rgba(144, 29, 40, 1) 0%, rgba(99, 37, 86, 1) 100%);
+
         }
 
         @media (min-width: 992px) {
