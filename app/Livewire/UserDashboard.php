@@ -50,6 +50,9 @@ class UserDashboard extends Component
         $this->showMesssage = false;
         $this->showViewers = false;
         $this->showProfile = false;
+
+        // Add Shortlist Model here to show data on line no 434  @if ($showShortlist)
+        $this->profileviewers = ProfileViewedBy::where("profile_id", auth()->user()->id)->orderBy('created_at', 'desc')->get();
     }
 
     public function show_intrest()
@@ -60,6 +63,7 @@ class UserDashboard extends Component
         $this->showMesssage = false;
         $this->showViewers = false;
         $this->showProfile = false;
+
     }
 
     public function show_messsage()
