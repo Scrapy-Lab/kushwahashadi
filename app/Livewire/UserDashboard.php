@@ -25,8 +25,8 @@ class UserDashboard extends Component
     public function mount(){
 
         $this->profileviewers = ProfileViewedBy::all();
-        $this->profileviewersList = ProfileViewedBy::where('profile_id',Auth::id())->distinct()->get();
-        $this->shortlistedCandidates = ShortlistedCandidate::where('user_id',Auth::id())->get();
+        $this->profileviewersList = ProfileViewedBy::where('profile_id',Auth::id())->get();
+       
         // dd($this->profileviewersList);
     }
 
@@ -52,7 +52,8 @@ class UserDashboard extends Component
         $this->showProfile = false;
 
         // Add Shortlist Model here to show data on line no 434  @if ($showShortlist)
-        $this->profileviewers = ProfileViewedBy::where("profile_id", auth()->user()->id)->orderBy('created_at', 'desc')->get();
+        $this->shortlistedCandidates = ShortlistedCandidate::where('user_id',Auth::id())->get();
+        // $this->profileviewers = ProfileViewedBy::where("profile_id", auth()->user()->id)->orderBy('created_at', 'desc')->get();
     }
 
     public function show_intrest()
@@ -93,6 +94,11 @@ class UserDashboard extends Component
         $shortlist_candidate->profile_id = $id;
         $shortlist_candidate->user_id = Auth::id();
         $shortlist_candidate->save();
+    }
+
+    public function checkshortlist($id)
+    {
+
     }
 
     public function render()

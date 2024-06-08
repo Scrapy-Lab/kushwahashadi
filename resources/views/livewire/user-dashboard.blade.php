@@ -432,28 +432,31 @@
         @endif
 
         @if ($showShortlist)
+
             <div class="col-md-7" id="dashboard_listing" wire:ignore>
-                @forelse ($profileviewers as $viewer)
+                <h3>Shortlisted Candidates</h3>
+                @forelse ($shortlistedCandidates as $viewer)
                     {{-- MEMBERS --}}
                     <div class="activeMember">
                         <div class="d-flex justify-content-between">
-                            @if ($viewer->user->user_detail->gender == 1)
-                                <img src="{{ asset('storage/profile_img/' . ($viewer->user->user_detail->user_image ?? 'default_male.jpg')) }}"
+                            @if ($viewer->profile->user_detail->gender == 1)
+                                <img src="{{ asset('storage/profile_img/' . ($viewer->profile->user_detail->user_image ?? 'default_male.jpg')) }}"
                                     alt="">
                             @else
-                                <img src="{{ asset('storage/profile_img/' . ($viewer->user->user_detail->user_image ?? 'default_female.jpg')) }}"
+                                <img src="{{ asset('storage/profile_img/' . ($viewer->profile->user_detail->user_image ?? 'default_female.jpg')) }}"
                                     alt="">
                             @endif
                             <div class="activeinfo">
-                                <h2>{{ $viewer->user->name }}</h2>
+                                <h2>{{ $viewer->profile->name }}</h2>
                                 <p class="memberDescription">...</p>
                                 @php
-                                    $dob = Carbon\Carbon::parse($viewer->user->user_detail->dob);
+                                    $dob = Carbon\Carbon::parse($viewer->profile->user_detail->dob);
                                     $age = $dob->age;
                                 @endphp
 
-                                <p class="occupation">{{ $viewer->user->user_detail->occupation }}</p>
-                                <h4>Member Id: <span class="green">{{ $viewer->user->user_detail->member_id }}</span>
+                                <p class="occupation">{{ $viewer->profile->user_detail->occupation }}</p>
+                                <h4>Member Id: <span
+                                        class="green">{{ $viewer->profile->user_detail->member_id }}</span>
                                 </h4>
                                 <div class="d-flex">
                                     <table class="table table-striped">
@@ -464,15 +467,15 @@
                                             </tr>
                                             <tr>
                                                 <td>Religion</td>
-                                                <td>{{ $viewer->user->user_detail->religion }}</td>
+                                                <td>{{ $viewer->profile->user_detail->religion }}</td>
                                             </tr>
                                             <tr>
                                                 <td>Highest Education</td>
-                                                <td>{{ $viewer->user->user_detail->highest_education }}</td>
+                                                <td>{{ $viewer->profile->user_detail->highest_education }}</td>
                                             </tr>
                                             <tr>
                                                 <td>Location</td>
-                                                <td>{{ $viewer->user->user_detail->address }}</td>
+                                                <td>{{ $viewer->profile->user_detail->address }}</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -480,15 +483,15 @@
                                         <tbody>
                                             <tr>
                                                 <td>Height</td>
-                                                <td>{{ $viewer->user->user_detail->member_id }} Feet</td>
+                                                <td>{{ $viewer->profile->user_detail->member_id }} Feet</td>
                                             </tr>
                                             <tr>
                                                 <td>Caste / Sect</td>
-                                                <td>{{ $viewer->user->user_detail->caste }}</td>
+                                                <td>{{ $viewer->profile->user_detail->caste }}</td>
                                             </tr>
                                             <tr>
                                                 <td>Marital Status</td>
-                                                <td>{{ $viewer->user->user_detail->marital_status }}</td>
+                                                <td>{{ $viewer->profile->user_detail->marital_status }}</td>
                                             </tr>
                                             <tr>
                                                 <td></td>
@@ -643,9 +646,21 @@
                             <li>
                                 <a href="#">Contact Numbers</a>
                             </li>
-                            <li>
-                                <a wire:click="shortlist_candidates({{ $viewer->user->id }})">Shortlist</a>
-                            </li>
+                            @php
+
+                                $isShortlisted = \App\Models\ShortlistedCandidate::where('profile_id', $viewer->user_id)
+                                    ->where('user_id', Auth::id())
+                                    ->first();
+                            @endphp
+                            @if (empty($isShortlisted))
+                                <li>
+                                    <a wire:click="shortlist_candidates({{ $viewer->user->id }})">Shortlist</a>
+                                </li>
+                            @else
+                                <li>
+                                    <a>Shortlisted</a>
+                                </li>
+                            @endif
                             <li>
                                 <a href="#">Follow</a>
                             </li>
