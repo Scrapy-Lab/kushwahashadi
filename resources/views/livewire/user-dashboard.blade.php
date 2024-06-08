@@ -466,50 +466,6 @@
                                         <i class="fa fa-times" aria-hidden="true"></i>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td><img src="images/img12.jpg" alt=""></td>
-                                    <td>Shalini Singh</td>
-                                    <td>33</td>
-                                    <td>Hindu</td>
-                                    <td>Uttar Pardesh Bharat</td>
-                                    <td></td>
-                                    <td><i class="fa fa-heart" aria-hidden="true"></i>
-                                        <i class="fa fa-times" aria-hidden="true"></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><img src="images/img13.jpg" alt=""></td>
-                                    <td>Suman Verma</td>
-                                    <td>34</td>
-                                    <td>Hindu</td>
-                                    <td>Uttar Pardesh</td>
-                                    <td></td>
-                                    <td><i class="fa fa-heart" aria-hidden="true"></i>
-                                        <i class="fa fa-times" aria-hidden="true"></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><img src="images/img13.jpg" alt=""></td>
-                                    <td>Shivani Maurya</td>
-                                    <td>29</td>
-                                    <td>Hindu</td>
-                                    <td>Uttar Pardesh</td>
-                                    <td></td>
-                                    <td><i class="fa fa-heart" aria-hidden="true"></i>
-                                        <i class="fa fa-times" aria-hidden="true"></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><img src="images/img13.jpg" alt=""></td>
-                                    <td>Sneha Lata Verma</td>
-                                    <td>30</td>
-                                    <td>Hindu</td>
-                                    <td>Uttar Pardesh</td>
-                                    <td></td>
-                                    <td><i class="fa fa-heart" aria-hidden="true"></i>
-                                        <i class="fa fa-times" aria-hidden="true"></i>
-                                    </td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -631,7 +587,7 @@
                                 <a href="#">Contact Numbers</a>
                             </li>
                             <li>
-                                <a href="#">Shortlist</a>
+                                <a wire:click="shortlist_candidates({{$viewer->user->id}})">Shortlist</a>
                             </li>
                             <li>
                                 <a href="#">Follow</a>
