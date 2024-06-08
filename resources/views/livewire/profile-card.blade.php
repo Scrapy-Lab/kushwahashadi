@@ -24,14 +24,14 @@
         <button class="btn btn-success" id="profile_image">Submit</button>
     </form>
     <div class="profile-details">
-        <h2 class="heading heading-3 strong-500 profile-name">{{ ucfirst($user->name) }} {{ $user->last_name }}</h2>
+        {{-- <h2 class="heading heading-3 strong-500 profile-name">{{ ucfirst($user->name) }} {{ $user->last_name }}</h2>
         <h3 class="heading heading-6 strong-400 profile-occupation mt-3">14</h3>
         <div class="profile-stats clearfix mt-2">
             <div class="stats-entry" style="width: 100%">
                 <span class="stats-count">0</span>
                 <span class="stats-label text-uppercase">Followers</span>
             </div>
-        </div>
+        </div> --}}
         <!-- Profile connect -->
         <div class="profile-connect mt-5">
             <!-- <a href="#" class="btn btn-styled btn-block btn-circle btn-sm btn-base-5">Follow</a>

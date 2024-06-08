@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
     {{-- Dashboard --}}
+    
     <div class="container">
         <ul class="d-flex gap-5 p-0" style="list-style: none;">
          <li class="nav-item">
@@ -27,10 +28,10 @@
         </ul>
         <div class="row align-items-start justify-content-between">
 
-        @livewire('profile-card', ['id' => $id])
-        {{-- @if ($showProfile) --}}
-        @livewire('profile-info', ['id' => $id])
-        {{-- @endif --}}
+            @livewire('profile-card', ['id' => $id])
+            {{-- @if ($showProfile) --}}
+            @livewire('profile-info', ['id' => $id])
+            {{-- @endif --}}
 
         </div>
 

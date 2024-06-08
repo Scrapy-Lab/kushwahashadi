@@ -7,6 +7,11 @@ Route::get('/', function () {
     return view('welcome');
 })->name('login');
 
+
+Route::get('/registration-step', function () {
+    return view('innerPages.registration-step');
+})->name('registration_step');
+
 Route::group(['middleware' => ['auth']], function () {
 
 
@@ -23,6 +28,7 @@ Route::group(['middleware' => ['auth']], function () {
     // })->name('view_profile');
 });
 Route::get('/view-profile/{id}', function ($id) {
+    // dd($id);
     return view('innerPages.view_profile', ['id' => $id]);
 })->name('view_profile');
 

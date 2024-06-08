@@ -2,6 +2,8 @@
 
 namespace App\Livewire;
 
+
+use App\Models\ProfileViewedBy;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
@@ -23,6 +25,33 @@ class ProfileInfo extends Component
             $this->user = User::findOrFail($id);
             $this->is_view_profile = false;
             $user = $this->user;
+
+            // $profile_viewed_by = new ProfileViewedBy();
+            // $profile_viewed_by->profile_id = $id;
+            // $profile_viewed_by->user_id = Auth::id();
+            // $profile_viewed_by->save();
+
+            $profile_id = $id; // Assuming $id is defined somewhere earlier in your code
+            $user_id = Auth::id();
+
+            // Ensure the profile_id and user_id are not the same
+            if ($profile_id !== $user_id) {
+                // Check if a record with the given profile_id and user_id already exists
+                $profile_viewed_by = ProfileViewedBy::where('profile_id', $profile_id)
+                    ->where('user_id', $user_id)
+                    ->first();
+
+                if ($profile_viewed_by) {
+                    // If the record exists, update the created_at timestamp
+                    $profile_viewed_by->touch();
+                } else {
+                    // If the record does not exist, create a new one
+                    $profile_viewed_by = new ProfileViewedBy();
+                    $profile_viewed_by->profile_id = $profile_id;
+                    $profile_viewed_by->user_id = $user_id;
+                    $profile_viewed_by->save();
+                }
+            }
         } else {
             $this->is_view_profile = true;
             $this->user = Auth::user();
@@ -129,33 +158,45 @@ class ProfileInfo extends Component
         $userDetail->on_behalf = $this->form['on_behalf'];
         $userDetail->on_behalf_name = $this->form['on_behalf_name'];
         $userDetail->wp_no = $this->form['wp_no'];
-        $userDetail->degree = $this->form['degree'];
+
+
         $userDetail->address = $this->form['address'];
         $userDetail->country = $this->form['country'];
         $userDetail->state = $this->form['state'];
         $userDetail->city = $this->form['city'];
+
+
+        $userDetail->degree = $this->form['degree'];
         $userDetail->highest_education = $this->form['highest_education'];
         $userDetail->occupation = $this->form['occupation'];
         $userDetail->edu_details = $this->form['edu_details'];
         $userDetail->posting_place = $this->form['posting_place'];
         $userDetail->annual_income = $this->form['annual_income'];
         $userDetail->other_occupation = $this->form['other_occupation'];
+
+
         $userDetail->height = $this->form['height'];
         $userDetail->weight = $this->form['weight'];
         $userDetail->complexion = $this->form['complexion'];
         $userDetail->blood_group = $this->form['blood_group'];
         $userDetail->body_type = $this->form['body_type'];
         $userDetail->any_disability = $this->form['any_disability'];
+
+
         $userDetail->religion = $this->form['religion'];
         $userDetail->caste = $this->form['caste'];
         $userDetail->sub_caste = $this->form['sub_caste'];
         $userDetail->gotra = $this->form['gotra'];
         $userDetail->family_values = $this->form['family_values'];
         $userDetail->family_status = $this->form['family_status'];
+
+
         $userDetail->sun_sign = $this->form['sun_sign'];
         $userDetail->moon_sign = $this->form['moon_sign'];
         $userDetail->birth_city = $this->form['birth_city'];
         $userDetail->time_of_birth = $this->form['time_of_birth'];
+
+
         $userDetail->family_residence = $this->form['family_residence'];
         $userDetail->father = $this->form['father'];
         $userDetail->mother = $this->form['mother'];
