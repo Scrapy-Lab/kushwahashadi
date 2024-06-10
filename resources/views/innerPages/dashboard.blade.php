@@ -10,7 +10,7 @@
              <a href="{{ route('edit_profile') }}" class="nav-link">Edit Profile</a>
          </li>
          <li class="nav-item">
-             <a href="#" class="nav-link">Partner Expectations</a>
+             <a href="{{ route('partner_expectation') }}" class="nav-link">Partner Expectations</a>
          </li>
          <li class="nav-item">
              <a href="#" class="nav-link">Search</a>

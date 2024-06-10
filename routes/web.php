@@ -23,6 +23,10 @@ Route::group(['middleware' => ['auth']], function () {
         return view('innerPages.edit_profile');
     })->name('edit_profile');
 
+    Route::get('/partner-expectation', function () {
+        return view('innerPages.partner_expectation');
+    })->name('partner_expectation');
+
     // Route::get('/view-profile/{id}', function () {
     //     return view('innerPages.view_profile');
     // })->name('view_profile');
@@ -31,6 +35,8 @@ Route::get('/view-profile/{id}', function ($id) {
     // dd($id);
     return view('innerPages.view_profile', ['id' => $id]);
 })->name('view_profile');
+
+
 
 
 Route::get('crop-image-upload', [CropImageController::class, 'index']);
