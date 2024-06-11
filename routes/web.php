@@ -40,3 +40,7 @@ Route::get('/logout', function () {
     Auth::logout();
     return redirect('/');
 })->name('logout');
+
+Route::get('/admin-dashboard',function() {
+    return view('admin-panel.admin-dashboard');
+})->name('admin.dashboard');
