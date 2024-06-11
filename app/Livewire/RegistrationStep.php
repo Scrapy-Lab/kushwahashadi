@@ -2,6 +2,16 @@
 
 namespace App\Livewire;
 
+use App\Models\BodyType;
+use App\Models\Caste;
+use App\Models\Complexion;
+use App\Models\FamilyStatus;
+use App\Models\FamilyValue;
+use App\Models\HighestEducation;
+use App\Models\Occupation;
+use App\Models\OnBehalf;
+use App\Models\Religion;
+use App\Models\SubCaste;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
@@ -11,6 +21,16 @@ class RegistrationStep extends Component
 
     public $user;
     public $userDetail;
+    public $on_behalf;
+    public $highest_education;
+    public $occupation;
+    public $body_type;
+    public $religion;
+    public $complexion;
+    public $caste;
+    public $sub_caste;
+    public $family_values;
+    public $family_status;
     public $form = [];
 
     public function mount()
@@ -73,6 +93,18 @@ class RegistrationStep extends Component
 
         $this->user = Auth::user();
         $this->userDetail = $user->user_detail;
+
+        $this->on_behalf = OnBehalf::all();
+        $this->highest_education = HighestEducation::all();
+        $this->occupation = Occupation::all();
+        $this->body_type = BodyType::all();
+        $this->religion = Religion::all();
+        $this->caste = Caste::all();
+        $this->complexion = Complexion::all();
+        $this->sub_caste = SubCaste::all();
+        $this->family_values = FamilyValue::all();
+        $this->family_status = FamilyStatus::all();
+
     }
 
 

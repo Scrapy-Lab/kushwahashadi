@@ -2,6 +2,8 @@
 
 namespace App\Livewire;
 
+use App\Models\HighestEducation;
+use App\Models\OnBehalf;
 use Livewire\Component;
 use App\Models\User;
 use App\Models\UserDetail;
@@ -19,7 +21,7 @@ class Registration extends Component
     public $degree;
     public $address;
     public $height;
-    public $profession;
+    public $highest_education;
     public $email;
     public $sibling_name;
     public $password;
@@ -28,10 +30,16 @@ class Registration extends Component
     public $createUser;
     public $createUserDetail;
 
+
+    public $on_behalf_select;
+    public $highest_education_select;
+
     public function mount()
     {
         $this->createUser = new User();
         $this->createUserDetail = new UserDetail();
+        $this->on_behalf_select = OnBehalf::all();
+        $this->highest_education_select = HighestEducation::all();
     }
 
     public function render()
@@ -60,7 +68,7 @@ class Registration extends Component
             $this->createUserDetail->degree = $this->degree;
             $this->createUserDetail->address = $this->address;
             $this->createUserDetail->height = $this->height;
-            // $this->createUserDetail->profession = $this->profession;
+            $this->createUserDetail->highest_education = $this->highest_education;
             // $this->createUserDetail->sibling_name = $this->sibling_name;
             $this->createUser->email = $this->email;
             $this->createUser->password = Hash::make($this->password);

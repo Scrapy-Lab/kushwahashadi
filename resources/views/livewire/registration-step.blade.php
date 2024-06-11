@@ -45,7 +45,8 @@
 
                                                 <div data-mdb-input-init class="form-outline">
                                                     <input type="text" id="form3Examplev2"
-                                                        class="form-control form-control-lg" wire:model="form.email"  disabled/>
+                                                        class="form-control form-control-lg" wire:model="form.email"
+                                                        disabled />
                                                     <label class="form-label" for="form3Examplev2">Email</label>
                                                 </div>
 
@@ -74,12 +75,17 @@
                                             </div>
                                             <div class="col-md-6 mb-4 pb-2">
 
-                                                <div data-mdb-input-init class="form-outline">
-                                                    <input type="text" id="form3Examplev3"
-                                                        class="form-control form-control-lg"
-                                                        wire:model="form.on_behalf" />
-                                                    <label class="form-label" for="form3Examplev3">ON BEHALF</label>
+                                                <div>
+
+                                                    <select class="form-select" wire:model="form.on_behalf">
+                                                        <option value="">Select On Behalf</option>
+                                                        @foreach ($on_behalf as $data)
+                                                            <option value="{{ $data->id }}">{{ $data->name }}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
                                                 </div>
+
 
                                             </div>
                                             <div class="col-md-6 mb-4 pb-2">
@@ -278,12 +284,25 @@
                                         <div class="row">
                                             <div class="col-md-6 mb-4 pb-2">
 
-                                                <div data-mdb-input-init class="form-outline">
+                                                {{-- <div data-mdb-input-init class="form-outline">
                                                     <input type="text" id="form3Examplev2"
                                                         class="form-control form-control-lg"
                                                         wire:model="form.highest_education" />
                                                     <label class="form-label" for="form3Examplev2">HIGHEST
                                                         EDUCATION</label>
+                                                </div> --}}
+
+
+                                                <div>
+
+                                                    <select class="form-select" wire:model="form.highest_education">
+                                                        <option value="">Select HIGHEST
+                                                            EDUCATION</option>
+                                                        @foreach ($highest_education as $data)
+                                                            <option value="{{ $data->id }}">{{ $data->name }}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
                                                 </div>
 
 
@@ -301,12 +320,24 @@
                                             </div>
                                             <div class="col-md-12 mb-4 pb-2">
 
-                                                <div data-mdb-input-init class="form-outline">
+                                                {{-- <div data-mdb-input-init class="form-outline">
                                                     <input type="text" id="form3Examplev3"
                                                         class="form-control form-control-lg"
                                                         wire:model="form.occupation" />
                                                     <label class="form-label" for="form3Examplev3">OCCUPATION</label>
+                                                </div> --}}
+
+                                                <div>
+
+                                                    <select class="form-select" wire:model="form.occupation">
+                                                        <option value="">Select OCCUPATION</option>
+                                                        @foreach ($occupation as $data)
+                                                            <option value="{{ $data->id }}">{{ $data->name }}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
                                                 </div>
+
 
                                             </div>
                                         </div>
@@ -378,7 +409,8 @@
                                             <div class="col-md-6  mb-4 pb-2">
                                                 <div data-mdb-input-init class="form-outline form-white">
                                                     <input type="text" id="form3Examplea2"
-                                                        class="form-control form-control-lg" wire:model="form.height" />
+                                                        class="form-control form-control-lg"
+                                                        wire:model="form.height" />
                                                     <label class="form-label" for="form3Examplea2">HEIGHT</label>
                                                 </div>
                                             </div>
@@ -387,37 +419,64 @@
                                             <div class="col-md-6 mb-4 pb-2">
                                                 <div data-mdb-input-init class="form-outline form-white">
                                                     <input type="text" id="form3Examplea6"
-                                                        class="form-control form-control-lg" wire:model="form.weight" />
+                                                        class="form-control form-control-lg"
+                                                        wire:model="form.weight" />
                                                     <label class="form-label" for="form3Examplea6">WEIGHT</label>
                                                 </div>
                                             </div>
 
                                             <div class="col-md-6 mb-4 pb-2">
-                                                <div data-mdb-input-init class="form-outline form-white">
+                                                {{-- <div data-mdb-input-init class="form-outline form-white">
                                                     <input type="text" id="form3Examplea6"
-                                                        class="form-control form-control-lg" wire:model="form.complexion" />
+                                                        class="form-control form-control-lg"
+                                                        wire:model="form.complexion" />
                                                     <label class="form-label" for="form3Examplea6">COMPLEXION</label>
+                                                </div> --}}
+                                                <div>
+
+                                                    <select class="form-select" wire:model="form.complexion">
+                                                        <option value="">Select COMPLEXION</option>
+                                                        @foreach ($complexion as $data)
+                                                            <option value="{{ $data->id }}">{{ $data->name }}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
                                                 </div>
+
                                             </div>
 
                                             <div class=" col-md-6 mb-4 pb-2">
                                                 <div data-mdb-input-init class="form-outline form-white">
                                                     <input type="text" id="form3Examplea6"
-                                                        class="form-control form-control-lg" wire:model="form.blood_group" />
+                                                        class="form-control form-control-lg"
+                                                        wire:model="form.blood_group" />
                                                     <label class="form-label" for="form3Examplea6">BLOOD GROUP</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 mb-4 pb-2">
-                                                <div data-mdb-input-init class="form-outline form-white">
+                                                {{-- <div data-mdb-input-init class="form-outline form-white">
                                                     <input type="text" id="form3Examplea6"
-                                                        class="form-control form-control-lg" wire:model="form.body_type" />
+                                                        class="form-control form-control-lg"
+                                                        wire:model="form.body_type" />
                                                     <label class="form-label" for="form3Examplea6">BODY TYPE</label>
+                                                </div> --}}
+
+                                                <div>
+
+                                                    <select class="form-select" wire:model="form.body_type">
+                                                        <option value="">Select BODY TYPE</option>
+                                                        @foreach ($body_type as $data)
+                                                            <option value="{{ $data->id }}">{{ $data->name }}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 mb-4 pb-2">
                                                 <div data-mdb-input-init class="form-outline form-white">
                                                     <input type="text" id="form3Examplea6"
-                                                        class="form-control form-control-lg" wire:model="form.any_disability" />
+                                                        class="form-control form-control-lg"
+                                                        wire:model="form.any_disability" />
                                                     <label class="form-label" for="form3Examplea6">ANY
                                                         DISABILITY</label>
                                                 </div>
@@ -455,8 +514,10 @@
                                                 <div>
                                                     <select class="form-select" wire:model="form.religion">
                                                         <option value="">Select RELIGION</option>
-                                                        <option value="1">Male</option>
-                                                        <option value="2">Female</option>
+                                                        @foreach ($religion as $data)
+                                                            <option value="{{ $data->id }}">{{ $data->name }}
+                                                            </option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
 
@@ -466,8 +527,10 @@
                                                 <div>
                                                     <select class="form-select" wire:model="form.caste">
                                                         <option value="">Select CASTE / SECT</option>
-                                                        <option value="1">Male</option>
-                                                        <option value="2">Female</option>
+                                                        @foreach ($caste as $data)
+                                                            <option value="{{ $data->id }}">{{ $data->name }}
+                                                            </option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
 
@@ -481,8 +544,10 @@
                                                 <div>
                                                     <select class="form-select" wire:model="form.sub_caste">
                                                         <option value="">Select SUB-CASTE</option>
-                                                        <option value="1">Male</option>
-                                                        <option value="2">Female</option>
+                                                        @foreach ($sub_caste as $data)
+                                                            <option value="{{ $data->id }}">{{ $data->name }}
+                                                            </option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
 
@@ -491,7 +556,8 @@
 
                                                 <div data-mdb-input-init class="form-outline">
                                                     <input type="text" id="form3Examplev3"
-                                                        class="form-control form-control-lg" wire:model="form.gotra" />
+                                                        class="form-control form-control-lg"
+                                                        wire:model="form.gotra" />
                                                     <label class="form-label" for="form3Examplev3">GOTRA</label>
                                                 </div>
 
@@ -504,8 +570,10 @@
                                                 <div>
                                                     <select class="form-select" wire:model="form.family_values">
                                                         <option value="">Select FAMILY VALUES</option>
-                                                        <option value="1">Male</option>
-                                                        <option value="2">Female</option>
+                                                        @foreach ($family_values as $data)
+                                                            <option value="{{ $data->id }}">{{ $data->name }}
+                                                            </option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
 
@@ -515,8 +583,10 @@
                                                 <div>
                                                     <select class="form-select" wire:model="form.family_status">
                                                         <option value="">Select FAMILY STATUS</option>
-                                                        <option value="1">Male</option>
-                                                        <option value="2">Female</option>
+                                                        @foreach ($family_status as $data)
+                                                            <option value="{{ $data->id }}">{{ $data->name }}
+                                                            </option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
 
@@ -549,7 +619,8 @@
                                         <div class="mb-4 pb-2">
                                             <div data-mdb-input-init class="form-outline form-white">
                                                 <input type="text" id="form3Examplea2"
-                                                    class="form-control form-control-lg" wire:model="form.moon_sign" />
+                                                    class="form-control form-control-lg"
+                                                    wire:model="form.moon_sign" />
                                                 <label class="form-label" for="form3Examplea2">MOON SIGN</label>
                                             </div>
                                         </div>
@@ -557,14 +628,16 @@
                                         <div class="mb-4 pb-2">
                                             <div data-mdb-input-init class="form-outline form-white">
                                                 <input type="text" id="form3Examplea6"
-                                                    class="form-control form-control-lg" wire:model="form.birth_city" />
+                                                    class="form-control form-control-lg"
+                                                    wire:model="form.birth_city" />
                                                 <label class="form-label" for="form3Examplea6">CITY OF BIRTH</label>
                                             </div>
                                         </div>
                                         <div class="mb-4 pb-2">
                                             <div data-mdb-input-init class="form-outline form-white">
                                                 <input type="text" id="form3Examplea6"
-                                                    class="form-control form-control-lg" wire:model="form.time_of_birth" />
+                                                    class="form-control form-control-lg"
+                                                    wire:model="form.time_of_birth" />
                                                 <label class="form-label" for="form3Examplea6">TIME OF BIRTH</label>
                                             </div>
                                         </div>
@@ -611,7 +684,8 @@
 
                                                 <div data-mdb-input-init class="form-outline">
                                                     <input type="text" id="form3Examplev2"
-                                                        class="form-control form-control-lg" wire:model="form.family_residence" />
+                                                        class="form-control form-control-lg"
+                                                        wire:model="form.family_residence" />
                                                     <label class="form-label" for="form3Examplev2">FAMILY
                                                         RESIDENCE</label>
                                                 </div>
@@ -621,7 +695,8 @@
 
                                                 <div data-mdb-input-init class="form-outline">
                                                     <input type="text" id="form3Examplev3"
-                                                        class="form-control form-control-lg" wire:model="form.native_place" />
+                                                        class="form-control form-control-lg"
+                                                        wire:model="form.native_place" />
                                                     <label class="form-label" for="form3Examplev3">NATIVE
                                                         PLACE</label>
                                                 </div>
@@ -635,7 +710,8 @@
 
                                                 <div data-mdb-input-init class="form-outline">
                                                     <input type="text" id="form3Examplev2"
-                                                        class="form-control form-control-lg" wire:model="form.father" />
+                                                        class="form-control form-control-lg"
+                                                        wire:model="form.father" />
                                                     <label class="form-label" for="form3Examplev2">FATHER</label>
                                                 </div>
 
@@ -644,7 +720,8 @@
 
                                                 <div data-mdb-input-init class="form-outline">
                                                     <input type="text" id="form3Examplev3"
-                                                        class="form-control form-control-lg" wire:model="form.father_occupation" />
+                                                        class="form-control form-control-lg"
+                                                        wire:model="form.father_occupation" />
                                                     <label class="form-label" for="form3Examplev3">FATHER
                                                         OCCUPATION</label>
                                                 </div>
@@ -657,7 +734,8 @@
 
                                                 <div data-mdb-input-init class="form-outline">
                                                     <input type="text" id="form3Examplev3"
-                                                        class="form-control form-control-lg" wire:model="form.mother" />
+                                                        class="form-control form-control-lg"
+                                                        wire:model="form.mother" />
                                                     <label class="form-label" for="form3Examplev3">MOTHER</label>
                                                 </div>
 
@@ -666,7 +744,8 @@
 
                                                 <div data-mdb-input-init class="form-outline">
                                                     <input type="text" id="form3Examplev3"
-                                                        class="form-control form-control-lg" wire:model="form.mother_occupation" />
+                                                        class="form-control form-control-lg"
+                                                        wire:model="form.mother_occupation" />
                                                     <label class="form-label" for="form3Examplev3">MOTHER
                                                         OCCUPATION</label>
                                                 </div>
@@ -676,7 +755,8 @@
 
                                                 <div data-mdb-input-init class="form-outline">
                                                     <input type="text" id="form3Examplev3"
-                                                        class="form-control form-control-lg" wire:model="form.brother" />
+                                                        class="form-control form-control-lg"
+                                                        wire:model="form.brother" />
                                                     <label class="form-label" for="form3Examplev3">BROTHER</label>
                                                 </div>
 
@@ -686,7 +766,8 @@
 
                                                 <div data-mdb-input-init class="form-outline">
                                                     <input type="text" id="form3Examplev3"
-                                                        class="form-control form-control-lg" wire:model="form.brother_occupation" />
+                                                        class="form-control form-control-lg"
+                                                        wire:model="form.brother_occupation" />
                                                     <label class="form-label" for="form3Examplev3">BROTHER
                                                         OCCUPATION</label>
                                                 </div>
@@ -697,7 +778,8 @@
 
                                                 <div data-mdb-input-init class="form-outline">
                                                     <input type="text" id="form3Examplev3"
-                                                        class="form-control form-control-lg" wire:model="form.sister" />
+                                                        class="form-control form-control-lg"
+                                                        wire:model="form.sister" />
                                                     <label class="form-label" for="form3Examplev3">SISTER</label>
                                                 </div>
 
@@ -707,7 +789,8 @@
 
                                                 <div data-mdb-input-init class="form-outline">
                                                     <input type="text" id="form3Examplev3"
-                                                        class="form-control form-control-lg" wire:model="form.sister_occupation" />
+                                                        class="form-control form-control-lg"
+                                                        wire:model="form.sister_occupation" />
                                                     <label class="form-label" for="form3Examplev3">SISTER
                                                         OCCUPATION</label>
                                                 </div>
