@@ -9,9 +9,14 @@
             <div class="inputgroup d-flex">
                 <label>On Behalf </label>
                 <select wire:model="on_behalf" name="">
-                    <option value="self">Self</option>
+                    <option value=" ">Select On Behalf</option>
+                    @foreach ($on_behalf_select as $data)
+                        <option value="{{ $data->id }}">{{ $data->name }}
+                        </option>
+                    @endforeach
+                    {{-- <option value="self">Self</option>
                     <option value="son">Son</option>
-                    <option value="daughter">Daughter</option>
+                    <option value="daughter">Daughter</option> --}}
                 </select>
             </div>
             <div class="inputgroup d-flex">
@@ -56,14 +61,30 @@
             <div class="inputgroup d-flex">
                 <label>Height</label>
                 <select wire:model="height" name="">
-                    <option value="5.0">5'0'{1.52 mts}</option>
+                    <option value="">Select Height in CM</option>
+                    @for ($i=140; $i<=190 ; $i++)
+
+                    <option value="{{ $i }}">{{ $i }} CM
+                    </option>
+                    @endfor
+                    {{-- <option value="5.0">5'0'{1.52 mts}</option>
                     <option value="5.1">5'0'{1.52 mts}</option>
-                    <option value="5.2">5'0'{1.52 mts}</option>
+                    <option value="5.2">5'0'{1.52 mts}</option> --}}
                 </select>
             </div>
             <div class="inputgroup d-flex">
                 <label>Profession</label>
-                <input type="text" wire:model="profession" name="" placeholder="Profession">
+                <select wire:model="highest_education" name="">
+                    <option value=" ">Select Highest Education</option>
+                    @foreach ($highest_education_select as $data)
+                        <option value="{{ $data->id }}">{{ $data->name }}
+                        </option>
+                    @endforeach
+                    {{-- <option value="self">Self</option>
+                    <option value="son">Son</option>
+                    <option value="daughter">Daughter</option> --}}
+                </select>
+                {{-- <input type="text" wire:model="highest_education" name="" placeholder="Profession"> --}}
             </div>
             <div class="inputgroup d-flex">
                 <label>Password</label>
@@ -75,7 +96,8 @@
             </div>
         </div>
         <label for="" class="px-3">
-            <input type="checkbox" wire:model="terms_condition" name="">By signing up, I agree to Term and Conditions</label>
+            <input type="checkbox" wire:model="terms_condition" name="">By signing up, I agree to Term and
+            Conditions</label>
         <div class="submitButtn"><button type="submit" value="Register">Register</button></div>
         <div class="text-center">Already A Member <a href="#">Log In</a></div>
     </form>
