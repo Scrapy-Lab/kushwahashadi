@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <img src="{{asset('images/HomePage_Default_Final.webp')}}" class="w-100" alt="" />
+    <img src="{{ asset('images/HomePage_Default_Final.webp') }}" class="w-100" alt="" />
     <div class="header_logo">
         @if (!auth()->user())
             <img src="./images/header-logo.png" w="100" h="100" alt="" />
@@ -81,7 +81,7 @@
                     </div>
                 </div>
             </div>
-            <div class="chooseImage col-md-4">
+            <div class="chooseImage col-md-5">
 
                 <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
@@ -142,7 +142,7 @@
 
 
     {{-- ---------------VERIFY MEMBERS------------------- --}}
-    <div class="verify myDiv pt-5">
+    <div class="verify myDiv ">
         <div class="text-center">
             <h2><strong>Verify Members</strong></h2>
         </div>
@@ -161,7 +161,8 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="d-block profileCard">
-                                    <img src="./images/6SH13119509-OSH28753792-big.jpg" alt="" style="width:100%">
+                                    <img src="./images/6SH13119509-OSH28753792-big.jpg" alt=""
+                                        style="width:100%">
                                     <div class="chooseimgCont text-center">
                                         <h3 class="text-center text-white">Prity Kushwaha
                                         </h3>
@@ -176,7 +177,8 @@
                             </div>
                             <div class="col-md-3">
                                 <div class="d-block profileCard">
-                                    <img src="./images/6SH13119509-OSH28753792-big.jpg" alt="" style="width:100%">
+                                    <img src="./images/6SH13119509-OSH28753792-big.jpg" alt=""
+                                        style="width:100%">
                                     <div class="chooseimgCont text-center">
                                         <h3 class="text-center text-white">Prity Kushwaha
                                         </h3>
@@ -191,7 +193,8 @@
                             </div>
                             <div class="col-md-3">
                                 <div class="d-block profileCard">
-                                    <img src="./images/6SH13119509-OSH28753792-big.jpg" alt="" style="width:100%">
+                                    <img src="./images/6SH13119509-OSH28753792-big.jpg" alt=""
+                                        style="width:100%">
                                     <div class="chooseimgCont text-center">
                                         <h3 class="text-center text-white">Prity Kushwaha
                                         </h3>
@@ -206,7 +209,8 @@
                             </div>
                             <div class="col-md-3">
                                 <div class="d-block profileCard">
-                                    <img src="./images/6SH13119509-OSH28753792-big.jpg" alt="" style="width:100%">
+                                    <img src="./images/6SH13119509-OSH28753792-big.jpg" alt=""
+                                        style="width:100%">
                                     <div class="chooseimgCont text-center">
                                         <h3 class="text-center text-white">Prity Kushwaha
                                         </h3>
@@ -227,7 +231,8 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="d-block profileCard">
-                                    <img src="./images/6SH13119509-OSH28753792-big.jpg" alt="" style="width:100%">
+                                    <img src="./images/6SH13119509-OSH28753792-big.jpg" alt=""
+                                        style="width:100%">
                                     <div class="chooseimgCont text-center">
                                         <h3 class="text-center text-white">Prity Kushwaha
                                         </h3>
@@ -242,7 +247,8 @@
                             </div>
                             <div class="col-md-3">
                                 <div class="d-block profileCard">
-                                    <img src="./images/6SH13119509-OSH28753792-big.jpg" alt="" style="width:100%">
+                                    <img src="./images/6SH13119509-OSH28753792-big.jpg" alt=""
+                                        style="width:100%">
                                     <div class="chooseimgCont text-center">
                                         <h3 class="text-center text-white">Prity Kushwaha
                                         </h3>
@@ -257,7 +263,8 @@
                             </div>
                             <div class="col-md-3">
                                 <div class="d-block profileCard">
-                                    <img src="./images/6SH13119509-OSH28753792-big.jpg" alt="" style="width:100%">
+                                    <img src="./images/6SH13119509-OSH28753792-big.jpg" alt=""
+                                        style="width:100%">
                                     <div class="chooseimgCont text-center">
                                         <h3 class="text-center text-white">Prity Kushwaha
                                         </h3>
@@ -272,7 +279,8 @@
                             </div>
                             <div class="col-md-3">
                                 <div class="d-block profileCard">
-                                    <img src="./images/6SH13119509-OSH28753792-big.jpg" alt="" style="width:100%">
+                                    <img src="./images/6SH13119509-OSH28753792-big.jpg" alt=""
+                                        style="width:100%">
                                     <div class="chooseimgCont text-center">
                                         <h3 class="text-center text-white">Prity Kushwaha
                                         </h3>
@@ -301,6 +309,250 @@
         </div>
 
         {{-- CAROUSEL ENDS --}}
+    </div>
+
+
+    {{-- HAPPY STORIES --}}
+
+    <div class="myDiv happyStory ">
+        <div class="text-center">
+            <h2><strong>Over 40.000+ Happy Stories</strong></h2>
+            <p>If like thousands of couples, you too met your one-and-only on Sangam.com, we'd love to hear all about it,
+                It's <br> our favourite part of what we do</p>
+        </div>
+
+        {{-- CAROUSEL --}}
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <!-- Add more buttons for additional slides -->
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="d-block profileCard">
+                                    <img src="./images/6SH13119509-OSH28753792-big.jpg" alt=""
+                                        style="width:100%">
+                                    <div class="chooseimgCont text-start">
+                                        <h3 class="text-start text-white">Prity Kushwaha
+                                        </h3>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus delectus maxime
+                                            voluptatibus aperiam ratione porro fuga vero rerum possimus quidem.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="d-block profileCard">
+                                    <img src="./images/6SH13119509-OSH28753792-big.jpg" alt=""
+                                        style="width:100%">
+                                    <div class="chooseimgCont text-start">
+                                        <h3 class="text-start text-white">Prity Kushwaha
+                                        </h3>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus delectus maxime
+                                            voluptatibus aperiam ratione porro fuga vero rerum possimus quidem.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="d-block profileCard">
+                                    <img src="./images/6SH13119509-OSH28753792-big.jpg" alt=""
+                                        style="width:100%">
+                                    <div class="chooseimgCont text-start">
+                                        <h3 class="text-start text-white">Prity Kushwaha
+                                        </h3>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus delectus maxime
+                                            voluptatibus aperiam ratione porro fuga vero rerum possimus quidem.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="d-block profileCard">
+                                    <img src="./images/6SH13119509-OSH28753792-big.jpg" alt=""
+                                        style="width:100%">
+                                    <div class="chooseimgCont text-start">
+                                        <h3 class="text-start text-white">Prity Kushwaha
+                                        </h3>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus delectus maxime
+                                            voluptatibus aperiam ratione porro fuga vero rerum possimus quidem.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="d-block profileCard">
+                                    <img src="./images/6SH13119509-OSH28753792-big.jpg" alt=""
+                                        style="width:100%">
+                                    <div class="chooseimgCont text-start">
+                                        <h3 class="text-start text-white">Prity Kushwaha
+                                        </h3>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus delectus maxime
+                                            voluptatibus aperiam ratione porro fuga vero rerum possimus quidem.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="d-block profileCard">
+                                    <img src="./images/6SH13119509-OSH28753792-big.jpg" alt=""
+                                        style="width:100%">
+                                    <div class="chooseimgCont text-start">
+                                        <h3 class="text-start text-white">Prity Kushwaha
+                                        </h3>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus delectus maxime
+                                            voluptatibus aperiam ratione porro fuga vero rerum possimus quidem.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more carousel items as needed -->
+            </div>
+            <a class="carousel-control-prev" href="#carouselExample" role="button" data-bs-slide="prev">
+                <span class="fa fa-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExample" role="button" data-bs-slide="next">
+                <span class="fa fa-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+        {{-- CAROUSEL ENDS --}}
+    </div>
+
+    {{-- ----------------HAPPY STORIES ENDS---------------------- --}}
+
+
+    {{-- --------------ABOUT SANGAM--------------------- --}}
+    <div class="aboutSangam text-center mt-5">
+        <h2>About Sangam</h2>
+        <p>Sangam is a trusted matchmaking service created for parents who are looking for a life partner for their loved
+            ones. Unlike other Matrimonial services, we focus on providing trustworthy detailed family and background
+            information to help you take the next step with confidence. With over 80+ community sites, you can find a match
+            from your own community. Sangam is part of Shaadi.com (sometimes mis-spelt as Shadi), the World's No. 1
+            Matchmaking service.</p>
+    </div>
+    {{-- ABOUT SANGAM ENDDS --}}
+
+
+    {{-- Our Successfull Events --}}
+
+    <div class="myDiv   success">
+        <div class="text-center">
+            <h2><strong>Our Successful Events</strong></h2>
+        </div>
+
+
+        {{-- Gallery --}}
+        <div class="gallery pt-4">
+            <div class="gallery-item big">
+                <img src="{{ asset('images/dummy.jpg') }}" alt="Image 1">
+            </div>
+            <div class="gallery-item">
+                <img src="{{ asset('images/dummy.jpg') }}" alt="Image 2">
+            </div>
+            <div class="gallery-item">
+                <img src="{{ asset('images/dummy.jpg') }}" alt="Image 3">
+            </div>
+            <div class="gallery-item vertical">
+                <img src="{{ asset('images/dummy.jpg') }}" alt="Image 4">
+            </div>
+            <div class="gallery-item horizontal">
+                <img src="{{ asset('images/dummy.jpg') }}" alt="Image 5">
+            </div>
+            <div class="gallery-item horizontal">
+                <img src="{{ asset('images/dummy.jpg') }}" alt="Image 6">
+            </div>
+            <div class="gallery-item">
+                <img src="{{ asset('images/dummy.jpg') }}" alt="Image 7">
+            </div>
+            <div class="gallery-item">
+                <img src="{{ asset('images/dummy.jpg') }}" alt="Image 8">
+            </div>
+        </div>
+
+
+
+    </div>
+
+    {{-- blogs --}}
+
+    <div class="blogs  ">
+        <div class="myDiv">
+            <div class="text-center">
+                <h2><strong>Blogs</strong></h2>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="blogMain">
+                        <img src="{{ asset('images/blog.jpg') }}" alt="">
+                        <div class="blogDetail">
+                            <h3>Top 5 Best Matrimonial Sites in Delhi</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum nulla minima cum deleniti
+                                eveniet ratione doloremque praesentium voluptate dolores</p>
+                            <div class="d-flex gap-3">
+                                <div class="blogGroup">
+                                    <p class="date"><i class="fa fa-calendar" aria-hidden="true"></i> 20 May 2024</p>
+                                </div>
+                                <div class="blogGroup">
+                                    <p class="date"><i class="fa fa-user" aria-hidden="true"></i> Admin</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="blogMain">
+                        <img src="{{ asset('images/blog.jpg') }}" alt="">
+                        <div class="blogDetail">
+                            <h3>Top 5 Best Matrimonial Sites in Delhi</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum nulla minima cum deleniti
+                                eveniet ratione doloremque praesentium voluptate dolores</p>
+                            <div class="d-flex gap-3">
+                                <div class="blogGroup">
+                                    <p class="date"><i class="fa fa-calendar" aria-hidden="true"></i> 20 May 2024</p>
+                                </div>
+                                <div class="blogGroup">
+                                    <p class="date"><i class="fa fa-user" aria-hidden="true"></i> Admin</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="blogMain">
+                        <img src="{{ asset('images/blog.jpg') }}" alt="">
+                        <div class="blogDetail">
+                            <h3>Top 5 Best Matrimonial Sites in Delhi</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum nulla minima cum deleniti
+                                eveniet ratione doloremque praesentium voluptate dolores</p>
+                            <div class="d-flex gap-3">
+                                <div class="blogGroup">
+                                    <p class="date"><i class="fa fa-calendar" aria-hidden="true"></i> 20 May 2024</p>
+                                </div>
+                                <div class="blogGroup">
+                                    <p class="date"><i class="fa fa-user" aria-hidden="true"></i> Admin</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 
 
