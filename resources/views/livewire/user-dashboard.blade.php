@@ -647,7 +647,6 @@
                                 <a href="#">Contact Numbers</a>
                             </li>
                             @php
-
                                 $isShortlisted = \App\Models\ShortlistedCandidate::where('profile_id', $viewer->user_id)
                                     ->where('user_id', Auth::id())
                                     ->first();
