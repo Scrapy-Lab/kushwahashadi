@@ -9,18 +9,24 @@
         @else
 
         @endif --}}
-    @if ($user_detail->gender == 1)
-        <img src="{{ asset('storage/profile_img/' . ($user_detail->user_image ?? 'default_male.jpg')) }}"
-            alt="">
+
+    @if ($user_details->gender == 1)
+        <img src="{{ asset('storage/profile_img/' . ($user_details->user_image ?? 'default_male.jpg')) }}" wire:ignore class="show-image" alt="">
     @else
-        <img src="{{ asset('storage/profile_img/' . ($user_detail->user_image ?? 'default_female.jpg')) }}"
+        <img src="{{ asset('storage/profile_img/' . ($user_details->user_image ?? 'default_female.jpg')) }}" wire:ignore class="show-image"
             alt="">
     @endif
     {{-- <img src="{{ asset('storage/profile_img/' . $user_details->user_image) }}" wire:ignore class="show-image"
         alt=""> --}}
     <form wire:submit="store_profile_image" wire:ignore>
         @csrf
-        <input type="file" name="image" class="image">
+        <label for="file" id="fileLabel">
+            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            <input type="file" id="file" style="display: none" name="image" class="image"
+                accept="image/gif,image/jpeg,image/jpg,image/png" multiple="">
+        </label>
+
+        {{-- <input type="file" name="image" class="image"> --}}
         <input type="hidden" name="image_base64">
         @error('image_base64')
             <span class="error">{{ $message }}</span>
@@ -120,6 +126,9 @@
     @endif
     @script
         <script>
+            document.getElementById('fileLabel').addEventListener('click', function() {
+                // document.getElementById('file').click();
+            });
             base64data = ""
             $("#crop").click(function() {
                 canvas = cropper.getCroppedCanvas({
