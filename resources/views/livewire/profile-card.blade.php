@@ -9,8 +9,15 @@
         @else
 
         @endif --}}
-    <img src="{{ asset('storage/profile_img/' . $user_details->user_image) }}" wire:ignore class="show-image"
-        alt="">
+    @if ($user_detail->gender == 1)
+        <img src="{{ asset('storage/profile_img/' . ($user_detail->user_image ?? 'default_male.jpg')) }}"
+            alt="">
+    @else
+        <img src="{{ asset('storage/profile_img/' . ($user_detail->user_image ?? 'default_female.jpg')) }}"
+            alt="">
+    @endif
+    {{-- <img src="{{ asset('storage/profile_img/' . $user_details->user_image) }}" wire:ignore class="show-image"
+        alt=""> --}}
     <form wire:submit="store_profile_image" wire:ignore>
         @csrf
         <input type="file" name="image" class="image">
