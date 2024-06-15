@@ -15,6 +15,7 @@ class ProfileInfo extends Component
     public $user_details;
     public $editBasicInfo = false;
     public $editAddress = false;
+    public $editQualification = false;
     public $memberId;
     public $form = [];
     public $is_view_profile = false;
@@ -129,6 +130,18 @@ class ProfileInfo extends Component
         } else {
 
             $this->editAddress = true;
+        }
+    }
+
+    public function edit_qualification_show()
+    {
+        // dd($this->editBasicInfo);
+        if ($this->editQualification) {
+
+            $this->editQualification = false;
+        } else {
+
+            $this->editQualification = true;
         }
     }
 

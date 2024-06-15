@@ -1,4 +1,4 @@
-<div class="col-md-4 text-center mainProfile">
+<div class="col-md-3 text-center mainProfile" id="hideDivCard">
     @if (session()->has('message'))
         <div class="alert alert-success">
             {{ session('message') }}
@@ -11,10 +11,11 @@
         @endif --}}
 
     @if ($user_details->gender == 1)
-        <img src="{{ asset('storage/profile_img/' . ($user_details->user_image ?? 'default_male.jpg')) }}" wire:ignore class="show-image" alt="">
+        <img src="{{ asset('storage/profile_img/' . ($user_details->user_image ?? 'default_male.jpg')) }}" wire:ignore
+            class="show-image" alt="">
     @else
-        <img src="{{ asset('storage/profile_img/' . ($user_details->user_image ?? 'default_female.jpg')) }}" wire:ignore class="show-image"
-            alt="">
+        <img src="{{ asset('storage/profile_img/' . ($user_details->user_image ?? 'default_female.jpg')) }}" wire:ignore
+            class="show-image" alt="">
     @endif
     {{-- <img src="{{ asset('storage/profile_img/' . $user_details->user_image) }}" wire:ignore class="show-image"
         alt=""> --}}
@@ -34,7 +35,10 @@
         {{-- <img src="" style="width: 200px;display: none;" class="show-image"> --}}
 
         <br />
-        <button class="btn btn-success" id="profile_image">Submit</button>
+        {{-- @if ($updatePhotoButton) --}}
+
+        <button class="btn btn-success" id="profile_image" style="display: none">Submit</button>
+        {{-- @endif --}}
     </form>
     <div class="profile-details">
         {{-- <h2 class="heading heading-3 strong-500 profile-name">{{ ucfirst($user->name) }} {{ $user->last_name }}</h2>
@@ -87,31 +91,31 @@
             <div class="useful-links">
 
                 <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 gallery l_nav "
-                    wire:click="$parent.show_profile()">
+                     wire:click="$parent.show_profile()"  >
                     <b style="font-size: 12px">My Profile</b>
                 </a>
-                <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 gallery l_nav"
+                <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 gallery l_nav "
                     wire:click="$parent.show_intrest()">
                     <b style="font-size: 12px">My Intrest</b>
                 </a>
-                <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 happy_story l_nav"
+                <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 happy_story l_nav "
                     wire:click="$parent.show_shortlist()">
                     <b style="font-size: 12px">Shortlist</b>
                 </a>
-                <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 my_packages l_nav"
+                <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 my_packages l_nav "
                     wire:click="$parent.show_messsage()">
                     <b style="font-size: 12px">Messaging</b>
                 </a>
-                <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 payments l_nav"
+                <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 payments l_nav "
                     wire:click="$parent.show_viewers()">
                     <b style="font-size: 12px">Profile Viewers</b>
                 </a>
-                <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 picture_privacy l_nav"
+                <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 picture_privacy l_nav "
                     onclick="profile_load('picture_privacy','alt-sm')">
                     <b style="font-size: 12px">Picture Privacy</b>
                 </a>
 
-                <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 change_pass l_nav"
+                <a class="btn btn-styled btn-sm btn-white z-depth-2-bottom mb-3 change_pass l_nav "
                     onclick="profile_load('change_pass','alt-sm')">
                     <b style="font-size: 12px">Change Password</b>
                 </a>
@@ -126,8 +130,15 @@
     @endif
     @script
         <script>
-            document.getElementById('fileLabel').addEventListener('click', function() {
+            document.getElementById('crop').addEventListener('click', function() {
                 // document.getElementById('file').click();
+                $('#profile_image').show();
+                console.log("adasdTest")
+
+                $wire.dispatch('upload-image', {
+                    value: base64data
+                });
+
             });
             base64data = ""
             $("#crop").click(function() {
@@ -156,7 +167,7 @@
 
                 console.log("adasdTest")
 
-                $wire.dispatch('post-created', {
+                $wire.dispatch('upload-image', {
                     value: base64data
                 });
 

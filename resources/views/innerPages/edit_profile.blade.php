@@ -1,30 +1,8 @@
 @extends('layouts.app')
 @section('content')
     {{-- Dashboard --}}
+    @livewire('user-navigation')
     <div class="container">
-       <ul class="d-flex gap-5 p-0" style="list-style: none;">
-        <li class="nav-item">
-            <a href="{{ route('dashboard') }}" class="nav-link">Dashboard</a>
-        </li>
-        <li class="nav-item">
-            <a href="{{ route('edit_profile') }}" class="nav-link">Edit Profile</a>
-        </li>
-        <li class="nav-item">
-            <a href="#" class="nav-link">Partner Expectations</a>
-        </li>
-        <li class="nav-item">
-            <a href="#" class="nav-link">Search</a>
-        </li>
-        <li class="nav-item">
-            <a href="#" class="nav-link">Happy Story</a>
-        </li>
-        <li class="nav-item">
-            <a href="#" class="nav-link">Contact Us</a>
-        </li>
-        <li class="nav-item">
-            <a href="#" class="nav-link">Upgrade Plan</a>
-        </li>
-       </ul>
 
         @livewire('user-dashboard')
 
@@ -36,7 +14,7 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalLabel">Laravel Crop Image Before Upload Example - ItSolutionStuff.com
+                    <h5 class="modal-title" id="modalLabel">Upload Profile Image
                     </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>

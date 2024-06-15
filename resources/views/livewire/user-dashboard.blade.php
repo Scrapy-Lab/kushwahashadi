@@ -5,401 +5,404 @@
 
         @livewire('profile-card')
 
+        @if (Route::is('dashboard'))
+            <div class="col-md-9" id="dashboard_listing" wire:ignore>
 
-        <div class="col-md-7" id="dashboard_listing" wire:ignore>
-
-            {{-- MEMBERS --}}
-            <div class="activeMember">
-                <div class="d-flex justify-content-between">
-                    <img src="{{ url('/images/ritu.jpeg') }}" alt="">
-                    <div class="activeinfo">
-                        <h2>Reetu Kushwaha</h2>
-                        <p class="memberDescription">...</p>
-                        <p class="occupation">PVT JOB</p>
-                        <h4>Member Id: <span class="green">42A093EF6089</span></h4>
-                        <div class="d-flex">
-                            <table class="table table-striped">
-                                <tbody>
-                                    <tr>
-                                        <td>Age</td>
-                                        <td>26</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Religion</td>
-                                        <td>Hindu</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Highest Education</td>
-                                        <td>12th</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Location</td>
-                                        <td>Delhi , Bharat</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <table class="table table-striped">
-                                <tbody>
-                                    <tr>
-                                        <td>Height</td>
-                                        <td>5.01 Feet</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Caste / Sect</td>
-                                        <td>kushwaha</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Marital Status</td>
-                                        <td>Never Married</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                {{-- MEMBERS --}}
+                <div class="activeMember">
+                    <div class="d-flex justify-content-between">
+                        <img src="{{ url('/images/ritu.jpeg') }}" alt="">
+                        <div class="activeinfo">
+                            <h2>Reetu Kushwaha</h2>
+                            <p class="memberDescription">...</p>
+                            <p class="occupation">PVT JOB</p>
+                            <h4>Member Id: <span class="green">42A093EF6089</span></h4>
+                            <div class="d-flex">
+                                <table class="table table-striped">
+                                    <tbody>
+                                        <tr>
+                                            <td>Age</td>
+                                            <td>26</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Religion</td>
+                                            <td>Hindu</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Highest Education</td>
+                                            <td>12th</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Location</td>
+                                            <td>Delhi , Bharat</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="table table-striped">
+                                    <tbody>
+                                        <tr>
+                                            <td>Height</td>
+                                            <td>5.01 Feet</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Caste / Sect</td>
+                                            <td>kushwaha</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Marital Status</td>
+                                            <td>Never Married</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
+                    <ul class="activeDetials">
+                        <li>
+                            <a href="#">Full Profile</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact Numbers</a>
+                        </li>
+                        <li>
+                            <a href="#">Shortlist</a>
+                        </li>
+                        <li>
+                            <a href="#">Follow</a>
+                        </li>
+                        <li>
+                            <a href="#">Ignore</a>
+                        </li>
+                        <li>
+                            <a href="#">Profile Report</a>
+                        </li>
+                    </ul>
                 </div>
-                <ul class="activeDetials">
-                    <li>
-                        <a href="#">Full Profile</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact Numbers</a>
-                    </li>
-                    <li>
-                        <a href="#">Shortlist</a>
-                    </li>
-                    <li>
-                        <a href="#">Follow</a>
-                    </li>
-                    <li>
-                        <a href="#">Ignore</a>
-                    </li>
-                    <li>
-                        <a href="#">Profile Report</a>
-                    </li>
-                </ul>
-            </div>
-            {{-- MEMEBERS END --}}
+                {{-- MEMEBERS END --}}
 
-            {{-- MEMBERS --}}
-            <div class="activeMember">
-                <div class="d-flex justify-content-between">
-                    <img src="{{ url('/images/sonal.jpeg') }}" alt="">
-                    <div class="activeinfo">
-                        <h2>Sonal Sharma (PHool Mali)</h2>
-                        <p class="memberDescription">SONAL SHARMA AAGE - 36 QUALIFICATION - MBA PROFESSION - WORKING
-                            WITH A PRIVATE BANK HEIGHT 5'3" COMPLEXION - FAIR LOOKING FOR QUALIFIED EDUCATED WORKING
-                            PROFESSIONAL</p>
-                        <p class="occupation">PVT JOB</p>
-                        <h4>Member Id: <span class="green">42A093EF6089</span></h4>
-                        <div class="d-flex">
-                            <table class="table table-striped">
-                                <tbody>
-                                    <tr>
-                                        <td>Age</td>
-                                        <td>26</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Religion</td>
-                                        <td>Hindu</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Highest Education</td>
-                                        <td>12th</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Location</td>
-                                        <td>Delhi , Bharat</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <table class="table table-striped">
-                                <tbody>
-                                    <tr>
-                                        <td>Height</td>
-                                        <td>5.01 Feet</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Caste / Sect</td>
-                                        <td>kushwaha</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Marital Status</td>
-                                        <td>Never Married</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                {{-- MEMBERS --}}
+                <div class="activeMember">
+                    <div class="d-flex justify-content-between">
+                        <img src="{{ url('/images/sonal.jpeg') }}" alt="">
+                        <div class="activeinfo">
+                            <h2>Sonal Sharma (PHool Mali)</h2>
+                            <p class="memberDescription">SONAL SHARMA AAGE - 36 QUALIFICATION - MBA PROFESSION - WORKING
+                                WITH A PRIVATE BANK HEIGHT 5'3" COMPLEXION - FAIR LOOKING FOR QUALIFIED EDUCATED WORKING
+                                PROFESSIONAL</p>
+                            <p class="occupation">PVT JOB</p>
+                            <h4>Member Id: <span class="green">42A093EF6089</span></h4>
+                            <div class="d-flex">
+                                <table class="table table-striped">
+                                    <tbody>
+                                        <tr>
+                                            <td>Age</td>
+                                            <td>26</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Religion</td>
+                                            <td>Hindu</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Highest Education</td>
+                                            <td>12th</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Location</td>
+                                            <td>Delhi , Bharat</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="table table-striped">
+                                    <tbody>
+                                        <tr>
+                                            <td>Height</td>
+                                            <td>5.01 Feet</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Caste / Sect</td>
+                                            <td>kushwaha</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Marital Status</td>
+                                            <td>Never Married</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
+                    <ul class="activeDetials">
+                        <li>
+                            <a href="#">Full Profile</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact Numbers</a>
+                        </li>
+                        <li>
+                            <a href="#">Shortlist</a>
+                        </li>
+                        <li>
+                            <a href="#">Follow</a>
+                        </li>
+                        <li>
+                            <a href="#">Ignore</a>
+                        </li>
+                        <li>
+                            <a href="#">Profile Report</a>
+                        </li>
+                    </ul>
                 </div>
-                <ul class="activeDetials">
-                    <li>
-                        <a href="#">Full Profile</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact Numbers</a>
-                    </li>
-                    <li>
-                        <a href="#">Shortlist</a>
-                    </li>
-                    <li>
-                        <a href="#">Follow</a>
-                    </li>
-                    <li>
-                        <a href="#">Ignore</a>
-                    </li>
-                    <li>
-                        <a href="#">Profile Report</a>
-                    </li>
-                </ul>
-            </div>
-            {{-- MEMEBERS END --}}
+                {{-- MEMEBERS END --}}
 
-            {{-- MEMBERS --}}
-            <div class="activeMember">
-                <div class="d-flex justify-content-between">
-                    <img src="{{ url('/images/ritu.jpeg') }}" alt="">
-                    <div class="activeinfo">
-                        <h2>Reetu Kushwaha</h2>
-                        <p class="memberDescription">...</p>
-                        <p class="occupation">PVT JOB</p>
-                        <h4>Member Id: <span class="green">42A093EF6089</span></h4>
-                        <div class="d-flex">
-                            <table class="table table-striped">
-                                <tbody>
-                                    <tr>
-                                        <td>Age</td>
-                                        <td>26</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Religion</td>
-                                        <td>Hindu</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Highest Education</td>
-                                        <td>12th</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Location</td>
-                                        <td>Delhi , Bharat</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <table class="table table-striped">
-                                <tbody>
-                                    <tr>
-                                        <td>Height</td>
-                                        <td>5.01 Feet</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Caste / Sect</td>
-                                        <td>kushwaha</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Marital Status</td>
-                                        <td>Never Married</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                {{-- MEMBERS --}}
+                <div class="activeMember">
+                    <div class="d-flex justify-content-between">
+                        <img src="{{ url('/images/ritu.jpeg') }}" alt="">
+                        <div class="activeinfo">
+                            <h2>Reetu Kushwaha</h2>
+                            <p class="memberDescription">...</p>
+                            <p class="occupation">PVT JOB</p>
+                            <h4>Member Id: <span class="green">42A093EF6089</span></h4>
+                            <div class="d-flex">
+                                <table class="table table-striped">
+                                    <tbody>
+                                        <tr>
+                                            <td>Age</td>
+                                            <td>26</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Religion</td>
+                                            <td>Hindu</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Highest Education</td>
+                                            <td>12th</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Location</td>
+                                            <td>Delhi , Bharat</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="table table-striped">
+                                    <tbody>
+                                        <tr>
+                                            <td>Height</td>
+                                            <td>5.01 Feet</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Caste / Sect</td>
+                                            <td>kushwaha</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Marital Status</td>
+                                            <td>Never Married</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
+                    <ul class="activeDetials">
+                        <li>
+                            <a href="#">Full Profile</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact Numbers</a>
+                        </li>
+                        <li>
+                            <a href="#">Shortlist</a>
+                        </li>
+                        <li>
+                            <a href="#">Follow</a>
+                        </li>
+                        <li>
+                            <a href="#">Ignore</a>
+                        </li>
+                        <li>
+                            <a href="#">Profile Report</a>
+                        </li>
+                    </ul>
                 </div>
-                <ul class="activeDetials">
-                    <li>
-                        <a href="#">Full Profile</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact Numbers</a>
-                    </li>
-                    <li>
-                        <a href="#">Shortlist</a>
-                    </li>
-                    <li>
-                        <a href="#">Follow</a>
-                    </li>
-                    <li>
-                        <a href="#">Ignore</a>
-                    </li>
-                    <li>
-                        <a href="#">Profile Report</a>
-                    </li>
-                </ul>
-            </div>
-            {{-- MEMEBERS END --}}
+                {{-- MEMEBERS END --}}
 
-            {{-- MEMBERS --}}
-            <div class="activeMember">
-                <div class="d-flex justify-content-between">
-                    <img src="{{ url('/images/ritu.jpeg') }}" alt="">
-                    <div class="activeinfo">
-                        <h2>Reetu Kushwaha</h2>
-                        <p class="memberDescription">...</p>
-                        <p class="occupation">PVT JOB</p>
-                        <h4>Member Id: <span class="green">42A093EF6089</span></h4>
-                        <div class="d-flex">
-                            <table class="table table-striped">
-                                <tbody>
-                                    <tr>
-                                        <td>Age</td>
-                                        <td>26</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Religion</td>
-                                        <td>Hindu</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Highest Education</td>
-                                        <td>12th</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Location</td>
-                                        <td>Delhi , Bharat</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <table class="table table-striped">
-                                <tbody>
-                                    <tr>
-                                        <td>Height</td>
-                                        <td>5.01 Feet</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Caste / Sect</td>
-                                        <td>kushwaha</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Marital Status</td>
-                                        <td>Never Married</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                {{-- MEMBERS --}}
+                <div class="activeMember">
+                    <div class="d-flex justify-content-between">
+                        <img src="{{ url('/images/ritu.jpeg') }}" alt="">
+                        <div class="activeinfo">
+                            <h2>Reetu Kushwaha</h2>
+                            <p class="memberDescription">...</p>
+                            <p class="occupation">PVT JOB</p>
+                            <h4>Member Id: <span class="green">42A093EF6089</span></h4>
+                            <div class="d-flex">
+                                <table class="table table-striped">
+                                    <tbody>
+                                        <tr>
+                                            <td>Age</td>
+                                            <td>26</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Religion</td>
+                                            <td>Hindu</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Highest Education</td>
+                                            <td>12th</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Location</td>
+                                            <td>Delhi , Bharat</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="table table-striped">
+                                    <tbody>
+                                        <tr>
+                                            <td>Height</td>
+                                            <td>5.01 Feet</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Caste / Sect</td>
+                                            <td>kushwaha</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Marital Status</td>
+                                            <td>Never Married</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
+                    <ul class="activeDetials">
+                        <li>
+                            <a href="#">Full Profile</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact Numbers</a>
+                        </li>
+                        <li>
+                            <a href="#">Shortlist</a>
+                        </li>
+                        <li>
+                            <a href="#">Follow</a>
+                        </li>
+                        <li>
+                            <a href="#">Ignore</a>
+                        </li>
+                        <li>
+                            <a href="#">Profile Report</a>
+                        </li>
+                    </ul>
                 </div>
-                <ul class="activeDetials">
-                    <li>
-                        <a href="#">Full Profile</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact Numbers</a>
-                    </li>
-                    <li>
-                        <a href="#">Shortlist</a>
-                    </li>
-                    <li>
-                        <a href="#">Follow</a>
-                    </li>
-                    <li>
-                        <a href="#">Ignore</a>
-                    </li>
-                    <li>
-                        <a href="#">Profile Report</a>
-                    </li>
-                </ul>
-            </div>
-            {{-- MEMEBERS END --}}
+                {{-- MEMEBERS END --}}
 
-            {{-- MEMBERS --}}
-            <div class="activeMember">
-                <div class="d-flex justify-content-between">
-                    <img src="{{ url('/images/ritu.jpeg') }}" alt="">
-                    <div class="activeinfo">
-                        <h2>Reetu Kushwaha</h2>
-                        <p class="memberDescription">...</p>
-                        <p class="occupation">PVT JOB</p>
-                        <h4>Member Id: <span class="green">42A093EF6089</span></h4>
-                        <div class="d-flex">
-                            <table class="table table-striped">
-                                <tbody>
-                                    <tr>
-                                        <td>Age</td>
-                                        <td>26</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Religion</td>
-                                        <td>Hindu</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Highest Education</td>
-                                        <td>12th</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Location</td>
-                                        <td>Delhi , Bharat</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <table class="table table-striped">
-                                <tbody>
-                                    <tr>
-                                        <td>Height</td>
-                                        <td>5.01 Feet</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Caste / Sect</td>
-                                        <td>kushwaha</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Marital Status</td>
-                                        <td>Never Married</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                {{-- MEMBERS --}}
+                <div class="activeMember">
+                    <div class="d-flex justify-content-between">
+                        <img src="{{ url('/images/ritu.jpeg') }}" alt="">
+                        <div class="activeinfo">
+                            <h2>Reetu Kushwaha</h2>
+                            <p class="memberDescription">...</p>
+                            <p class="occupation">PVT JOB</p>
+                            <h4>Member Id: <span class="green">42A093EF6089</span></h4>
+                            <div class="d-flex">
+                                <table class="table table-striped">
+                                    <tbody>
+                                        <tr>
+                                            <td>Age</td>
+                                            <td>26</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Religion</td>
+                                            <td>Hindu</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Highest Education</td>
+                                            <td>12th</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Location</td>
+                                            <td>Delhi , Bharat</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="table table-striped">
+                                    <tbody>
+                                        <tr>
+                                            <td>Height</td>
+                                            <td>5.01 Feet</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Caste / Sect</td>
+                                            <td>kushwaha</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Marital Status</td>
+                                            <td>Never Married</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
+                    <ul class="activeDetials">
+                        <li>
+                            <a href="#">Full Profile</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact Numbers</a>
+                        </li>
+                        <li>
+                            <a href="#">Shortlist</a>
+                        </li>
+                        <li>
+                            <a href="#">Follow</a>
+                        </li>
+                        <li>
+                            <a href="#">Ignore</a>
+                        </li>
+                        <li>
+                            <a href="#">Profile Report</a>
+                        </li>
+                    </ul>
                 </div>
-                <ul class="activeDetials">
-                    <li>
-                        <a href="#">Full Profile</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact Numbers</a>
-                    </li>
-                    <li>
-                        <a href="#">Shortlist</a>
-                    </li>
-                    <li>
-                        <a href="#">Follow</a>
-                    </li>
-                    <li>
-                        <a href="#">Ignore</a>
-                    </li>
-                    <li>
-                        <a href="#">Profile Report</a>
-                    </li>
-                </ul>
+                {{-- MEMEBERS END --}}
+
             </div>
-            {{-- MEMEBERS END --}}
+        @endif
 
-        </div>
+        @if (Route::is('partner_expectation'))
+            @livewire('profile-expectation')
+        @endif
 
-
-
-        @if ($showProfile)
+        @if ($showProfile || Route::is('edit_profile'))
             @livewire('profile-info')
         @endif
 
         @if ($showIntrest)
-            <div class="col-md-7">
+            <div class="col-md-9">
                 <div class="card z-depth-2-top">
                     <div class="card-title">
                         <h3 class="heading heading-6 strong-500 pull-left">
@@ -433,7 +436,7 @@
 
         @if ($showShortlist)
 
-            <div class="col-md-7" id="dashboard_listing" wire:ignore>
+            <div class="col-md-9" id="dashboard_listing" wire:ignore>
                 <h3>Shortlisted Profile</h3>
                 @forelse ($shortlistedCandidates as $viewer)
                     {{-- MEMBERS --}}
@@ -535,7 +538,7 @@
         @endif
 
         @if ($showMesssage)
-            <div class="col-md-7">
+            <div class="col-md-9">
                 <div class="card z-depth-2-top">
                     <div class="card-title">
                         <h3 class="heading heading-6 strong-500 pull-left">
@@ -571,7 +574,7 @@
 
         @if ($showViewers)
 
-            <div class="col-md-7" id="dashboard_listing" wire:ignore>
+            <div class="col-md-9" id="dashboard_listing" wire:ignore>
                 @forelse ($profileviewers as $viewer)
                     {{-- MEMBERS --}}
                     <div class="activeMember">

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     {{-- Dashboard --}}
-    
+
     <div class="container">
         <ul class="d-flex gap-5 p-0" style="list-style: none;">
          <li class="nav-item">
@@ -42,7 +42,7 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalLabel">Laravel Crop Image Before Upload Example - ItSolutionStuff.com
+                    <h5 class="modal-title" id="modalLabel">Upload Profile Image
                     </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>

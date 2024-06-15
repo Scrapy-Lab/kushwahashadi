@@ -1,51 +1,53 @@
-<div class="col-md-7">
+<div class="col-md-9">
     <div class="card z-depth-2-top editProfileMain">
 
-        <div class="intro quickIntro">
-            <div class=" d-flex justify-content-between align-items-center mb-3">
-                <h4>Quick Information</h4>
-            </div>
-            <h4>Member Id: <span class="green">42A093EF6089</span></h4>
-            <div class="d-flex align-items-start mt-4">
-                <table class="table table-striped">
-                    <tr>
-                        <th>First Name</th>
-                            <th>Ritu</th>
-                    </tr>
-                    <tr>
-                        <th>Gender</th>
-                            <th>Female</th>
-                    </tr>
-                    <tr>
-                        <th>Marital Status</th>
-                            <th>Never Married</th>
-                    </tr>
-                    <tr>
-                        <th>Area</th>
-                            <th>Delhi</th>
-                    </tr>
-                </table>
+        @if (Route::is('view_profile'))
+            <div class="intro quickIntro">
+                <div class=" d-flex justify-content-between align-items-center mb-3">
+                    <h4>Quick Information</h4>
+                </div>
+                <h4>Member Id: <span class="green">42A093EF6089</span></h4>
+                <div class="d-flex align-items-start mt-4">
+                    <table class="table table-striped">
+                        <tr>
+                            <th>First Name</th>
+                            <th>{{ $user->name }}</th>
+                        </tr>
+                        <tr>
+                            <th>Gender</th>
+                            <th>{{ $user->user_detail->gender == 1 ? 'Male' : 'Female' }}</th>
+                        </tr>
+                        <tr>
+                            <th>Marital Status</th>
+                            <th>{{ $user->user_detail->marital_status }}</th>
+                        </tr>
+                        <tr>
+                            <th>Area</th>
+                            <th>{{ $user->user_detail->area }}</th>
+                        </tr>
+                    </table>
 
-                <table class="table table-striped">
-                    <tr>
-                        <th>Last Name</th>
-                        <th>Kushwaha</th>
-                    </tr>
-                    <tr>
-                        <th>Age</th>
+                    <table class="table table-striped">
+                        <tr>
+                            <th>Last Name</th>
+                            <th>{{ $user->lst_name }}</th>
+                        </tr>
+                        <tr>
+                            <th>Age</th>
                             <th>28</th>
-                    </tr>
-                    <tr>
-                        <th>Number of Children</th>
-                            <th>0</th>
-                    </tr>
-                    <tr>
-                        <th>On Behalf</th>
-                            <th>K_BDA</th>
-                    </tr>
-                </table>
+                        </tr>
+                        <tr>
+                            <th>Number of Children</th>
+                            <th>{{ $user->user_detail->no_of_children }}</th>
+                        </tr>
+                        <tr>
+                            <th>On Behalf</th>
+                            <th>{{ $user->user_detail->on_behalf }}</th>
+                        </tr>
+                    </table>
+                </div>
             </div>
-        </div>
+        @endif
 
 
         <div class="card-title">
@@ -58,8 +60,8 @@
 
             <div class="pull-right">
 
-                <a href="#" class="bttn bttn-base-1 btn-sm btn-shadow"><i class="ion-edit"></i>
-                    Edit All</a>
+                {{-- <a href="#" class="bttn bttn-base-1 btn-sm btn-shadow"><i class="ion-edit"></i>
+                    Edit All</a> --}}
 
             </div>
 
@@ -265,11 +267,11 @@
                             <tr>
                                 <th>STATE</th>
                                 @if ($editAddress)
-                                <td><input class="form-control" value="{{ $user->user_detail->state }}"
-                                        type="text" wire:model="form.state"></td>
-                            @else
-                                <td>{{ $user->user_detail->state }}</td>
-                            @endif
+                                    <td><input class="form-control" value="{{ $user->user_detail->state }}"
+                                            type="text" wire:model="form.state"></td>
+                                @else
+                                    <td>{{ $user->user_detail->state }}</td>
+                                @endif
                             </tr>
                         </table>
                     </div>
@@ -280,38 +282,77 @@
                     <div class=" d-flex justify-content-between align-items-center">
                         <h4>Education And Career</h4>
                         <div class="d-flex align-items-center gap-2">
-                            <button><i class="fa fa-unlock" aria-hidden="true"></i> Show</button>
-                            <p><i class="fa fa-pencil" aria-hidden="true"></i></p>
+                            {{-- <button><i class="fa fa-unlock" aria-hidden="true"></i> Show</button>
+                            <p><i class="fa fa-pencil" aria-hidden="true"></i></p> --}}
+                            @if ($editQualification)
+                                <p wire:click="edit_qualification_show"><i class="fa fa-times"
+                                        aria-hidden="true"></i></p>
+                                <p wire:click="update_info"><i class="fa fa-check" aria-hidden="true"></i></p>
+                            @else
+                                <p wire:click="edit_qualification_show"><i class="fa fa-pencil"
+                                        aria-hidden="true"></i></p>
+                            @endif
                         </div>
                     </div>
                     <div class="d-flex align-items-start mt-4">
                         <table class="table table-striped">
                             <tr>
                                 <th>HIGHEST EDUCATION</th>
-                                <td>{{ $user->user_detail->highest_education }}</td>
+                                @if ($editQualification)
+                                    <td><input class="form-control"
+                                            value="{{ $user->user_detail->highest_education }}" type="text"
+                                            wire:model="form.highest_education"></td>
+                                @else
+                                    <td>{{ $user->user_detail->highest_education }}</td>
+                                @endif
                             </tr>
                             <tr>
                                 <th>EDUCATION DETAIL</th>
-                                <td>{{ $user->user_detail->edu_details }}</td>
+                                @if ($editQualification)
+                                    <td><input class="form-control" value="{{ $user->user_detail->edu_details }}"
+                                            type="text" wire:model="form.edu_details"></td>
+                                @else
+                                    <td>{{ $user->user_detail->edu_details }}</td>
+                                @endif
                             </tr>
                             <tr>
                                 <th>ANNUAL INCOME</th>
-                                <td>{{ $user->user_detail->annual_income }}</td>
+                                @if ($editQualification)
+                                    <td><input class="form-control" value="{{ $user->user_detail->annual_income }}"
+                                            type="text" wire:model="form.edu_dannual_incomeetails"></td>
+                                @else
+                                    <td>{{ $user->user_detail->annual_income }}</td>
+                                @endif
                             </tr>
                         </table>
 
                         <table class="table table-striped">
                             <tr>
                                 <th>OCCUPATION</th>
-                                <td>{{ $user->user_detail->occupation }}</td>
+                                @if ($editQualification)
+                                    <td><input class="form-control" value="{{ $user->user_detail->occupation }}"
+                                            type="text" wire:model="form.occupation"></td>
+                                @else
+                                    <td>{{ $user->user_detail->occupation }}</td>
+                                @endif
                             </tr>
                             <tr>
                                 <th>POSTING PLACE</th>
-                                <td>{{ $user->user_detail->posting_place }}</td>
+                                @if ($editQualification)
+                                    <td><input class="form-control" value="{{ $user->user_detail->posting_place }}"
+                                            type="text" wire:model="form.posting_place"></td>
+                                @else
+                                    <td>{{ $user->user_detail->posting_place }}</td>
+                                @endif
                             </tr>
                             <tr>
                                 <th>Other OCCUPATION</th>
+                                @if ($editQualification)
+                                <td><input class="form-control" value="{{ $user->user_detail->other_occupation }}"
+                                        type="text" wire:model="form.other_occupation"></td>
+                            @else
                                 <td>{{ $user->user_detail->other_occupation }}</td>
+                            @endif
                             </tr>
                         </table>
                     </div>
@@ -495,7 +536,7 @@
                 </div>
             @endif
             {{-- Partner Expectation --}}
-            <div class="intro">
+            {{-- <div class="intro">
                 <div class=" d-flex justify-content-between align-items-center">
                     <h4>Partner Expectation</h4>
                     <div class="d-flex align-items-center gap-2">
@@ -602,7 +643,7 @@
                         </tr>
                     </table>
                 </div>
-            </div>
+            </div> --}}
 
         </div>
     </div>

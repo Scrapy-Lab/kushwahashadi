@@ -16,6 +16,7 @@ class ProfileCard extends Component
     public $user_details;
     public $imageBase64;
     public $is_view_profile = false;
+    public $updatePhotoButton = false;
 
 
     // protected $listeners = ['store_profile_image' ];
@@ -55,7 +56,7 @@ class ProfileCard extends Component
 
 
 
-    #[On('post-created')]
+    #[On('upload-image')]
     public function store_profile_image($value = '')
     {
 
@@ -74,7 +75,8 @@ class ProfileCard extends Component
 
             $this->storeBase64($value);
             // dd("asdasdasd", $value);
-
+            $this->updatePhotoButton = true;
+            return redirect(route('dashboard'));
             return session()->flash('message', 'Image uploaded successfully!');
             // Reset the form
             // $this->reset('image_base64');
