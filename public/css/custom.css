@@ -166,17 +166,28 @@ span.psw {
     border: 1px solid #888;
     width: 20%;
 }
-
+.storeImagesProfile {
+    justify-content: center;
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    gap: 10px;
+}
+.storeImagesProfile br {
+    display: none;
+}
 /* The Close Button (x) */
 .close {
-    position: absolute;
-    right: 25px;
+    position: relative;
+    right: 0;
     top: 0;
-    color: #000;
-    font-size: 35px;
+    color: #fff;
+    font-size: 25px;
+    width: fit-content;
     font-weight: bold;
+    padding: 0 15px;
+    background: red;
 }
-
 .close:focus, .close:hover {
     color: red;
     cursor: pointer;
@@ -235,7 +246,7 @@ span.psw {
 .btn {
     font-size: 20px;
     width: 170px;
-    height: 56px;
+    height: 38px;
     background: linear-gradient(270deg, rgb(99, 37, 86) 0, rgb(144, 29, 40) 100%);
     color: rgb(255, 255, 255);
     border-radius: 6px;
@@ -987,7 +998,11 @@ h2 {
     padding: 0;
 }
 
-
+.user_navigation ul {
+    max-width: 1316px;
+    margin: 0 auto !important;
+    padding: 13px 0 !important;
+}
 .user_navigation{
     box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
 }

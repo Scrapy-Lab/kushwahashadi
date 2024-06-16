@@ -19,7 +19,7 @@
     @endif
     {{-- <img src="{{ asset('storage/profile_img/' . $user_details->user_image) }}" wire:ignore class="show-image"
         alt=""> --}}
-    <form wire:submit="store_profile_image" wire:ignore>
+    <form wire:submit="store_profile_image" wire:ignore class="storeImagesProfile">
         @csrf
         <label for="file" id="fileLabel">
             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
