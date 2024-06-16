@@ -59,9 +59,9 @@ class ProfileInfo extends Component
             $user = auth()->user();
         }
 
-        // dd($this->user, $id);
+        // dd($user->user_detail, $id);
         // $this->user_details = $this->user->user_detail;
-        $this->memberId = $user->member_id;
+        $this->memberId = $user->user_detail->member_id;
         $this->form = [
             'name' => $user->name,
             'last_name' => $user->last_name ?? '',
