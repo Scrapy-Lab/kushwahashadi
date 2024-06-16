@@ -6,7 +6,7 @@
                 <div class=" d-flex justify-content-between align-items-center mb-3">
                     <h4>Quick Information</h4>
                 </div>
-                <h4>Member Id: <span class="green">42A093EF6089</span></h4>
+                <h4>Member Id: <span class="green"> {{ strtoupper($memberId) }}</span></h4>
                 <div class="d-flex align-items-start mt-4">
                     <table class="table table-striped">
                         <tr>
@@ -70,11 +70,33 @@
         <div class="card-body">
             <h3><span class="grey">Member ID -</span> {{ strtoupper($memberId) }} </h3>
             {{-- INTRODUCTION --}}
-            <div class="intro d-flex justify-content-between align-items-center">
-                <h4>Introduction</h4>
-                <p><i class="fa fa-pencil" aria-hidden="true"></i></p>
-            </div>
+            <div class="intro">
+                @if (session()->has('message'))
+                    <div class="alert alert-success">
+                        {{ session('message') }}
+                    </div>
+                @endif
 
+                <div class=" d-flex justify-content-between align-items-center">
+                    <h4>Introduction</h4>
+                    {{-- <p><i class="fa fa-pencil" aria-hidden="true"></i></p> --}}
+                    @if ($editIntro)
+                        <p wire:click="edit_Intro_show"><i class="fa fa-times" aria-hidden="true"></i></p>
+                        <p wire:click="update_info"><i class="fa fa-check" aria-hidden="true"></i></p>
+                    @else
+                        <p wire:click="edit_Intro_show"><i class="fa fa-pencil" aria-hidden="true"></i></p>
+                    @endif
+                </div>
+
+                <div class=" d-flex justify-content-between align-items-center">
+                    @if ($editIntro)
+                        <textarea name="" id="" cols="30" rows="5" wire:model="form.intro"></textarea>
+                    @else
+                        {{ $user->user_detail->intro }}
+                    @endif
+                </div>
+
+            </div>
             {{-- BASIC INFORMATION --}}
             <div class="intro">
                 <div class=" d-flex justify-content-between align-items-center">
@@ -89,11 +111,11 @@
                             </ul>
                         </div>
                     @endif
-                    @if (session()->has('message'))
+                    {{-- @if (session()->has('message'))
                         <div class="alert alert-success">
                             {{ session('message') }}
                         </div>
-                    @endif
+                    @endif --}}
 
                     @if ($editBasicInfo)
                         <p wire:click="edit_basic_info_show"><i class="fa fa-times" aria-hidden="true"></i></p>
@@ -348,11 +370,12 @@
                             <tr>
                                 <th>Other OCCUPATION</th>
                                 @if ($editQualification)
-                                <td><input class="form-control" value="{{ $user->user_detail->other_occupation }}"
-                                        type="text" wire:model="form.other_occupation"></td>
-                            @else
-                                <td>{{ $user->user_detail->other_occupation }}</td>
-                            @endif
+                                    <td><input class="form-control"
+                                            value="{{ $user->user_detail->other_occupation }}" type="text"
+                                            wire:model="form.other_occupation"></td>
+                                @else
+                                    <td>{{ $user->user_detail->other_occupation }}</td>
+                                @endif
                             </tr>
                         </table>
                     </div>

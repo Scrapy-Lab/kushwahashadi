@@ -16,6 +16,7 @@ class ProfileInfo extends Component
     public $editBasicInfo = false;
     public $editAddress = false;
     public $editQualification = false;
+    public $editIntro = false;
     public $memberId;
     public $form = [];
     public $is_view_profile = false;
@@ -64,6 +65,7 @@ class ProfileInfo extends Component
         $this->memberId = $user->user_detail->member_id;
         $this->form = [
             'name' => $user->name,
+            'intro' => $user->user_detail->intro,
             'last_name' => $user->last_name ?? '',
             'gender' => $user->user_detail->gender ?? '',
             'dob' => $user->user_detail->dob ?? '',
@@ -145,6 +147,18 @@ class ProfileInfo extends Component
         }
     }
 
+    public function edit_Intro_show()
+    {
+        // dd($this->editBasicInfo);
+        if ($this->editIntro) {
+
+            $this->editIntro = false;
+        } else {
+
+            $this->editIntro = true;
+        }
+    }
+
 
     public function update_info()
     {
@@ -163,6 +177,7 @@ class ProfileInfo extends Component
         $this->user->name = $this->form['name'];
         $this->user->last_name = $this->form['last_name'];
         $userDetail->phone = $this->form['phone'];
+        $userDetail->intro = $this->form['intro'];
         $userDetail->gender = $this->form['gender'];
         $userDetail->dob = $this->form['dob'];
         $userDetail->marital_status = $this->form['marital_status'];
