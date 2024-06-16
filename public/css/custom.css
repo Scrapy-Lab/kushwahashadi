@@ -818,7 +818,7 @@ span.red {
 /* DASHBOARD CSS */
 div#dashboard_listing {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.19);
-    height: 1157px;
+    height: auto;
     overflow: scroll;
     overflow-y: auto;
     overflow-x: auto;
@@ -910,7 +910,7 @@ ul.activeDetials {
 }
 .editProfileMain {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.19);
-    height: 1275px !important;
+    height: 1050px !important;
     overflow: scroll;
     overflow-y: auto;
     overflow-x: auto;

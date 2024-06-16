@@ -71,9 +71,9 @@
                         <li>
                             <a href="#">Shortlist</a>
                         </li>
-                        <li>
+                        {{-- <li>
                             <a href="#">Follow</a>
-                        </li>
+                        </li> --}}
                         <li>
                             <a href="#">Ignore</a>
                         </li>
@@ -149,9 +149,9 @@
                         <li>
                             <a href="#">Shortlist</a>
                         </li>
-                        <li>
+                        {{-- <li>
                             <a href="#">Follow</a>
-                        </li>
+                        </li> --}}
                         <li>
                             <a href="#">Ignore</a>
                         </li>
@@ -225,9 +225,9 @@
                         <li>
                             <a href="#">Shortlist</a>
                         </li>
-                        <li>
+                        {{-- <li>
                             <a href="#">Follow</a>
-                        </li>
+                        </li> --}}
                         <li>
                             <a href="#">Ignore</a>
                         </li>
@@ -301,9 +301,9 @@
                         <li>
                             <a href="#">Shortlist</a>
                         </li>
-                        <li>
+                        {{-- <li>
                             <a href="#">Follow</a>
-                        </li>
+                        </li> --}}
                         <li>
                             <a href="#">Ignore</a>
                         </li>
@@ -377,9 +377,9 @@
                         <li>
                             <a href="#">Shortlist</a>
                         </li>
-                        <li>
+                        {{-- <li>
                             <a href="#">Follow</a>
-                        </li>
+                        </li> --}}
                         <li>
                             <a href="#">Ignore</a>
                         </li>
@@ -516,9 +516,9 @@
                             <li>
                                 <a wire:click="shortlist_candidates({{ $viewer->user->id }})">Shortlist</a>
                             </li>
-                            <li>
+                            {{-- <li>
                                 <a href="#">Follow</a>
-                            </li>
+                            </li> --}}
                             <li>
                                 <a href="#">Ignore</a>
                             </li>
@@ -663,9 +663,9 @@
                                     <a>Shortlisted</a>
                                 </li>
                             @endif
-                            <li>
+                            {{-- <li>
                                 <a href="#">Follow</a>
-                            </li>
+                            </li> --}}
                             <li>
                                 <a href="#">Ignore</a>
                             </li>
