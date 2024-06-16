@@ -386,38 +386,82 @@
                     <div class=" d-flex justify-content-between align-items-center">
                         <h4>Physical Attributes</h4>
                         <div class="d-flex align-items-center gap-2">
-                            <button><i class="fa fa-unlock" aria-hidden="true"></i> Show</button>
-                            <p><i class="fa fa-pencil" aria-hidden="true"></i></p>
+                            {{-- <button><i class="fa fa-unlock" aria-hidden="true"></i> Show</button>
+                            <p><i class="fa fa-pencil" aria-hidden="true"></i></p> --}}
+
+                            @if ($editPhysical)
+                                <p wire:click="edit_physical_show"><i class="fa fa-times" aria-hidden="true"></i></p>
+                                <p wire:click="update_info"><i class="fa fa-check" aria-hidden="true"></i></p>
+                            @else
+                                <p wire:click="edit_physical_show"><i class="fa fa-pencil" aria-hidden="true"></i>
+                                </p>
+                            @endif
                         </div>
                     </div>
                     <div class="d-flex align-items-start mt-4">
                         <table class="table table-striped">
                             <tr>
                                 <th>HEIGHT</th>
-                                <td>{{ $user->user_detail->height }}</td>
+                                @if ($editPhysical)
+                                    <td><input class="form-control" value="{{ $user->user_detail->height }}"
+                                            type="text" wire:model="form.height"></td>
+                                @else
+                                    {{-- <td>{{ $user->user_detail->other_occupation }}</td> --}}
+                                    <td>{{ $user->user_detail->height }}</td>
+                                @endif
                             </tr>
                             <tr>
                                 <th>COMPLEXION</th>
-                                <td>{{ $user->user_detail->complexion }}</td>
+                                @if ($editPhysical)
+                                    <td><input class="form-control" value="{{ $user->user_detail->complexion }}"
+                                            type="text" wire:model="form.complexion"></td>
+                                @else
+                                    {{-- <td>{{ $user->user_detail->other_occupation }}</td> --}}
+                                    <td>{{ $user->user_detail->complexion }}</td>
+                                @endif
                             </tr>
                             <tr>
                                 <th>BODY TYPE</th>
-                                <td>{{ $user->user_detail->body_type }}</td>
+                                @if ($editPhysical)
+                                    <td><input class="form-control" value="{{ $user->user_detail->body_type }}"
+                                            type="text" wire:model="form.body_type"></td>
+                                @else
+                                    {{-- <td>{{ $user->user_detail->other_occupation }}</td> --}}
+                                    <td>{{ $user->user_detail->body_type }}</td>
+                                @endif
                             </tr>
                         </table>
 
                         <table class="table table-striped">
                             <tr>
                                 <th>WEIGHT</th>
-                                <td>{{ $user->user_detail->weight }}</td>
+                                @if ($editPhysical)
+                                    <td><input class="form-control" value="{{ $user->user_detail->weight }}"
+                                            type="text" wire:model="form.weight"></td>
+                                @else
+                                    {{-- <td>{{ $user->user_detail->other_occupation }}</td> --}}
+                                    <td>{{ $user->user_detail->weight }}</td>
+                                @endif
                             </tr>
                             <tr>
                                 <th>BLOOD GROUP</th>
-                                <td>{{ $user->user_detail->blood_group }}</td>
+                                @if ($editPhysical)
+                                    <td><input class="form-control" value="{{ $user->user_detail->blood_group }}"
+                                            type="text" wire:model="form.blood_group"></td>
+                                @else
+                                    {{-- <td>{{ $user->user_detail->other_occupation }}</td> --}}
+                                    <td>{{ $user->user_detail->blood_group }}</td>
+                                @endif
                             </tr>
                             <tr>
                                 <th>ANY DISABILITY</th>
-                                <td>{{ $user->user_detail->any_disability }}</td>
+                                @if ($editPhysical)
+                                    <td><input class="form-control" value="{{ $user->user_detail->any_disability }}"
+                                            type="text" wire:model="form.any_disability"></td>
+                                @else
+                                    {{-- <td>{{ $user->user_detail->other_occupation }}</td> --}}
+                                    <td>{{ $user->user_detail->any_disability }}</td>
+                                @endif
                             </tr>
                         </table>
                     </div>
@@ -428,39 +472,102 @@
                     <div class=" d-flex justify-content-between align-items-center">
                         <h4>Spiritual And Social Background</h4>
                         <div class="d-flex align-items-center gap-2">
-                            <button><i class="fa fa-unlock" aria-hidden="true"></i> Show</button>
-                            <p><i class="fa fa-pencil" aria-hidden="true"></i></p>
+                            @if ($editSpritual)
+                                <p wire:click="edit_spritual_show"><i class="fa fa-times" aria-hidden="true"></i></p>
+                                <p wire:click="update_info"><i class="fa fa-check" aria-hidden="true"></i></p>
+                            @else
+                                <p wire:click="edit_spritual_show"><i class="fa fa-pencil" aria-hidden="true"></i>
+                                </p>
+                            @endif
                         </div>
                     </div>
                     <div class="d-flex align-items-start mt-4">
                         <table class="table table-striped">
                             <tr>
                                 <th>RELIGION</th>
-                                <td>{{ $user->user_detail->religion }}</td>
+                                @if ($editSpritual)
+                                    <td><select class="form-select" wire:model="form.religion">
+                                            <option value="">Select RELIGION</option>
+                                            @foreach ($religion as $data)
+                                                <option value="{{ $data->id }}">{{ $data->name }}
+                                                </option>
+                                            @endforeach
+                                        </select></td>
+                                @else
+                                    <td>{{ $user->user_detail->religion }}</td>
+                                @endif
                             </tr>
                             <tr>
                                 <th>SUB-CASTE</th>
-                                <td>{{ $user->user_detail->sub_caste }}</td>
+                                @if ($editSpritual)
+                                    <td><select class="form-select" wire:model="form.sub_caste">
+                                            <option value="">Select SUB-CASTE</option>
+                                            @foreach ($sub_caste as $data)
+                                                <option value="{{ $data->id }}">{{ $data->name }}
+                                                </option>
+                                            @endforeach
+                                        </select></td>
+                                @else
+                                    <td>{{ $user->user_detail->sub_caste }}</td>
+                                @endif
                             </tr>
                             <tr>
                                 <th>FAMILY VALUES</th>
-                                <td>{{ $user->user_detail->family_values }}</td>
+                                @if ($editSpritual)
+                                    <td><select class="form-select" wire:model="form.family_values">
+                                            <option value="">Select FAMILY VALUES</option>
+                                            @foreach ($family_values as $data)
+                                                <option value="{{ $data->id }}">{{ $data->name }}
+                                                </option>
+                                            @endforeach
+                                        </select></td>
+                                @else
+                                    {{-- <td>{{ $user->user_detail->sub_caste }}</td> --}}
+                                    <td>{{ $user->user_detail->family_values }}</td>
+                                @endif
                             </tr>
                         </table>
 
                         <table class="table table-striped">
                             <tr>
                                 <th>CASTE / SECT</th>
-                                <td>{{ $user->user_detail->caste }}</td>
+                                @if ($editSpritual)
+                                    <td><select class="form-select" wire:model="form.caste">
+                                            <option value="">Select CASTE / SECT</option>
+                                            @foreach ($caste as $data)
+                                                <option value="{{ $data->id }}">{{ $data->name }}
+                                                </option>
+                                            @endforeach
+                                        </select></td>
+                                @else
+                                    {{-- <td>{{ $user->user_detail->sub_caste }}</td> --}}
+                                    <td>{{ $user->user_detail->caste }}</td>
+                                @endif
                             </tr>
                             <tr>
                                 <th>GOTRA</th>
-                                <td>
-                                    <{{ $user->user_detail->gotra }} /td>
+                                @if ($editSpritual)
+                                    <td><input class="form-control" value="{{ $user->user_detail->gotra }}"
+                                            type="text" wire:model="form.gotra"></td>
+                                @else
+                                    {{-- <td>{{ $user->user_detail->sub_caste }}</td> --}}
+                                    <td>{{ $user->user_detail->gotra }} </td>
+                                @endif
                             </tr>
                             <tr>
                                 <th>FAMILY STATUS</th>
-                                <td>{{ $user->user_detail->family_status }}</td>
+                                @if ($editSpritual)
+                                    <td> <select class="form-select" wire:model="form.family_values">
+                                            <option value="">Select FAMILY VALUES</option>
+                                            @foreach ($family_values as $data)
+                                                <option value="{{ $data->id }}">{{ $data->name }}
+                                                </option>
+                                            @endforeach
+                                        </select></td>
+                                @else
+                                    {{-- <td>{{ $user->user_detail->sub_caste }}</td> --}}
+                                    <td>{{ $user->user_detail->family_status }}</td>
+                                @endif
                             </tr>
                         </table>
                     </div>
@@ -471,30 +578,58 @@
                     <div class=" d-flex justify-content-between align-items-center">
                         <h4>Astronomic Information</h4>
                         <div class="d-flex align-items-center gap-2">
-                            <button><i class="fa fa-unlock" aria-hidden="true"></i> Show</button>
-                            <p><i class="fa fa-pencil" aria-hidden="true"></i></p>
+                            @if ($editAstro)
+                                <p wire:click="edit_astro_show"><i class="fa fa-times" aria-hidden="true"></i></p>
+                                <p wire:click="update_info"><i class="fa fa-check" aria-hidden="true"></i></p>
+                            @else
+                                <p wire:click="edit_astro_show"><i class="fa fa-pencil" aria-hidden="true"></i>
+                                </p>
+                            @endif
                         </div>
                     </div>
                     <div class="d-flex align-items-start mt-4">
                         <table class="table table-striped">
                             <tr>
                                 <th>SUN SIGN</th>
-                                <td>{{ $user->user_detail->sun_sign }}</td>
+                                @if ($editAstro)
+                                    <td><input class="form-control" value="{{ $user->user_detail->sun_sign }}"
+                                            type="text" wire:model="form.sun_sign"></td>
+                                @else
+                                    <td>{{ $user->user_detail->sun_sign }}</td>
+                                @endif
                             </tr>
                             <tr>
                                 <th>CITY OF BIRTH</th>
-                                <td>{{ $user->user_detail->birth_city }}</td>
+                                @if ($editAstro)
+                                    <td><input class="form-control" value="{{ $user->user_detail->birth_city }}"
+                                            type="text" wire:model="form.birth_city"></td>
+                                @else
+                                    {{-- <td>{{ $user->user_detail->sun_sign }}</td> --}}
+                                    <td>{{ $user->user_detail->birth_city }}</td>
+                                @endif
                             </tr>
                         </table>
 
                         <table class="table table-striped">
                             <tr>
                                 <th>MOON SIGN</th>
-                                <td>{{ $user->user_detail->moon_sign }}</td>
+                                @if ($editAstro)
+                                    <td><input class="form-control" value="{{ $user->user_detail->moon_sign }}"
+                                            type="text" wire:model="form.moon_sign"></td>
+                                @else
+                                    {{-- <td>{{ $user->user_detail->sun_sign }}</td> --}}
+                                    <td>{{ $user->user_detail->moon_sign }}</td>
+                                @endif
                             </tr>
                             <tr>
                                 <th>TIME OF BIRTH</th>
-                                <td>{{ $user->user_detail->time_of_birth }}</td>
+                                @if ($editAstro)
+                                    <td><input class="form-control" value="{{ $user->user_detail->time_of_birth }}"
+                                            type="time" wire:model="form.time_of_birth"></td>
+                                @else
+                                    {{-- <td>{{ $user->user_detail->sun_sign }}</td> --}}
+                                    <td>{{ $user->user_detail->time_of_birth }}</td>
+                                @endif
                             </tr>
                         </table>
                     </div>
@@ -505,54 +640,124 @@
                     <div class=" d-flex justify-content-between align-items-center">
                         <h4>Family Information</h4>
                         <div class="d-flex align-items-center gap-2">
-                            <button><i class="fa fa-unlock" aria-hidden="true"></i> Show</button>
-                            <p><i class="fa fa-pencil" aria-hidden="true"></i></p>
+                            @if ($ediFamilyInfo)
+                                <p wire:click="edit_family_info_show"><i class="fa fa-times" aria-hidden="true"></i>
+                                </p>
+                                <p wire:click="update_info"><i class="fa fa-check" aria-hidden="true"></i></p>
+                            @else
+                                <p wire:click="edit_family_info_show"><i class="fa fa-pencil" aria-hidden="true"></i>
+                                </p>
+                            @endif
                         </div>
                     </div>
                     <div class="d-flex align-items-start mt-4">
                         <table class="table table-striped">
                             <tr>
                                 <th>FAMILY RESIDENCE</th>
-                                <td>{{ $user->user_detail->family_residence }}</td>
+                                @if ($ediFamilyInfo)
+                                    <td><input class="form-control"
+                                            value="{{ $user->user_detail->family_residence }}" type="text"
+                                            wire:model="form.family_residence"></td>
+                                @else
+                                    <td>{{ $user->user_detail->family_residence }}</td>
+                                @endif
                             </tr>
                             <tr>
                                 <th>FATHER</th>
-                                <td>{{ $user->user_detail->father }}</td>
+                                @if ($ediFamilyInfo)
+                                    <td><input class="form-control" value="{{ $user->user_detail->father }}"
+                                            type="text" wire:model="form.father"></td>
+                                @else
+                                    {{-- <td>{{ $user->user_detail->family_residence }}</td> --}}
+                                    <td>{{ $user->user_detail->father }}</td>
+                                @endif
                             </tr>
                             <tr>
                                 <th>MOTHER</th>
-                                <td>{{ $user->user_detail->mother }}</td>
+                                @if ($ediFamilyInfo)
+                                    <td><input class="form-control" value="{{ $user->user_detail->mother }}"
+                                            type="text" wire:model="form.mother"></td>
+                                @else
+                                    {{-- <td>{{ $user->user_detail->family_residence }}</td> --}}
+                                    <td>{{ $user->user_detail->mother }}</td>
+                                @endif
                             </tr>
                             <tr>
                                 <th>BROTHER</th>
-                                <td>{{ $user->user_detail->brother }}</td>
+                                @if ($ediFamilyInfo)
+                                    <td><input class="form-control" value="{{ $user->user_detail->brother }}"
+                                            type="text" wire:model="form.brother"></td>
+                                @else
+                                    {{-- <td>{{ $user->user_detail->family_residence }}</td> --}}
+                                    <td>{{ $user->user_detail->brother }}</td>
+                                @endif
                             </tr>
                             <tr>
                                 <th>SISTER</th>
-                                <td>{{ $user->user_detail->sister }}</td>
+                                @if ($ediFamilyInfo)
+                                    <td><input class="form-control" value="{{ $user->user_detail->sister }}"
+                                            type="text" wire:model="form.sister"></td>
+                                @else
+                                    {{-- <td>{{ $user->user_detail->family_residence }}</td> --}}
+                                    <td>{{ $user->user_detail->sister }}</td>
+                                @endif
                             </tr>
                         </table>
 
                         <table class="table table-striped">
                             <tr>
                                 <th>NATIVE PLACE</th>
-                                <td>{{ $user->user_detail->native_place }}</td>
+                                @if ($ediFamilyInfo)
+                                    <td><input class="form-control" value="{{ $user->user_detail->native_place }}"
+                                            type="text" wire:model="form.native_place"></td>
+                                @else
+                                    {{-- <td>{{ $user->user_detail->family_residence }}</td> --}}
+                                    <td>{{ $user->user_detail->native_place }}</td>
+                                @endif
                             </tr>
                             <tr>
                                 <th>FATHER OCCUPATION</th>
-                                <td>{{ $user->user_detail->father_occupation }}</td>
+                                @if ($ediFamilyInfo)
+                                    <td><input class="form-control"
+                                            value="{{ $user->user_detail->father_occupation }}" type="text"
+                                            wire:model="form.father_occupation"></td>
+                                @else
+                                    {{-- <td>{{ $user->user_detail->family_residence }}</td> --}}
+                                    <td>{{ $user->user_detail->father_occupation }}</td>
+                                @endif
                             </tr>
                             <tr>
                                 <th>MOTHER OCCUPATION</th>
-                                <td>{{ $user->user_detail->mother_occupation }}</td>
+                                @if ($ediFamilyInfo)
+                                    <td><input class="form-control"
+                                            value="{{ $user->user_detail->mother_occupation }}" type="text"
+                                            wire:model="form.mother_occupation"></td>
+                                @else
+                                    {{-- <td>{{ $user->user_detail->family_residence }}</td> --}}
+                                    <td>{{ $user->user_detail->mother_occupation }}</td>
+                                @endif
                             </tr>
                             <tr>
                                 <th>BROTHER OCCUPATION</th>
-                                <td>{{ $user->user_detail->brother_occupation }}</td>
+                                @if ($ediFamilyInfo)
+                                    <td><input class="form-control"
+                                            value="{{ $user->user_detail->brother_occupation }}" type="text"
+                                            wire:model="form.brother_occupation"></td>
+                                @else
+                                    {{-- <td>{{ $user->user_detail->family_residence }}</td> --}}
+                                    <td>{{ $user->user_detail->brother_occupation }}</td>
+                                @endif
                             </tr>
                             <tr>
                                 <th>SISTER OCCUPATION</th>
-                                <td>{{ $user->user_detail->sister_occupation }}</td>
+                                @if ($ediFamilyInfo)
+                                    <td><input class="form-control"
+                                            value="{{ $user->user_detail->sister_occupation }}" type="text"
+                                            wire:model="form.sister_occupation"></td>
+                                @else
+                                    {{-- <td>{{ $user->user_detail->family_residence }}</td> --}}
+                                    <td>{{ $user->user_detail->sister_occupation }}</td>
+                                @endif
                             </tr>
                         </table>
                     </div>

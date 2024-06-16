@@ -74,17 +74,14 @@
             </div>
             <div class="inputgroup d-flex">
                 <label>Profession</label>
-                <select wire:model="highest_education" name="">
+                {{-- <select wire:model="highest_education" name="">
                     <option value=" ">Select Highest Education</option>
                     @foreach ($highest_education_select as $data)
                         <option value="{{ $data->id }}">{{ $data->name }}
                         </option>
                     @endforeach
-                    {{-- <option value="self">Self</option>
-                    <option value="son">Son</option>
-                    <option value="daughter">Daughter</option> --}}
-                </select>
-                {{-- <input type="text" wire:model="highest_education" name="" placeholder="Profession"> --}}
+                </select> --}}
+                <input type="text" wire:model="occupation" name="" placeholder="Profession">
             </div>
             <div class="inputgroup d-flex">
                 <label>Password</label>

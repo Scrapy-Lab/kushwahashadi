@@ -8,6 +8,17 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
+use App\Models\BodyType;
+use App\Models\Caste;
+use App\Models\Complexion;
+use App\Models\FamilyStatus;
+use App\Models\FamilyValue;
+use App\Models\HighestEducation;
+use App\Models\Occupation;
+use App\Models\OnBehalf;
+use App\Models\Religion;
+use App\Models\SubCaste;
+
 class ProfileInfo extends Component
 {
 
@@ -17,7 +28,21 @@ class ProfileInfo extends Component
     public $editAddress = false;
     public $editQualification = false;
     public $editIntro = false;
+    public $editPhysical = false;
+    public $editSpritual = false;
+    public $editAstro = false;
+    public $ediFamilyInfo = false;
     public $memberId;
+    public $on_behalf;
+    public $highest_education;
+    public $occupation;
+    public $body_type;
+    public $religion;
+    public $complexion;
+    public $caste;
+    public $sub_caste;
+    public $family_values;
+    public $family_status;
     public $form = [];
     public $is_view_profile = false;
 
@@ -104,11 +129,28 @@ class ProfileInfo extends Component
             'birth_city' => $user->user_detail->birth_city ?? '',
             'time_of_birth' => $user->user_detail->time_of_birth ?? '',
             'family_residence' => $user->user_detail->family_residence ?? '',
+            'native_place' => $user->user_detail->native_place ?? '',
             'father' => $user->user_detail->father ?? '',
+            'father_occupation' => $user->user_detail->father_occupation ?? '',
             'mother' => $user->user_detail->mother ?? '',
+            'mother_occupation' => $user->user_detail->mother_occupation ?? '',
             'brother' => $user->user_detail->brother ?? '',
+            'brother_occupation' => $user->user_detail->brother_occupation ?? '',
             'sister' => $user->user_detail->sister ?? '',
+            'sister_occupation' => $user->user_detail->sister_occupation ?? '',
         ];
+
+
+        $this->on_behalf = OnBehalf::all();
+        $this->highest_education = HighestEducation::all();
+        $this->occupation = Occupation::all();
+        $this->body_type = BodyType::all();
+        $this->religion = Religion::all();
+        $this->caste = Caste::all();
+        $this->complexion = Complexion::all();
+        $this->sub_caste = SubCaste::all();
+        $this->family_values = FamilyValue::all();
+        $this->family_status = FamilyStatus::all();
     }
 
     public function edit_basic_info_show()
@@ -156,6 +198,56 @@ class ProfileInfo extends Component
         } else {
 
             $this->editIntro = true;
+        }
+    }
+
+
+    public function edit_physical_show()
+    {
+        // dd($this->editBasicInfo);
+        if ($this->editPhysical) {
+
+            $this->editPhysical = false;
+        } else {
+
+            $this->editPhysical = true;
+        }
+    }
+
+    public function edit_spritual_show()
+    {
+        // dd($this->editBasicInfo);
+        if ($this->editSpritual) {
+
+            $this->editSpritual = false;
+        } else {
+
+            $this->editSpritual = true;
+        }
+    }
+
+    public function edit_astro_show()
+    {
+        // dd($this->editBasicInfo);
+        if ($this->editAstro) {
+
+            $this->editAstro = false;
+        } else {
+
+            $this->editAstro = true;
+        }
+    }
+
+
+    public function edit_family_info_show()
+    {
+        // dd($this->editBasicInfo);
+        if ($this->ediFamilyInfo) {
+
+            $this->ediFamilyInfo = false;
+        } else {
+
+            $this->ediFamilyInfo = true;
         }
     }
 
