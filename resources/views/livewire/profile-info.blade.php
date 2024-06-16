@@ -166,7 +166,15 @@
                         <tr>
                             <th>On Behalf</th>
                             @if ($editBasicInfo)
-                                <td><input class="form-control" type="text" wire:model="form.on_behalf">
+                                <td>
+                                    <select class="form-select" wire:model="form.on_behalf">
+                                        <option value="">Select On Behalf</option>
+                                        @foreach ($on_behalf as $data)
+                                            <option value="{{ $data->id }}">{{ $data->name }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                    {{-- <input class="form-control" type="text" wire:model="form.on_behalf"> --}}
                                 </td>
                             @else
                                 <td>{{ $user->user_detail->on_behalf }}</td>
@@ -203,7 +211,14 @@
                         <tr>
                             <th>Marital Status</th>
                             @if ($editBasicInfo)
-                                <td><input class="form-control" type="text" wire:model="form.marital_status"></td>
+                                <td>
+                                    <select class="form-select" wire:model="form.marital_status">
+                                        <option value="">Select MARITAL STATUS</option>
+                                        <option value="1">Single</option>
+                                        <option value="2">Married</option>
+                                    </select>
+                                    {{-- <input class="form-control" type="text" wire:model="form.marital_status"> --}}
+                                </td>
                             @else
                                 <td>{{ $user->user_detail->marital_status }}</td>
                             @endif
@@ -321,9 +336,20 @@
                             <tr>
                                 <th>HIGHEST EDUCATION</th>
                                 @if ($editQualification)
-                                    <td><input class="form-control"
+                                    <td>
+                                        <select class="form-select" wire:model="form.highest_education">
+                                            <option value="">Select HIGHEST
+                                                EDUCATION</option>
+                                            @foreach ($highest_education as $data)
+                                                <option value="{{ $data->id }}">{{ $data->name }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                        {{-- <input class="form-control"
                                             value="{{ $user->user_detail->highest_education }}" type="text"
-                                            wire:model="form.highest_education"></td>
+                                            wire:model="form.highest_education"> --}}
+
+                                    </td>
                                 @else
                                     <td>{{ $user->user_detail->highest_education }}</td>
                                 @endif
@@ -341,7 +367,7 @@
                                 <th>ANNUAL INCOME</th>
                                 @if ($editQualification)
                                     <td><input class="form-control" value="{{ $user->user_detail->annual_income }}"
-                                            type="text" wire:model="form.edu_dannual_incomeetails"></td>
+                                            type="text" wire:model="form.annual_income"></td>
                                 @else
                                     <td>{{ $user->user_detail->annual_income }}</td>
                                 @endif
@@ -352,8 +378,18 @@
                             <tr>
                                 <th>OCCUPATION</th>
                                 @if ($editQualification)
-                                    <td><input class="form-control" value="{{ $user->user_detail->occupation }}"
-                                            type="text" wire:model="form.occupation"></td>
+                                    <td>
+                                        <select class="form-select" wire:model="form.occupation">
+                                            <option value="">Select OCCUPATION</option>
+                                            @foreach ($occupation as $data)
+                                                <option value="{{ $data->id }}">{{ $data->name }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                        {{-- <input class="form-control" value="{{ $user->user_detail->occupation }}"
+                                            type="text" wire:model="form.occupation"> --}}
+
+                                    </td>
                                 @else
                                     <td>{{ $user->user_detail->occupation }}</td>
                                 @endif
@@ -413,8 +449,18 @@
                             <tr>
                                 <th>COMPLEXION</th>
                                 @if ($editPhysical)
-                                    <td><input class="form-control" value="{{ $user->user_detail->complexion }}"
-                                            type="text" wire:model="form.complexion"></td>
+                                    <td>
+                                        <select class="form-select" wire:model="form.complexion">
+                                            <option value="">Select COMPLEXION</option>
+                                            @foreach ($complexion as $data)
+                                                <option value="{{ $data->id }}">{{ $data->name }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+
+                                        {{-- <input class="form-control" value="{{ $user->user_detail->complexion }}"
+                                            type="text" wire:model="form.complexion"> --}}
+                                    </td>
                                 @else
                                     {{-- <td>{{ $user->user_detail->other_occupation }}</td> --}}
                                     <td>{{ $user->user_detail->complexion }}</td>
@@ -423,8 +469,17 @@
                             <tr>
                                 <th>BODY TYPE</th>
                                 @if ($editPhysical)
-                                    <td><input class="form-control" value="{{ $user->user_detail->body_type }}"
-                                            type="text" wire:model="form.body_type"></td>
+                                    <td>
+                                        <select class="form-select" wire:model="form.body_type">
+                                            <option value="">Select BODY TYPE</option>
+                                            @foreach ($body_type as $data)
+                                                <option value="{{ $data->id }}">{{ $data->name }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                        {{-- <input class="form-control" value="{{ $user->user_detail->body_type }}"
+                                            type="text" wire:model="form.body_type"> --}}
+                                    </td>
                                 @else
                                     {{-- <td>{{ $user->user_detail->other_occupation }}</td> --}}
                                     <td>{{ $user->user_detail->body_type }}</td>
