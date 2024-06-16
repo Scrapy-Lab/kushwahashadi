@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('caste_id')->constrained('castes')->onDelete('cascade');
             $table->string('name');
+            $table->boolean('status');
             $table->timestamps();
         });
     }
