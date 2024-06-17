@@ -44,6 +44,11 @@ Route::get('/happy-stories', function () {
 })->name('happy_stories');
 
 
+Route::get('/upgrade-plan', function () {
+    return view('innerPages.upgrade-plan');
+})->name('upgrade-plan');
+
+
 
 
 Route::get('crop-image-upload', [CropImageController::class, 'index']);

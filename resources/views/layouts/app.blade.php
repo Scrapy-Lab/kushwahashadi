@@ -41,6 +41,8 @@
     <!-- Favicon -->
     <link rel="icon" href="path/to/favicon.ico" type="image/x-icon">
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet">
+
     <!-- Meta Tags -->
     <meta name="description" content="Your website description">
     <meta name="keywords" content="your, keywords, here">
