@@ -50,7 +50,7 @@ class ProfileInfo extends Component
     {
         if ($id) {
             $this->user = User::findOrFail($id);
-            $this->is_view_profile = false;
+            $this->is_view_profile = true;
             $user = $this->user;
 
             // $profile_viewed_by = new ProfileViewedBy();
@@ -80,7 +80,7 @@ class ProfileInfo extends Component
                 }
             }
         } else {
-            $this->is_view_profile = true;
+            $this->is_view_profile = false;
             $this->user = Auth::user();
             $user = auth()->user();
         }

@@ -60,17 +60,33 @@
             </div>
             <div class="inputgroup d-flex">
                 <label>Height</label>
-                <select wire:model="height" name="">
+                {{-- <select wire:model="height" name="">
                     <option value="">Select Height in CM</option>
-                    @for ($i=140; $i<=190 ; $i++)
+                    @for ($i = 140; $i <= 190; $i++)
 
                     <option value="{{ $i }}">{{ $i }} CM
                     </option>
                     @endfor
-                    {{-- <option value="5.0">5'0'{1.52 mts}</option>
+                    <option value="5.0">5'0'{1.52 mts}</option>
                     <option value="5.1">5'0'{1.52 mts}</option>
-                    <option value="5.2">5'0'{1.52 mts}</option> --}}
+                    <option value="5.2">5'0'{1.52 mts}</option>
+                </select> --}}
+                <select wire:model="height" name="">
+                    <option value="">Select Height</option>
+                    @for ($i = 140; $i <= 190; $i++)
+                        @php
+                            // Convert cm to inches
+                            $inches = $i / 2.54;
+                            // Get the feet part
+                            $feet = floor($inches / 12);
+                            // Get the remaining inches
+                            $remainingInches = round($inches % 12);
+                        @endphp
+                        <option value="{{ $i }}">{{ $i }} CM
+                            ({{ $feet }}'{{ $remainingInches }}")</option>
+                    @endfor
                 </select>
+
             </div>
             <div class="inputgroup d-flex">
                 <label>Profession</label>

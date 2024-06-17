@@ -19,6 +19,8 @@ Route::group(['middleware' => ['auth']], function () {
         return view('innerPages.dashboard');
     })->name('dashboard');
 
+
+
     Route::get('/edit-profile', function () {
         return view('innerPages.edit_profile');
     })->name('edit_profile');
@@ -30,11 +32,16 @@ Route::group(['middleware' => ['auth']], function () {
     // Route::get('/view-profile/{id}', function () {
     //     return view('innerPages.view_profile');
     // })->name('view_profile');
+
+    Route::get('/view-profile/{id}', function ($id) {
+        // dd($id);
+        return view('innerPages.view_profile', ['id' => $id]);
+    })->name('view_profile');
 });
-Route::get('/view-profile/{id}', function ($id) {
-    // dd($id);
-    return view('innerPages.view_profile', ['id' => $id]);
-})->name('view_profile');
+
+Route::get('/happy-stories', function () {
+    return view('innerPages.happy_stories');
+})->name('happy_stories');
 
 
 

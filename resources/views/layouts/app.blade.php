@@ -49,17 +49,34 @@
 
 
 <body>
+    {{-- <div id="google_translate_element"></div> --}}
 
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                    pageLanguage: 'en'
+                },
+                'google_translate_element'
+            );
+        }
+    </script>
+
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?
+    cb=googleTranslateElementInit"></script>
     <div style="margin: 0 auto;">
+
         @include('layouts.header')
         @yield('content')
         @include('layouts.footer')
 
     </div>
+
+
     @livewireScripts
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
+
 </body>
 
 </html>

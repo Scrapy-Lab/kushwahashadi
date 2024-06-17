@@ -252,7 +252,7 @@
                     </table>
                 </div>
             </div>
-            @if ($is_view_profile)
+            @if (!$is_view_profile)
 
 
                 {{-- PRESENT ADDRESS --}}
@@ -818,8 +818,9 @@
                     </div>
                 </div>
             @endif
+            @if ($is_view_profile)
             {{-- Partner Expectation --}}
-            {{-- <div class="intro">
+            <div class="intro">
                 <div class=" d-flex justify-content-between align-items-center">
                     <h4>Partner Expectation</h4>
                     <div class="d-flex align-items-center gap-2">
@@ -926,8 +927,8 @@
                         </tr>
                     </table>
                 </div>
-            </div> --}}
-
+            </div>
+            @endif
         </div>
     </div>
 </div>

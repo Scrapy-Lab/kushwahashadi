@@ -13,7 +13,7 @@
             <a href="#" class="nav-link">Search</a>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link">Happy Story</a>
+            <a href="{{route('happy_stories')}}" target="_blank" class="nav-link">Happy Story</a>
         </li>
         <li class="nav-item">
             <a href="#" class="nav-link">Contact Us</a>
