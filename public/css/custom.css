@@ -913,7 +913,7 @@ ul.activeDetials {
 }
 .editProfileMain {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.19);
-    height: 1050px !important;
+    height: 979px !important;
     overflow: scroll;
     overflow-y: auto;
     overflow-x: auto;
