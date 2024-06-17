@@ -6,7 +6,7 @@
         @livewire('profile-card')
 
         @if (Route::is('dashboard'))
-            <div class="col-md-9" id="dashboard_listing" wire:ignore>
+            <div class="col-md-9" id="dashboard_listing" wire:ignore >
 
                 {{-- MEMBERS --}}
                 <div class="activeMember">
@@ -74,9 +74,9 @@
                         {{-- <li>
                             <a href="#">Follow</a>
                         </li> --}}
-                        <li>
+                        {{-- <li>
                             <a href="#">Ignore</a>
-                        </li>
+                        </li> --}}
                         <li>
                             <a href="#">Profile Report</a>
                         </li>
@@ -152,9 +152,9 @@
                         {{-- <li>
                             <a href="#">Follow</a>
                         </li> --}}
-                        <li>
+                        {{-- <li>
                             <a href="#">Ignore</a>
-                        </li>
+                        </li> --}}
                         <li>
                             <a href="#">Profile Report</a>
                         </li>
@@ -228,9 +228,9 @@
                         {{-- <li>
                             <a href="#">Follow</a>
                         </li> --}}
-                        <li>
+                        {{-- <li>
                             <a href="#">Ignore</a>
-                        </li>
+                        </li> --}}
                         <li>
                             <a href="#">Profile Report</a>
                         </li>
@@ -304,9 +304,9 @@
                         {{-- <li>
                             <a href="#">Follow</a>
                         </li> --}}
-                        <li>
+                        {{-- <li>
                             <a href="#">Ignore</a>
-                        </li>
+                        </li> --}}
                         <li>
                             <a href="#">Profile Report</a>
                         </li>
@@ -380,9 +380,9 @@
                         {{-- <li>
                             <a href="#">Follow</a>
                         </li> --}}
-                        <li>
+                        {{-- <li>
                             <a href="#">Ignore</a>
-                        </li>
+                        </li> --}}
                         <li>
                             <a href="#">Profile Report</a>
                         </li>
@@ -519,9 +519,9 @@
                             {{-- <li>
                                 <a href="#">Follow</a>
                             </li> --}}
-                            <li>
+                            {{-- <li>
                                 <a href="#">Ignore</a>
-                            </li>
+                            </li> --}}
                             <li>
                                 <a href="#">Profile Report</a>
                             </li>
@@ -666,9 +666,9 @@
                             {{-- <li>
                                 <a href="#">Follow</a>
                             </li> --}}
-                            <li>
+                            {{-- <li>
                                 <a href="#">Ignore</a>
-                            </li>
+                            </li> --}}
                             <li>
                                 <a href="#">Profile Report</a>
                             </li>

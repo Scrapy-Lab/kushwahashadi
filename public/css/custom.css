@@ -819,6 +819,7 @@ span.red {
 div#dashboard_listing {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.19);
     height: auto;
+    max-height: 979px;
     overflow: scroll;
     overflow-y: auto;
     overflow-x: auto;
@@ -877,7 +878,9 @@ div#dashboard_listing h3 {
     padding-top: 20px;
 }
 .activeMember img {
-    width: 236px;
+    width: 228px;
+    border-radius: 30px;
+    margin: 58px;
     height: fit-content;
 }
 .activeMember h2 {
@@ -906,7 +909,7 @@ ul.activeDetials {
     display: flex;
     justify-content: space-between;
     list-style: none;
-    padding: 10px 0 20px;
+    padding: 10px 50px 20px;
 }
 .editProfileMain {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.19);

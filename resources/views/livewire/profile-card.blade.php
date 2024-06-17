@@ -67,24 +67,25 @@
         </div>
         <div class="profile-stats clearfix mt-2">
             <div class="stats-entry">
+                <span class="stats-count">0</span>
+                <span class="stats-label text-uppercase">Remaining Message</span>
+            </div>
+            {{-- <div class="stats-entry">
                 <span class="stats-count">None</span>
                 <span class="stats-label text-uppercase">Payment Gateway</span>
-            </div>
+            </div> --}}
             <div class="stats-entry">
                 <span class="stats-count">0</span>
                 <span class="stats-label text-uppercase">Remaining Interest</span>
             </div>
         </div>
-        <div class="profile-stats clearfix mt-2">
-            <div class="stats-entry">
-                <span class="stats-count">0</span>
-                <span class="stats-label text-uppercase">Remaining Message</span>
-            </div>
+        {{-- <div class="profile-stats clearfix mt-2">
+
             <div class="stats-entry">
                 <span class="stats-count">0</span>
                 <span class="stats-label text-uppercase">Photo Gallery</span>
             </div>
-        </div>
+        </div> --}}
     </div>
     @if (!$is_view_profile)
         <div class="profile-useful-links clearfix">
