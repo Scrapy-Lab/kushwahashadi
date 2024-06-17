@@ -177,7 +177,7 @@
                                     {{-- <input class="form-control" type="text" wire:model="form.on_behalf"> --}}
                                 </td>
                             @else
-                                <td>{{ $user->user_detail->on_behalf }}</td>
+                                <td>{{ $user->user_detail->get_on_behalf?->name }}</td>
                             @endif
                         </tr>
                         <tr>
@@ -220,7 +220,7 @@
                                     {{-- <input class="form-control" type="text" wire:model="form.marital_status"> --}}
                                 </td>
                             @else
-                                <td>{{ $user->user_detail->marital_status }}</td>
+                                <td>{{ $user->user_detail->get_marital_status?->name }}</td>
                             @endif
                         </tr>
                         <tr>
@@ -351,7 +351,7 @@
 
                                     </td>
                                 @else
-                                    <td>{{ $user->user_detail->highest_education }}</td>
+                                    <td>{{ $user->user_detail->get_highest_education?->name }}</td>
                                 @endif
                             </tr>
                             <tr>
@@ -391,7 +391,7 @@
 
                                     </td>
                                 @else
-                                    <td>{{ $user->user_detail->occupation }}</td>
+                                    <td>{{ $user->user_detail->get_occupation?->name }}</td>
                                 @endif
                             </tr>
                             <tr>
@@ -463,7 +463,7 @@
                                     </td>
                                 @else
                                     {{-- <td>{{ $user->user_detail->other_occupation }}</td> --}}
-                                    <td>{{ $user->user_detail->complexion }}</td>
+                                    <td>{{ $user->user_detail->get_complexion?->name }}</td>
                                 @endif
                             </tr>
                             <tr>
@@ -549,7 +549,7 @@
                                             @endforeach
                                         </select></td>
                                 @else
-                                    <td>{{ $user->user_detail->religion }}</td>
+                                    <td>{{ $user->user_detail->get_religion?->name }}</td>
                                 @endif
                             </tr>
                             <tr>
@@ -563,7 +563,7 @@
                                             @endforeach
                                         </select></td>
                                 @else
-                                    <td>{{ $user->user_detail->sub_caste }}</td>
+                                    <td>{{ $user->user_detail->get_sub_caste?->name }}</td>
                                 @endif
                             </tr>
                             <tr>
@@ -578,7 +578,7 @@
                                         </select></td>
                                 @else
                                     {{-- <td>{{ $user->user_detail->sub_caste }}</td> --}}
-                                    <td>{{ $user->user_detail->family_values }}</td>
+                                    <td>{{ $user->user_detail->get_family_values?->name }}</td>
                                 @endif
                             </tr>
                         </table>
@@ -596,7 +596,7 @@
                                         </select></td>
                                 @else
                                     {{-- <td>{{ $user->user_detail->sub_caste }}</td> --}}
-                                    <td>{{ $user->user_detail->caste }}</td>
+                                    <td>{{ $user->user_detail->get_caste?->name }}</td>
                                 @endif
                             </tr>
                             <tr>
@@ -621,7 +621,7 @@
                                         </select></td>
                                 @else
                                     {{-- <td>{{ $user->user_detail->sub_caste }}</td> --}}
-                                    <td>{{ $user->user_detail->family_status }}</td>
+                                    <td>{{ $user->user_detail->get_family_status?->name }}</td>
                                 @endif
                             </tr>
                         </table>
