@@ -220,7 +220,7 @@
                                     {{-- <input class="form-control" type="text" wire:model="form.marital_status"> --}}
                                 </td>
                             @else
-                                <td>{{ $user->user_detail->get_marital_status?->name }}</td>
+                                <td>{{ $user->user_detail->gender == 1 ? 'Single' : 'Married' }}</td>
                             @endif
                         </tr>
                         <tr>

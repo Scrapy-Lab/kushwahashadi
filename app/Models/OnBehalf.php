@@ -15,6 +15,6 @@ class OnBehalf extends Model
     public function user()
     {
 
-        return $this->hasOne(OnBehalf::class);
+        return $this->hasOne(UserDetail::class);
     }
 }
