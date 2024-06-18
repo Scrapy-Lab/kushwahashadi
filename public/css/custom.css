@@ -45,6 +45,32 @@ body {
     padding: 0;
 }
 
+.hidden-div {
+    display: none;
+    background-color: #fff;
+    padding: 0;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    position: absolute;
+    top: 30px;
+    right: 11rem;
+    z-index: 1000;
+}
+
+.hidden-div ul {
+    padding-right: 10px;
+}
+
+.hidden-div h3 {
+    font-size: 19px;
+    background: lightgrey;
+    padding: 10px;
+}
+
+.proDetails {
+    position: relative;
+}
+
 .col-md-4.free {
     box-shadow: #ddd 10px 4px 4px -4px;
     position: relative;
@@ -52,10 +78,12 @@ body {
     height: 498px;
     width: 32% !important;
 }
+
 .free img {
     width: 92px;
     margin: 24px 0;
 }
+
 .free li p {
     margin: 0;
     padding: 13px;
@@ -1260,4 +1288,60 @@ h2 {
 .useful-links .btn:hover {
 
     background-color: #e9e8e8;
+}
+
+.searchMain {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.19);
+}
+
+.inputMaingroup input {
+    width: 100%;
+}
+
+.inputMaingroup label {
+    width: 100%;
+    text-align: left;
+    font-size: 13px;
+}
+
+.inputMaingroup {
+    width: 46%;
+}
+
+.searchMain p {
+    margin: 0;
+}
+
+.searchMain h3 {
+    font-size: 18px;
+    padding: 10px 0;
+    border-bottom: 1px solid lightgrey;
+}
+
+.forInputStyle input {
+    padding: 4px 10px !important;
+    margin: 0 !important;
+    border: 1px solid #ccc;
+}
+
+.forInputStyle select {
+    padding: 4px 10px !important;
+    margin: 0 !important;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.forInputStyle label {
+    font-size: 13px;
+}
+input.searchIt {
+    border: none !important;
+    width: 100%;
+    transition: all ease .5s;
+    box-shadow: 0 4px 3px -5px rgb(0 0 0 / 64%) !important;
+    color: #fff;
+    background: #e62e04;
+    font-size: 14px;
+    padding: 5px 10px;
+    margin-bottom: 22px;
 }

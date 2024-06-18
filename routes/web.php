@@ -43,6 +43,10 @@ Route::get('/happy-stories', function () {
     return view('innerPages.happy_stories');
 })->name('happy_stories');
 
+Route::get('/search', function () {
+    return view('innerPages.search');
+})->name('search');
+
 
 Route::get('/upgrade-plan', function () {
     return view('innerPages.upgrade-plan');
