@@ -2,7 +2,7 @@
 @section('content')
 
 {{-- MY PLANS --}}
-
+@livewire('user-navigation')
 <div class="upplan my-5 pb-5">
     <div class="text-center pt-5">
         <h2 style="color: #fff;">UPGRADE PLANS</h2>

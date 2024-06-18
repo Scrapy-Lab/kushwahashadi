@@ -19,7 +19,7 @@
             <a href="#" class="nav-link">Contact Us</a>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link">Upgrade Plan</a>
+        <a href="{{route('upgrade-plan')}}" class="nav-link">Upgrade Plan</a>
         </li>
     </ul>
 </div>
