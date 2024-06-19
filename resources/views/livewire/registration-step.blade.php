@@ -407,11 +407,26 @@
                                         <h3 class="fw-normal mb-5">Physical Attributes</h3>
                                         <div class="row">
                                             <div class="col-md-6  mb-4 pb-2">
-                                                <div data-mdb-input-init class="form-outline form-white">
-                                                    <input type="text" id="form3Examplea2"
+                                                <div >
+                                                    {{-- <input type="text" id="form3Examplea2"
                                                         class="form-control form-control-lg"
-                                                        wire:model="form.height" />
-                                                    <label class="form-label" for="form3Examplea2">HEIGHT</label>
+                                                        wire:model="form.height" /> --}}
+                                                        <select wire:model="form.height" name="" class="form-select" >
+                                                            <option value="">Select Height</option>
+                                                            @for ($i = 140; $i <= 190; $i++)
+                                                                @php
+                                                                    // Convert cm to inches
+                                                                    $inches = $i / 2.54;
+                                                                    // Get the feet part
+                                                                    $feet = floor($inches / 12);
+                                                                    // Get the remaining inches
+                                                                    $remainingInches = round($inches % 12);
+                                                                @endphp
+                                                                <option value="{{ $i }}">{{ $i }} CM
+                                                                    ({{ $feet }}'{{ $remainingInches }}")</option>
+                                                            @endfor
+                                                        </select>
+                                                    {{-- <label class="form-label" for="form3Examplea2">HEIGHT</label> --}}
                                                 </div>
                                             </div>
 
@@ -846,7 +861,7 @@
 
                                         <div class="form-check d-flex justify-content-start mb-4 pb-3">
                                             <input class="form-check-input me-3" type="checkbox" value=""
-                                                id="form2Example3c" />
+                                                id="form2Example3c" required />
                                             <label class="form-check-label text-white" for="form2Example3">
                                                 I do accept the <a href="#!" class="text-white"><u>Terms and
                                                         Conditions</u></a> of your

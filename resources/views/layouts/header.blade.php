@@ -6,14 +6,16 @@
             <div class="row justify-content-between align-items-center">
                 <!-- Column 1: Language and Currency Selectors -->
                 <div class="col-md-5 d-flex align-items-center gap-4">
-                    <div class="mr-3 flag-select">
+                    <div id="google_translate_element"></div>
+                    {{-- <div class="mr-3 flag-select">
                         <label for="language-selector" class="mr-2">Language:</label>
+
                         <select id="language-selector" class="form-control d-inline-block" style="width: auto;">
                             <option value="en"><span class="flag-icon flag-icon-us"></span> English</option>
                             <option value="es"><span class="flag-icon flag-icon-es"></span> Spanish</option>
                             <option value="fr"><span class="flag-icon flag-icon-fr"></span> French</option>
                         </select>
-                    </div>
+                    </div> --}}
                     <div class="currency-select">
                         <label for="currency-selector" class="mr-2">Currency:</label>
                         <select id="currency-selector" class="form-control d-inline-block" style="width: auto;">
@@ -92,6 +94,19 @@
 
 
 
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+                pageLanguage: 'en'
+            },
+            'google_translate_element'
+        );
+    }
+</script>
+
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?
+cb=googleTranslateElementInit"></script>
 <script>
     function toggleDiv(divId) {
         var div = document.getElementById(divId);
