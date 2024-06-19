@@ -10,7 +10,7 @@
             <a href="{{ route('partner_expectation') }}" class="nav-link">Partner Expectations</a>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link">Search</a>
+            <a href="{{route('search')}}" class="nav-link">Search</a>
         </li>
         <li class="nav-item">
             <a href="{{route('happy_stories')}}" target="_blank" class="nav-link">Happy Story</a>
