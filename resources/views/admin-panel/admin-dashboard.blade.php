@@ -1811,7 +1811,7 @@
                       <div class="px-2 px-sm-3 py-3 notification-card position-relative unread border-bottom">
                         <div class="d-flex align-items-center justify-content-between position-relative">
                           <div class="d-flex">
-                            <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="assets/img/team/40x40/57.webp" alt="" /></div>
+                            <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="{{ asset('images/admin-panel/images/57.webp') }}" alt="" /></div>
                             <div class="flex-1 me-sm-3">
                               <h4 class="fs-9 text-body-emphasis">Kiera Anderson</h4>
                               <p class="fs-9 text-body-highlight mb-2 mb-sm-3 fw-normal"><span class='me-1 fs-10'>💬</span>Mentioned you in a comment.<span class="ms-2 text-body-quaternary text-opacity-75 fw-bold fs-10"></span></p>
@@ -1826,7 +1826,7 @@
                       <div class="px-2 px-sm-3 py-3 notification-card position-relative unread border-bottom">
                         <div class="d-flex align-items-center justify-content-between position-relative">
                           <div class="d-flex">
-                            <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="assets/img/team/40x40/59.webp" alt="" /></div>
+                            <div class="avatar avatar-m status-online me-3"><img class="rounded-circle" src="{{ asset('images/admin-panel/images/59.webp') }}" alt="" /></div>
                             <div class="flex-1 me-sm-3">
                               <h4 class="fs-9 text-body-emphasis">Herman Carter</h4>
                               <p class="fs-9 text-body-highlight mb-2 mb-sm-3 fw-normal"><span class='me-1 fs-10'>👤</span>Tagged you in a comment.<span class="ms-2 text-body-quaternary text-opacity-75 fw-bold fs-10"></span></p>
