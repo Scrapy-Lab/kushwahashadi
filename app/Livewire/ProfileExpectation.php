@@ -22,6 +22,7 @@ class ProfileExpectation extends Component
         $this->form = [
             'partner_exp_general_requirement' => $this->user->user_detail->partner_exp_general_requirement,
             'partner_exp_height' => $this->user->user_detail->partner_exp_height,
+            'partner_exp_country_of_residence' => $this->user->user_detail->partner_exp_country_of_residence,
             'partner_exp_marital_status' => $this->user->user_detail->partner_exp_marital_status,
             'partner_exp_caste' => $this->user->user_detail->partner_exp_caste,
             'partner_exp_education' => $this->user->user_detail->partner_exp_education,
@@ -68,6 +69,7 @@ class ProfileExpectation extends Component
 
         $userDetail->partner_exp_general_requirement = $this->form['partner_exp_general_requirement'];
         $userDetail->partner_exp_height = $this->form['partner_exp_height'];
+        $userDetail->partner_exp_country_of_residence = $this->form['partner_exp_country_of_residence'];
         $userDetail->partner_exp_marital_status = $this->form['partner_exp_marital_status'];
         $userDetail->partner_exp_caste = $this->form['partner_exp_caste'];
         $userDetail->partner_exp_education = $this->form['partner_exp_education'];

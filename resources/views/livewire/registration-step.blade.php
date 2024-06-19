@@ -407,25 +407,26 @@
                                         <h3 class="fw-normal mb-5">Physical Attributes</h3>
                                         <div class="row">
                                             <div class="col-md-6  mb-4 pb-2">
-                                                <div >
+                                                <div>
                                                     {{-- <input type="text" id="form3Examplea2"
                                                         class="form-control form-control-lg"
                                                         wire:model="form.height" /> --}}
-                                                        <select wire:model="form.height" name="" class="form-select" >
-                                                            <option value="">Select Height</option>
-                                                            @for ($i = 140; $i <= 190; $i++)
-                                                                @php
-                                                                    // Convert cm to inches
-                                                                    $inches = $i / 2.54;
-                                                                    // Get the feet part
-                                                                    $feet = floor($inches / 12);
-                                                                    // Get the remaining inches
-                                                                    $remainingInches = round($inches % 12);
-                                                                @endphp
-                                                                <option value="{{ $i }}">{{ $i }} CM
-                                                                    ({{ $feet }}'{{ $remainingInches }}")</option>
-                                                            @endfor
-                                                        </select>
+                                                    <select wire:model="form.height" name=""
+                                                        class="form-select">
+                                                        <option value="">Select Height</option>
+                                                        @for ($i = 140; $i <= 190; $i++)
+                                                            @php
+                                                                // Convert cm to inches
+                                                                $inches = $i / 2.54;
+                                                                // Get the feet part
+                                                                $feet = floor($inches / 12);
+                                                                // Get the remaining inches
+                                                                $remainingInches = round($inches % 12);
+                                                            @endphp
+                                                            <option value="{{ $i }}">{{ $i }} CM
+                                                                ({{ $feet }}'{{ $remainingInches }}")</option>
+                                                        @endfor
+                                                    </select>
                                                     {{-- <label class="form-label" for="form3Examplea2">HEIGHT</label> --}}
                                                 </div>
                                             </div>
@@ -690,7 +691,7 @@
 
                             <div class="row g-0" id="step_4_div" style="display: none">
                                 {{-- @if ($step2) --}}
-                                <div class="col-lg-6" id="step_2_div">
+                                <div class="col-lg-6">
                                     <div class="p-5">
                                         <h3 class="fw-normal mb-5" style="color: #4835d4;">Family Information
                                         </h3>
@@ -824,56 +825,120 @@
                                 <div class="col-lg-6 bg-indigo text-white">
                                     <div class="p-5">
                                         <h3 class="fw-normal mb-5">Partner Expectation</h3>
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="mb-4 pb-2">
+                                                    <div data-mdb-input-init class="form-outline form-white">
+                                                        <input type="text" id="form3Examplea2"
+                                                            value="{{ $user->user_detail->partner_exp_general_requirement }}"
+                                                            type="text"
+                                                            wire:model="form.partner_exp_general_requirement"
+                                                            class="form-control form-control-lg" />
+                                                        <label class="form-label" for="form3Examplea2">GENERAL
+                                                            REQUIREMENT</label>
+                                                    </div>
+                                                </div>
 
-                                        <div class="mb-4 pb-2">
-                                            <div data-mdb-input-init class="form-outline form-white">
-                                                <input type="text" id="form3Examplea2"
-                                                    class="form-control form-control-lg" />
-                                                <label class="form-label" for="form3Examplea2">SUN SIGN</label>
+
+                                                <div class="mb-4 pb-2">
+                                                    <div data-mdb-input-init class="form-outline form-white">
+                                                        <input type="text" id="form3Examplea2"
+                                                            value="{{ $user->user_detail->partner_exp_height }}"
+                                                            type="text" wire:model="form.partner_exp_height"
+                                                            class="form-control form-control-lg" />
+                                                        <label class="form-label" for="form3Examplea2">HEIGHT</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-4 pb-2">
+                                                    <div>
+
+                                                        <select class="form-select"
+                                                            wire:model="form.partner_exp_marital_status">
+                                                            <option value="">Select MARITAL STATUS</option>
+                                                            <option value="1">Single</option>
+                                                            <option value="2">Married</option>
+                                                        </select>
+                                                    </div>
+
+                                                </div>
+                                                <div class="mb-4 pb-2">
+                                                    <div data-mdb-input-init class="form-outline form-white">
+                                                        <input type="text" id="form3Examplea6"
+                                                            value="{{ $user->user_detail->partner_exp_country_of_residence }}"
+                                                            type="text"
+                                                            wire:model="form.partner_exp_country_of_residence"
+                                                            class="form-control form-control-lg" />
+                                                        <label class="form-label" for="form3Examplea6">COUNTRY OF
+                                                            RESIDENCE</label>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
+                                            <div class="col-md-6">
+                                                <div class="mb-4 pb-2">
+                                                    <div data-mdb-input-init class="form-outline form-white">
+                                                        <input type="text" id="form3Examplea6"
+                                                            value="{{ $user->user_detail->partner_exp_caste }}"
+                                                            type="text" wire:model="form.partner_exp_caste"
+                                                            class="form-control form-control-lg" />
+                                                        <label class="form-label" for="form3Examplea6">CASTE /
+                                                            SECT</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-4 pb-2">
+                                                    <div data-mdb-input-init class="form-outline form-white">
+                                                        <input type="text" id="form3Examplea6"
+                                                            value="{{ $user->user_detail->partner_exp_education }}"
+                                                            type="text" wire:model="form.partner_exp_education"
+                                                            class="form-control form-control-lg" />
+                                                        <label class="form-label"
+                                                            for="form3Examplea6">EDUCATION</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-4 pb-2">
+                                                    <div data-mdb-input-init class="form-outline form-white">
+                                                        <input type="text" id="form3Examplea6"
+                                                            value="{{ $user->user_detail->partner_exp_drinking_habits }}"
+                                                            type="text"
+                                                            wire:model="form.partner_exp_drinking_habits"
+                                                            class="form-control form-control-lg" />
+                                                        <label class="form-label" for="form3Examplea6">DRINKING
+                                                            HABITS</label>
+                                                    </div>
+                                                </div>
 
 
-                                        <div class="mb-4 pb-2">
-                                            <div data-mdb-input-init class="form-outline form-white">
-                                                <input type="text" id="form3Examplea2"
-                                                    class="form-control form-control-lg" />
-                                                <label class="form-label" for="form3Examplea2">MOON SIGN</label>
+
+                                                <div class="mb-4 pb-2">
+                                                    <div data-mdb-input-init class="form-outline form-white">
+                                                        <input type="text" id="form3Examplea6"
+                                                            value="{{ $user->user_detail->partner_exp_diet }}"
+                                                            type="text" wire:model="form.partner_exp_diet"
+                                                            class="form-control form-control-lg" />
+                                                        <label class="form-label" for="form3Examplea6">DIET</label>
+                                                    </div>
+                                                </div>
+
                                             </div>
-                                        </div>
-
-                                        <div class="mb-4 pb-2">
-                                            <div data-mdb-input-init class="form-outline form-white">
-                                                <input type="text" id="form3Examplea6"
-                                                    class="form-control form-control-lg" />
-                                                <label class="form-label" for="form3Examplea6">CITY OF BIRTH</label>
+                                            <div class="form-check d-flex justify-content-start mb-4 pb-3">
+                                                <input class="form-check-input me-3" type="checkbox" value=""
+                                                    id="form2Example3c" required />
+                                                <label class="form-check-label text-white" for="form2Example3">
+                                                    I do accept the <a href="#!" class="text-white"><u>Terms and
+                                                            Conditions</u></a> of your
+                                                    site.
+                                                </label>
                                             </div>
+
+
+                                            <button type="button" id="step_4" wire:click="step_four"
+                                                data-mdb-button-init data-mdb-ripple-init class="btn btn-light btn-lg"
+                                                data-mdb-ripple-color="dark">Finish</button>
+
+
                                         </div>
-                                        <div class="mb-4 pb-2">
-                                            <div data-mdb-input-init class="form-outline form-white">
-                                                <input type="text" id="form3Examplea6"
-                                                    class="form-control form-control-lg" />
-                                                <label class="form-label" for="form3Examplea6">TIME OF BIRTH</label>
-                                            </div>
-                                        </div>
-
-
-
-                                        <div class="form-check d-flex justify-content-start mb-4 pb-3">
-                                            <input class="form-check-input me-3" type="checkbox" value=""
-                                                id="form2Example3c" required />
-                                            <label class="form-check-label text-white" for="form2Example3">
-                                                I do accept the <a href="#!" class="text-white"><u>Terms and
-                                                        Conditions</u></a> of your
-                                                site.
-                                            </label>
-                                        </div>
-
-
-                                        <button type="button" id="step_4" wire:click="step_four"
-                                            data-mdb-button-init data-mdb-ripple-init class="btn btn-light btn-lg"
-                                            data-mdb-ripple-color="dark">Finish</button>
-
                                     </div>
                                 </div>
                                 {{-- @endif --}}

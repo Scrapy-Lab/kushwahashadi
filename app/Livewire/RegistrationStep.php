@@ -88,6 +88,29 @@ class RegistrationStep extends Component
             'brother_occupation' => $user->user_detail->brother_occupation ?? '',
             'sister' => $user->user_detail->sister ?? '',
             'sister_occupation' => $user->user_detail->sister_occupation ?? '',
+            'partner_exp_general_requirement' => $user->user_detail->partner_exp_general_requirement,
+            'partner_exp_height' => $user->user_detail->partner_exp_height,
+            'partner_exp_country_of_residence' => $user->user_detail->partner_exp_country_of_residence,
+            'partner_exp_marital_status' => $user->user_detail->partner_exp_marital_status,
+            'partner_exp_caste' => $user->user_detail->partner_exp_caste,
+            'partner_exp_education' => $user->user_detail->partner_exp_education,
+            'partner_exp_drinking_habits' => $user->user_detail->partner_exp_drinking_habits,
+            'partner_exp_diet' => $user->user_detail->partner_exp_diet,
+            'partner_exp_manglik' => $user->user_detail->partner_exp_manglik,
+            'partner_exp_family_values' => $user->user_detail->partner_exp_family_values,
+            'partner_exp_prefered_countries' => $user->user_detail->partner_exp_prefered_countries,
+            'partner_exp_prefered_cities' => $user->user_detail->partner_exp_prefered_cities,
+            'partner_exp_age' => $user->user_detail->partner_exp_age,
+            'partner_exp_weight' => $user->user_detail->partner_exp_weight,
+            'partner_exp_with_child' => $user->user_detail->partner_exp_with_child,
+            'partner_exp_religion' => $user->user_detail->partner_exp_religion,
+            'partner_exp_sub_caste' => $user->user_detail->partner_exp_sub_caste,
+            'partner_exp_profession' => $user->user_detail->partner_exp_profession,
+            'partner_exp_smoking' => $user->user_detail->partner_exp_smoking,
+            'partner_exp_bodyType' => $user->user_detail->partner_exp_bodyType,
+            'partner_exp_disability' => $user->user_detail->partner_exp_disability,
+            'partner_exp_family_stat' => $user->user_detail->partner_exp_family_stat,
+            'partner_exp_prefered_state' => $user->user_detail->partner_exp_prefered_state,
         ];
 
 
@@ -197,6 +220,31 @@ class RegistrationStep extends Component
         $this->userDetail->brother_occupation = $this->form['brother_occupation'];
         $this->userDetail->sister = $this->form['sister'];
         $this->userDetail->sister_occupation = $this->form['sister_occupation'];
+
+
+        $this->userDetail->partner_exp_general_requirement = $this->form['partner_exp_general_requirement'];
+        $this->userDetail->partner_exp_height = $this->form['partner_exp_height'];
+        $this->userDetail->partner_exp_marital_status = $this->form['partner_exp_marital_status'];
+        $this->userDetail->partner_exp_caste = $this->form['partner_exp_caste'];
+        $this->userDetail->partner_exp_education = $this->form['partner_exp_education'];
+        $this->userDetail->partner_exp_drinking_habits = $this->form['partner_exp_drinking_habits'];
+        $this->userDetail->partner_exp_diet = $this->form['partner_exp_diet'];
+        $this->userDetail->partner_exp_manglik = $this->form['partner_exp_manglik'];
+        $this->userDetail->partner_exp_family_values = $this->form['partner_exp_family_values'];
+        $this->userDetail->partner_exp_prefered_countries = $this->form['partner_exp_prefered_countries'];
+        $this->userDetail->partner_exp_prefered_cities = $this->form['partner_exp_prefered_cities'];
+        $this->userDetail->partner_exp_age = $this->form['partner_exp_age'];
+        $this->userDetail->partner_exp_weight = $this->form['partner_exp_weight'];
+        $this->userDetail->partner_exp_with_child = $this->form['partner_exp_with_child'];
+        $this->userDetail->partner_exp_religion = $this->form['partner_exp_religion'];
+        $this->userDetail->partner_exp_sub_caste = $this->form['partner_exp_sub_caste'];
+        $this->userDetail->partner_exp_profession = $this->form['partner_exp_profession'];
+        $this->userDetail->partner_exp_smoking = $this->form['partner_exp_smoking'];
+        $this->userDetail->partner_exp_bodyType = $this->form['partner_exp_bodyType'];
+        $this->userDetail->partner_exp_disability = $this->form['partner_exp_disability'];
+        $this->userDetail->partner_exp_family_stat = $this->form['partner_exp_family_stat'];
+        $this->userDetail->partner_exp_prefered_state = $this->form['partner_exp_prefered_state'];
+
         $this->user->push();
         $this->userDetail->push(); // Save the user and related models
 
